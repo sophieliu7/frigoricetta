@@ -3,6 +3,7 @@ class UserProductsController < ApplicationController
 
   def index
     @user_products = UserProduct.where(user_id: current_user)
+
   end
 
   def new
@@ -41,7 +42,8 @@ class UserProductsController < ApplicationController
     params.require(:user_product).permit(
       :place,
       :purchase_date,
-      :peremption_date
+      :peremption_date,
+      :product_id
       )
   end
 
