@@ -3,7 +3,6 @@ class UserProductsController < ApplicationController
 
   def index
     @user_products = UserProduct.where(user_id: current_user)
-
   end
 
   def new
@@ -16,7 +15,7 @@ class UserProductsController < ApplicationController
     if @user_product.save
       render :index, status: :created
     else
-      render_error
+      render :new
     end
   end
 
