@@ -1,4 +1,4 @@
-<%= simple_form_for @user_product do |f| %>
+<%= simple_form_for [@user_product, @product] do |f| %>
   <%= f.association :product %>
   <%= f.button :submit %>
 <% end %>

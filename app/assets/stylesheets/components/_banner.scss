@@ -1,9 +1,20 @@
+.home-banner {
+  background-image: url('TODO: A picture URL from unsplash.com!');
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+
 .banner-index {
   width: 100%;
-  background:linear-gradient(-225deg, rgba(168, 224, 99, 1) 0%, rgba(86, 171, 47, 1) 50%);
+  background:linear-gradient(-225deg, $light-green 0%, $green 50%);
   color: white;
   padding: 20px 0;
   h1 {
     font-size: 50px;
   }
 }
+
