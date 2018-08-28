@@ -10,16 +10,24 @@ class UserProductsController < ApplicationController
   end
 
   def create
-    UserProduct.create!(user_products_params)
-    redirect_to user_products_path
+    @user_product = UserProduct.new(user_products_params)
+    @user_product.user = current_user
+    if @user_product.save
+      render :index, status: :created
+    else
+      render_error
+    end
   end
 
   def edit
   end
 
   def update
-    @user_product.update(user_products_params)
-    redirect_to user_products_path
+    if @user_product.update(user_products_params)
+      render :index
+    else
+      render_error
+    end
   end
 
   def destroy
@@ -39,5 +47,10 @@ class UserProductsController < ApplicationController
 
   def set_user_product
     @user_product = UserProduct.find(params[:id])
+  end
+
+  def render_error
+    render json: { errors: @user_product.errors.full_messages },
+      status: :unprocessable_entity
   end
 end
