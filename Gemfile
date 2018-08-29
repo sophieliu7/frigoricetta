@@ -32,6 +32,8 @@ group :development, :test do
 end
 
 gem 'cloudinary'
+
 # gem 'pg_search'
 # gem 'select2-rails'
 # gem 'underscore-rails'
+

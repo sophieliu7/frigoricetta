@@ -58,6 +58,10 @@ class UserProductsController < ApplicationController
     redirect_to user_products_path
   end
 
+  def email
+    @email = email_parser
+  end
+
   private
 
   def user_products_params
@@ -77,4 +81,29 @@ class UserProductsController < ApplicationController
     render json: { errors: @user_product.errors.full_messages },
       status: :unprocessable_entity
   end
+
+  def email_parser
+    item_list = InboundEmail.first.content["TextBody"].split(/Produits commandés/).last.split(/Montant du panier/).first
+
+    item_list2 = item_list.split(/\r\n/).reject! { |string| string == "" }
+
+    item_list2.map! { |string| string.strip }
+
+    item_list2.reject! { |string|
+      string.last(2) =~ /\d\sg/ ||
+      string.last(2) =~ /\dg/ ||
+      string.last(2) =~ /((c|C)|(l|L))/ ||
+      string.last(2) =~ /((m|M)|(l|L))/ ||
+      string.last(2) =~ /((d|D)|(l|L))/ ||
+      string.last(2) =~ /((k|K)|(g|G))/ ||
+      string.last(2) =~ /((m|M)|(g|G))/ ||
+      string.last(2) =~ /((d|D)|(g|G))/ ||
+      string =~ /.+\d{2,}(\s|)g.+/ ||
+      string.last(7) =~ /A payer/ ||
+      string.length < 3 ||
+      string.last(1) =~ /€/ }
+
+      return item_list2
+  end
+
 end
