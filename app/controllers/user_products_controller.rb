@@ -38,6 +38,8 @@ class UserProductsController < ApplicationController
   def email
     @email_content = email_parser_content
     @email_date = email_parser_date
+    @email_user = email_parser_user
+    @email_from = email_parser_email_from
   end
 
   private
@@ -91,4 +93,13 @@ class UserProductsController < ApplicationController
     email.content["Date"]
   end
 
+  def email_parser_user
+    email = InboundEmail.where( user_id: current_user ).last
+    email.user.email
+  end
+
+  def email_parser_email_from
+    email = InboundEmail.where( user_id: current_user ).last
+    email.content["From"]
+  end
 end
