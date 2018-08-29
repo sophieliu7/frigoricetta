@@ -32,3 +32,5 @@ group :development, :test do
 end
 
 gem 'cloudinary'
+
+gem 'open-uri'
