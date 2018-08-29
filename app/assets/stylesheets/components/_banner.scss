@@ -1,0 +1,25 @@
+.home-banner {
+  background-image: url('TODO: A picture URL from unsplash.com!');
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+
+.banner-index {
+  width: 100%;
+  background:linear-gradient(-225deg, $light-green 0%, $green 50%);
+  color: white;
+  padding: 20px 0;
+  h1 {
+    font-size: 50px;
+  }
+}
+
+
+
+.index-happy-line-background {
+  background-image: url("https://lifesum.com/media/happy-line-beige.033f75f9.svg")
+}
