@@ -15,31 +15,44 @@
     </div>
 
     <!-- TITLE IN ZE MIDDLE -->
-    <div class="navbar-wagon-middle">
+   <!--  <div class="navbar-wagon-middle">
       <h2 class="hidden">FrigoRicetta</h2>
-    </div>
+    </div> -->
 
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <h3><%= link_to "Account", "#", class: "navbar-wagon-item navbar-wagon-link" %></h3>
-      <h3><%= link_to "Log Out", "#", class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </h3>
     </div>
+
+  <% else %>
+    <!-- Login link (when logged out) -->
+    <div class="navbar-wagon-right navbar-wagon-not-sign-in hidden-xs hidden-sm">
+      <h3><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3><%= link_to t(".sign_up", default: "Sign up"), '#', class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" =>"#myModal"%></h3>
+    </div>
+
+  <% end %>
 
 
       <!-- Avatar with dropdown menu -->
   <!--     <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%#= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
+              <#%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%#= t(".profile", default: "Profile") %>
+              <%# end %>
             </li>
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
+              <%#= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%#= t(".settings", default: "Settings") %>
+              <%# end %>
             </li>
           </ul>
         </div>
@@ -56,5 +69,6 @@
         </ul>
       </div>
     </div>
-  <% end %>
+
 </div>
+<%= render "shared/login_form" %>
