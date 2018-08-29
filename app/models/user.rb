@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :user_products
+  has_many :inbound_emails
   has_many :product, through: :user_products
 end
