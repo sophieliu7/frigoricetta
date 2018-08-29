@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :user_products
 
+  resources :user_products, except: [:show]
 
   devise_for :users
   root to: 'pages#home'

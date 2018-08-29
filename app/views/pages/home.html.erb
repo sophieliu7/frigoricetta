@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+
+<div class="banner home-banner" style="background-image: linear-gradient(-225deg, rgba(189, 195, 199, 0.4) 0%, rgba(44, 62, 80, 0.4) 50%), url('<%= cl_image_path "eahwcubxhirbmnnl2k7k" %>');">
+
+  <div class="banner-content">
+    <h1>FrigoRicetta</h1>
+    <p>Learn to code with us in Berlin</p>
+    <!-- <a class="btn btn-primary btn-lg btn-frigo" style="background:linear-gradient(-225deg, rgba(168, 224, 99, 1) 0%, rgba(86, 171, 47, 1) 50%)">Start now</a> -->
+    <%= link_to "Start Now", user_products_path, class:"btn btn-primary btn-lg btn-frigo" %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 100 %>
+    </div>
+  </div>
+</div>
