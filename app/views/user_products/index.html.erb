@@ -24,6 +24,13 @@
   <br>
   <% end %>
 </ul> -->
+<%= form_tag user_products_path, method: :get do%>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholde: "Trouver un aliment"
+   %>
+<% end %>
 
 <div class="container index-container text-center">
   <h5><%= link_to "Ajouter un aliment", new_user_product_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
