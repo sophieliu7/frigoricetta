@@ -3,7 +3,6 @@ class UserProductsController < ApplicationController
 
   def index
     @user_products = UserProduct.where(user_id: current_user)
-
   end
 
   def new
@@ -14,9 +13,9 @@ class UserProductsController < ApplicationController
     @user_product = UserProduct.new(user_products_params)
     @user_product.user = current_user
     if @user_product.save
-      render :index, status: :created
+      redirect_to user_products_path
     else
-      render_error
+      render :new
     end
   end
 

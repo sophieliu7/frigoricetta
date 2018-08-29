@@ -6,3 +6,15 @@
   <%= link_to "Add a product", new_user_product_path, class:"btn btn-primary btn-lg btn-frigo" %>
 </div>
 
+
+<ul>
+  <% @user_products.each do |user_product| %>
+  <li>Name: <%= link_to user_product.product.name, edit_user_product_path(user_product.id) %></li>
+  <li><%= link_to "Delete", user_product_path(user_product), method: :delete,
+      data: { confirm: "Are you sure?" } %></li>
+
+  <li>Location: <%= user_product.place %></li>
+  <li>Peremption date: <%= user_product.peremption_date %></li>
+  <br>
+  <% end %>
+</ul>
