@@ -13,7 +13,7 @@ class UserProductsController < ApplicationController
     @user_product = UserProduct.new(user_products_params)
     @user_product.user = current_user
     if @user_product.save
-      render :index, status: :created
+      redirect_to user_products_path
     else
       render :new
     end
