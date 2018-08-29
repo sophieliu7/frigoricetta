@@ -33,4 +33,4 @@ end
 
 gem 'cloudinary'
 
-gem 'open-uri'
+
