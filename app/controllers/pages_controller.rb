@@ -1,3 +1,4 @@
+require 'open-uri'
 
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
@@ -37,7 +38,7 @@ class PagesController < ApplicationController
         html_doc_target = Nokogiri::HTML(html_file_target, nil, 'utf-8')
         difficulty = html_doc_target.search('.recipe-infos__level .recipe-infos__item-title').text.strip
         lesetapes = html_doc_target.search('.recipe-preparation__list').text.strip
-        listing = {name: name, description: description, duration: duration, difficulty: difficulty, lesetapes: lesetapes}
+        listing = {"name": name, "description": description, "duration": duration, "difficulty": difficulty, "lesetapes": lesetapes}
 
         @array_top << listing
 
@@ -45,7 +46,7 @@ class PagesController < ApplicationController
 
         end
 
-      return @array_top
+      #return @array_top
 
   end
 
