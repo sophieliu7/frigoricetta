@@ -1,8 +1,10 @@
 <h1>Hello</h1>
 
-<ul>
 
-<% @email.each do |user_product| %>
+Date d'envoi : <%= @email_date %>
+
+<ul>
+<% @email_content.each do |user_product| %>
 <li><%= user_product %></li>
 <% end %>
 </ul>
