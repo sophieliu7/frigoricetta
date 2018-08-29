@@ -1,0 +1,9 @@
+console.log("yes")
+
+function addForm(formHTML) {
+  const nextNewForm = document.getElementById('followingform');
+  nextNewForm.innerHTML = '';
+  nextNewForm.insertAdjacentHTML('beforeend', formHTML);
+}
+
+addForm('<%= j render "new_product_form", user_product: UserProduct.new, product_name: @product_name %>')

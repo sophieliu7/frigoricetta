@@ -1,7 +1,9 @@
-<%= simple_form_for [@user_product] do |f| %>
-  <%= f.association :product %>
+<%= simple_form_for user_product do |f| %>
+  <%#= f.association :product %>
+  <%= hidden_field_tag :product_name, @product_name %>
   <%= f.input :purchase_date %>
   <%= f.input :place %>
   <%= f.input :peremption_date %>
+  <%= f.association :category %>
   <%= f.button :submit %>
 <% end %>

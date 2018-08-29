@@ -1,10 +1,11 @@
-
 <div class="container">
-  <div class="row">
+  <div class="row new-form-user-prod">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1>UserProducts#new</h1>
-      <p>Find me in app/views/user_products/new.html.erb</p>
-      <%= render "new_product_form" %>
+      <h1>Ajouter un aliment</h1>
+      <%= form_tag load_form_path, method: :get, remote: :true do %>
+        <%= search_field_tag :search, @product&.name, class: "search-form-new" %>
+      <% end %>
+      <div id="followingform"></div>
 
 
       <%= link_to "Back to products", user_products_path %>
