@@ -33,6 +33,8 @@
     <!-- Login link (when logged out) -->
     <div class="navbar-wagon-right navbar-wagon-not-sign-in hidden-xs hidden-sm">
       <h3><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3><%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" =>"#myModal"%></h3>
+      <%= render "shared/login_form" %>
     </div>
 
   <% end %>
