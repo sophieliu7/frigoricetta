@@ -2,6 +2,7 @@ console.log("yes")
 
 function addForm(formHTML) {
   const nextNewForm = document.getElementById('followingform');
+  nextNewForm.innerHTML = '';
   nextNewForm.insertAdjacentHTML('beforeend', formHTML);
 }
 
