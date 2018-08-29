@@ -15,15 +15,27 @@
     </div>
 
     <!-- TITLE IN ZE MIDDLE -->
-    <div class="navbar-wagon-middle">
+   <!--  <div class="navbar-wagon-middle">
       <h2 class="hidden">FrigoRicetta</h2>
-    </div>
+    </div> -->
 
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <h3><%= link_to "Account", "#", class: "navbar-wagon-item navbar-wagon-link" %></h3>
-      <h3><%= link_to "Log Out", "#", class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </h3>
     </div>
+
+  <% else %>
+    <!-- Login link (when logged out) -->
+    <div class="navbar-wagon-right navbar-wagon-not-sign-in hidden-xs hidden-sm">
+      <h3><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
+    </div>
+
+  <% end %>
 
 
       <!-- Avatar with dropdown menu -->
@@ -56,5 +68,5 @@
         </ul>
       </div>
     </div>
-  <% end %>
+
 </div>

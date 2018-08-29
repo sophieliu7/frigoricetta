@@ -50,3 +50,11 @@
     color: $light-green;
   }
 }
+
+.navbar-wagon-not-sign-in {
+  display: flex;
+  justify-content: flex-end;
+  h3 {
+    text-align: right;
+  }
+}
