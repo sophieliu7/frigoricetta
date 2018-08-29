@@ -7,7 +7,7 @@
 
 
 
-<div class="container text-center">
+<!-- <div class="container text-center">
   <p>Find me in app/views/user_products/index.html.erb</p>
   <%= link_to "Add a product", new_user_product_path, class:"btn btn-primary btn-lg btn-frigo" %>
 </div>
@@ -23,4 +23,19 @@
   <li>Peremption date: <%= user_product.peremption_date %></li>
   <br>
   <% end %>
-</ul>
+</ul> -->
+
+<div class="container index-container text-center">
+  <h5><%= link_to "Ajouter un aliment", new_user_product_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
+  <div class="row">
+    <% @user_products.each do |user_product| %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="card">
+        <h4><%= user_product.product.name%></h4>
+        <p>location <%= user_product.place%></p>
+        <p>Peremption date: <%= user_product.peremption_date %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
