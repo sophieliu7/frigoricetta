@@ -81,9 +81,23 @@ class UserProductsController < ApplicationController
       string.last(2) =~ /((m|M)|(g|G))/ ||
       string.last(2) =~ /((d|D)|(g|G))/ ||
       string =~ /.+\d{2,}(\s|)g.+/ ||
-      string.last(7) =~ /A payer/ ||
+      string =~ /.+\sPrix\sunitaire.+/ ||
+      string.last(5) =~ /payer/ ||
       string.length < 3 ||
       string.last(1) =~ /€/ }
+
+      require 'csv'
+      filepath = 'app/controllers/blacklist_items.csv'
+      blacklist = []
+      CSV.foreach(filepath) do |row|
+        blacklist << row
+      end
+
+      blacklist.flatten!
+
+      blacklist.each do |item|
+         item_list2.reject! { |string| string.upcase.include? item.upcase }
+      end
 
       return item_list2
   end
