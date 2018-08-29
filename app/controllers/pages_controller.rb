@@ -7,8 +7,8 @@ class PagesController < ApplicationController
 
   def recettes
 
-
-    @userproducts = current_user.user_products
+    @user = current_user;
+    @userproducts = @user.user_products
 
         url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@user.user_products}"
 
@@ -31,21 +31,15 @@ class PagesController < ApplicationController
 
           difficulty = html_doc_target.search('.recipe-infos__level .recipe-infos__item-title').text.strip
 
-
-
-
           templist = Recipe.new(name, description, duration, false, difficulty)
           array_top_5 << templist
 
 
         end
- return array_top_5
-end
-
-
-
-
+      return array_top_5
   end
 
-
 end
+
+
+
