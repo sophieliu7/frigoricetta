@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :user_products, except: [:show]
+  get '/load_form', to: "user_products#load_form"
 
   devise_for :users
   root to: 'pages#home'

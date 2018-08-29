@@ -11,6 +11,23 @@ class UserProductsController < ApplicationController
 
   def new
     @user_product = UserProduct.new
+    if params[:search]
+      @product = Product.first
+    end
+  end
+
+  def load_form
+
+    # raise
+
+    product = Product.find_by(name: params[:search])
+    @product_name =  product ? product.name : params[:search]
+    # format JS > load_form.js.erb
+    respond_to do |format|
+      format.js # actually means: if the client ask for js -> return file.js
+    end
+
+    # passer un produit @product
   end
 
   def create
