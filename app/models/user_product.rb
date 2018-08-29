@@ -14,6 +14,5 @@ class UserProduct < ApplicationRecord
       using: {
         tsearch: { prefix: true}
       }
-    ignoring: :accents
     }
 end

@@ -32,3 +32,4 @@ group :development, :test do
 end
 
 gem 'cloudinary'
+gem 'pg_search'
