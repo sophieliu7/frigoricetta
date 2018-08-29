@@ -39,11 +39,9 @@ class PagesController < ApplicationController
         lesetapes = html_doc_target.search('.recipe-preparation__list').text.strip
         listing = {name: name, description: description, duration: duration, difficulty: difficulty, lesetapes: lesetapes}
 
+        @array_top << listing
 
 
-          @array_top << listing
-
-        raise
 
         end
 

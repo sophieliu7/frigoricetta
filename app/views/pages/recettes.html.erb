@@ -1,11 +1,11 @@
 
 <h1>La liste des recettes</h1>
 
-<%= @user.email %>
-<%= @userproducts %>
-
-
-<%= @userproducts %>
-
-
-<%= @array_top[1] %>
+<ul>
+<%= @array_top.each do |item| %>
+  <li><%= item["name"] %></li>
+  <li><%= item["description"] %></li>
+  <li><%= item["difficulty"] %></li>
+  <li><%= item["lesetapes"] %></li>
+<% end %>
+</ul>
