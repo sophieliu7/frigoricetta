@@ -11,6 +11,17 @@
   transition: 0.5s background-color ease;
 }
 
+
+.navbar-wagon-dropdown-menu {
+  height: 90vh;
+  width: 300px;
+  transition: 1s;
+}
+
+.navbar-wagon-dropdown-menu a {
+  text-align: center
+}
+
 .navbar-wagon-white {
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -57,4 +68,14 @@
   h3 {
     text-align: right;
   }
+}
+
+.dropdown-font {
+  font-family: 'Oleo Script', cursive;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.navbar-wagon-item {
+  font-size: 20px;
 }

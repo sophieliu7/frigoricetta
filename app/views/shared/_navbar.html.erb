@@ -1,8 +1,12 @@
-<div class="navbar-wagon navbar-fixed-top">
+<div class="navbar-wagon navbar-fixed-top <%= "navbar-wagon-white" unless params[:action] == "home" %>">
   <!-- Logo
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %> -->
+
+
+
+<!-- NAVIGATION ON DESKTOP -->
 
   <% if user_signed_in? %>
 
@@ -21,10 +25,10 @@
 
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
-      <h3><%= link_to "Account", "#", class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3><%= link_to "Mon compte", "#", class: "navbar-wagon-item navbar-wagon-link" %></h3>
       <h3>
         <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
         <% end %>
       </h3>
     </div>
@@ -32,8 +36,8 @@
   <% else %>
     <!-- Login link (when logged out) -->
     <div class="navbar-wagon-right navbar-wagon-not-sign-in hidden-xs hidden-sm">
-      <h3><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
-      <h3><%= link_to t(".sign_up", default: "Sign up"), '#', class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" =>"#myModal"%></h3>
+      <h3><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3><%= link_to t(".sign_up", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
     </div>
 
   <% end %>
@@ -58,17 +62,50 @@
         </div>
       </div> -->
 
-    <!-- Dropdown list appearing on mobile only -->
+
+
+    <!-- NAVIGATION ON MOBILE -->
+
+
+      <% if user_signed_in? %>
+
     <div class="navbar-wagon-item hidden-md hidden-lg">
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Some mobile link</a></li>
-          <li><a href="#">Other one</a></li>
-          <li><a href="#">Other one</a></li>
+        <ul class="dropdown-menu navbar-wagon-dropdown-menu text-center">
+          <h1 class="text-center">FrigoRicetta</h1>
+          <br>
+          <li><a href="#">Mon compte</a></li>
+          <li><a href="#">Mon garde manger</a></li>
+          <li><a href="#">Mes recettes</a></li>
+          <li><a href="#">Se déconnecter</a></li>
+          <li><%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %></li>
         </ul>
       </div>
     </div>
+
+  <% else %>
+
+
+   <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu navbar-wagon-dropdown-menu text-center">
+          <h1 class="text-center dropdown-font">FrigoRicetta</h1>
+          <br>
+
+          <li><%= link_to t(".sign_in", default: "Se connecter"), '#', class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" =>"#login"%></li>
+          <li><%= link_to t(".sign_up", default: "Créer un compte"), '#', class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" =>"#signup"%></li>
+
+        </ul>
+      </div>
+    </div>
+
+    <% end %>
+
+
 
 </div>
 <%= render "shared/login_form" %>
