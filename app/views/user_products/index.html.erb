@@ -4,7 +4,19 @@
 <div class="index-happy-line index-happy-line-background"></div>
 
 
+
 <div class="container index-container text-center">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+     <%= form_tag user_products_path, method: :get do%>
+       <%= text_field_tag :query,
+         params[:query],
+         class: "form-control",
+         placeholde: "Trouver un aliment"
+        %>
+     <% end %>
+    </div>
+  </div>
   <h5><%= link_to "Ajouter un aliment", new_user_product_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
   <div class="row">
     <% @user_products.each do |user_product| %>
