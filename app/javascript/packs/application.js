@@ -37,10 +37,15 @@ function matchCustom(params, data) {
 
 $(document).ready(function(){
     // $('#search').select2();
-    $("#color").select2({
+    $("#products_product_id").select2({
       tags: true,
       matcher: matchCustom,
       minimumInputLength: 3,
-      minimumResultsForSearch: 5
+      minimumResultsForSearch: 5,
+      placeholder: {
+        id: '-1', // the value of the option
+        text: 'Select an option'
+      },
+      allowClear: true
     });
 })
