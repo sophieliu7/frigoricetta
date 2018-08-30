@@ -1,19 +1,41 @@
-<h1>Hello</h1>
+<div class="container index-container text-center">
+  <div data-user-product-id>
 
-<p>Date d'envoi du mail : <%= @email_date %></p>
-<p>Email from : <%= @email_from %></p>
-<p>User email Frigoricetta : <%= @email_user %></p>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-<% if !@email_content.nil? %>
-  <ul>
-      <% @email_content.each do |user_product| %>
-      <li><%= user_product %></li>
-    <% end %>
-  </ul>
-  <div>
-    <%= link_to "Confirmed ?", user_products_path, class:"btn btn-lg btn-frigo" %>
+        <p>Date d'envoi du mail : <%= @email_date %></p>
+        <p>Email from : <%= @email_from %></p>
+        <p>Frigoricetta User : <%= @email_user %></p>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <% if !@email_content.nil? %>
+
+          <% @email_content.each do |user_product| %>
+
+
+            <div class="card">
+            <h4><%= user_product %></h4>
+              <div class="card-menu">
+                <%= link_to user_product_path(user_product), method: :patch do %>
+                <%= icon("fas", 'edit') %>
+                <% end %>
+                <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
+                <%= icon("fas", 'trash-alt') %>
+                <% end %>
+              </div>
+            </div>
+
+          <% end %>
+        <% end %>
+
+        <h5><%= link_to "Rangez les courses ?", user_products_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
+
+        <div>
+          <%= @hash_food_category %>
+        </div>
+
+    </div>
   </div>
-  <div>
-    <%= @hash_food_category %>
-  </div>
-<% end %>
+</div>
