@@ -5,6 +5,12 @@
       <%= form_tag load_form_path, method: :get, remote: :true do %>
         <%= search_field_tag :search, @product&.name, class: "search-form-new" %>
       <% end %>
+<select id="color" class="form-control, search-form-new">
+  <% Product.all.each do |product| %>
+  <option><%= product.name %></option>
+
+<% end %>
+</select>
       <div id="followingform"></div>
 
 

@@ -1,7 +1,7 @@
 class UserProduct < ApplicationRecord
   belongs_to :user
   belongs_to :product
-  belongs_to :category
+
 
   validates :user, presence: true
   validates :product, presence: true
@@ -16,4 +16,8 @@ class UserProduct < ApplicationRecord
         tsearch: { prefix: true}
       }
     }
+
+  def category
+    product.category
+  end
 end

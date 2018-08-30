@@ -28,13 +28,16 @@ class UserProductsController < ApplicationController
 
   def create
     # @category mais d'où vient elle???
+    @category = Category.find(params[:categories])
     @product = Product.find_by(name: params[:product_name]) || Product.new(name: params[:product_name])
-    # @product.category = @category
+    @product.category = @category
     @product.save
+    # raise
     @user_product = UserProduct.new(user_products_params)
     @user_product.user = current_user
-    raise
-    @user_product.product = @product.reload
+    # @user_product.save
+    # raise
+    @user_product.product = @product
     if @user_product.save
       redirect_to user_products_path
     else
