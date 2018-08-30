@@ -1,27 +1,31 @@
 <div class="container form-sign-in">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <h2>Sign up</h2>
+      <br>
+      <h2>Créer un compte</h2>
+      <br>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs">
           <%= f.input :email,
+                      placeholder: 'sophie@domain.com',
                       required: true,
                       autofocus: true ,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
                       required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      placeholder: '*********',
+                      hint: ("#{@minimum_password_length} caratères minimum" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
-
+        <br>
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class:"btn-frigo btn-form" %>
+          <%= f.button :submit, "C'est parti !", class:"btn-frigo btn-form" %>
         </div>
       <% end %>
 
