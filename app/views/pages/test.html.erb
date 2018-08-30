@@ -1,32 +1,4 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-<!-- <select id="search" name="states[]" multiple="multiple">
-  <option value="AL">Alabama</option>
-  <option value="AL">Paris</option>
-  <option value="AL">Autre</option>
-  <option value="WY">Wyoming</option>
-</select> -->
-
-
-<br>
-<br>
-<br>
-<br>
+<!--
 
 <select id="color" class="form-control">
   <option selected="selected">orange</option>
@@ -55,5 +27,23 @@
   <option>plante</option>
   <option>purple</option>
 
-</select>
+</select> -->
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<select id="testing">
+
+  <% Category.order.each do |key, value| %>
+    <optgroup label='<%= key %>'>
+      <% value.each do |val| %>
+        <option><%= val.name.capitalize %></option>
+      <% end %>
+    </optgroup>
+  <% end %>
+</select>

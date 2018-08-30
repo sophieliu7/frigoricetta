@@ -1,12 +1,39 @@
 <%= simple_form_for user_product do |f| %>
-  <%= select_tag("categories", options_from_collection_for_select(Category.all, "id", "name", params[:category_name]))%>
+
+  <!-- search pour catégories -->
+  <select id="testing">
+
+    <% Category.order.each do |key, value| %>
+      <optgroup label='<%= key %>'>
+        <% value.each do |val| %>
+          <option><%= val.name.capitalize %></option>
+        <% end %>
+      </optgroup>
+    <% end %>
+  </select>
+
   <%= hidden_field_tag :product_name, @product_name %>
   <%= f.input :purchase_date %>
+
+  <%#= select_tag("categories", options_from_collection_for_select(Category.order, "id", "SubCategory", params[:category_name]))%>
+  <%= collection_select(:categories, :category_id, Category.order.values.map { |a| a }.flatten.uniq, :id, :name, {}, class: "search-form-new") %>
+
   <%= f.input :place %>
   <%= f.input :peremption_date %>
   <%= f.button :submit %>
 <% end %>
 
 
+    <!-- grouper les categories par subcategory -->
+
+
+
+    <!-- pour chaque sous category -->
+
+    <!-- pour chaque sous category -->
+
+  <%#= collection_select(:category, :category_id, Category.all, :id, :name, {}, class: "search-form-new") %>
+
 <%#= f.collection_select(:category_id, Category.all, :id, :name) %>
+
 

@@ -7,3 +7,25 @@ function addForm(formHTML) {
 }
 
 addForm('<%= j render "new_product_form", user_product: UserProduct.new, product_name: @product_name %>')
+
+$("#categories_category_id").select2({
+  tags: true,
+  matcher: matchCustom,
+  minimumResultsForSearch: 5,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: 'Select an option'
+  },
+  allowClear: true
+});
+$("#testing").select2({
+      tags: true,
+      matcher: matchCustom,
+      placeholder: {
+        id: '-1', // the value of the option
+        text: 'Select an option'
+      },
+      allowClear: true
+    });
+
+// matchCustom()

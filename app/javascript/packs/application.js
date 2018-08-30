@@ -11,6 +11,7 @@ import 'select2/dist/css/select2.css';  // optional if you have css loader
 
 
 function matchCustom(params, data) {
+    console.log('match')
     // If there are no search terms, return all of the data
     if ($.trim(params.term) === '') {
       return data;
@@ -51,8 +52,11 @@ $(document).ready(function(){
       },
       allowClear: true
     });
+
 })
 
+window.matchCustom = matchCustom
+window.$ = $
 
 addreturntab();
 
