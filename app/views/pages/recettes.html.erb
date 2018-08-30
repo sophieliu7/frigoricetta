@@ -30,15 +30,16 @@
           <h2>Niveau de difficulté :<%= item[:difficulty] %></h2>
           <p> <%= item[:description] %></p>
           <p class="read-more">
-            <a data-toggle="collapse" data-target="#collapseExample<%= @letter %>" aria-expanded="false" aria-controls="collapseExample<%= @letter %>"">Voir la recette</a>
+            <a data-toggle="collapse" data-target="#collapseExample<%= @letter %>" aria-expanded="false" aria-controls="collapseExample<%= @letter %>">Voir la recette</a>
           </p>
         </div>
 
 
     </div>
 
-    <div class="collapse blog-card" id="collapseExample<%= @letter %>">
+    <div class="collapse drop-card" id="collapseExample<%= @letter %>">
       <div>
+      <h4>Préparation</h4>
        <p class="fullrecette"><%= item[:lesetapes].gsub(/\n/, '') %></p>
       </div>
     </div>

@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
 
   def recettes
-    @lettre = ""
+
     @user = current_user
     @userproducts = @user.user_products
     @userproductlist = []
