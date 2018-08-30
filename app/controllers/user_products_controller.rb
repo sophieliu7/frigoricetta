@@ -36,6 +36,7 @@ class UserProductsController < ApplicationController
     @product = Product.find_by(name: params[:product_name]) || Product.new(name: params[:product_name])
     @product.category = @category
     @product.save
+    raise
     # raise
     @user_product = UserProduct.new(user_products_params)
     @user_product.user = current_user
