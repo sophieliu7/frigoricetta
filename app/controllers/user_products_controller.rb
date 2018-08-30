@@ -99,7 +99,7 @@ class UserProductsController < ApplicationController
     return nil if email.nil?
 
     item_list = email.content["TextBody"].split(/Produits commandés/).last.split(/Montant du panier/).first
-
+    # item_list.split(/\r\n/)
     item_list2 = item_list.split(/\r\n/).reject! { |string| string == "" }
 
     item_list2.map! { |string| string.strip }
