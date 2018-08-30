@@ -2,8 +2,14 @@
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script|Poiret+One|Raleway');
 
 // Define fonts for body and headers
-$body-font: "Raleway", "Helvetica", "sans-serif";
-$headers-font: "Poiret One", "Helvetica", "sans-serif";
+// $body-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: 'Source Sans Pro', 'sans-serif';
+
+
+    // font-family: 'Source Sans Pro', sans-serif;
+
+
+$headers-font:  'Source Sans Pro', 'sans-serif';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -6,6 +6,15 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.btn-frigo:hover {
+  margin: -5px;
+  padding-right: 23px;
+  padding-left: 23px;
+  transition: 0.4s ease;
+  font-weight: bold;
+}
+
 .btn-form {
   width: 100%;
   color: white;
