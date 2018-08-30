@@ -10,6 +10,10 @@
       <li><%= user_product %></li>
     <% end %>
   </ul>
-
-  <%= @hash_food_category %>
+  <div>
+    <%= link_to "Confirmed ?", user_products_path, class:"btn btn-lg btn-frigo" %>
+  </div>
+  <div>
+    <%= @hash_food_category %>
+  </div>
 <% end %>
