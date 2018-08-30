@@ -2,16 +2,10 @@
   <div class="row new-form-user-prod">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1>Ajouter un aliment</h1>
-      <%= form_tag load_form_path, method: :get, remote: :true do %>
-        <%#= search_field_tag :search, @product&.name, class: "search-form-new" %>
+      <%= form_tag load_form_path, method: :get, remote: true do %>
 
-        <%= collection_select :products, :product_id, Product.all, :id, :name, html_options: {class: "search-form-new"} %>
+        <%= collection_select :products, :product_id, Product.all, :id, :name, {}, class: "search-form-new" %>
 
-        <!-- <select id="color" class="form-control, search-form-new"> -->
-          <%# Product.all.each do |product| %>
-            <!-- <option><%#= product.name %></option> -->
-          <%# end %>
-        <!-- </select> -->
         <%= submit_tag "Entrer" %>
       <% end %>
       <div id="followingform"></div>

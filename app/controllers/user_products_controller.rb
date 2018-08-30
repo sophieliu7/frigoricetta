@@ -17,18 +17,22 @@ class UserProductsController < ApplicationController
   end
 
   def load_form
-    product = Product.find_by(name: params[:search])
-    @product_name =  product ? product.name : params[:search]
+    if params[:products][:product_id].is_a?(String)
+      product = Product.create(name: params[:products][:product_id])
+    else
+      product = Product.find(params[:products][:product_id])
+    end
+    @product_name = product.name
     # format JS > load_form.js.erb
     respond_to do |format|
       format.js # actually means: if the client ask for js -> return file.js
     end
     # passer un produit @product
+
   end
 
   def create
-    # @category mais d'où vient elle???
-    @category = Category.find(params[:categories])
+    @category = Category.find(params[:categories][:category_id])
     @product = Product.find_by(name: params[:product_name]) || Product.new(name: params[:product_name])
     @product.category = @category
     @product.save
