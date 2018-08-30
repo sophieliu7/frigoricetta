@@ -1,11 +1,65 @@
 
-<h1>La liste des recettes</h1>
-
-<%= @array_top %>
-<% @array_top.each do |item| %>
-<%= item %>
-<br>
+<h1>Recettes suggérées selon vos aliments en stock</h1>
 
 
-<% end %>
+
+
+
+  <% @array_top.each do |item| %>
+
+  <% @letter = ('a'..'z').to_a.sample %>
+    <div class="blog-card">
+      <div class="meta">
+        <div class="photo" style="background-image: url('<%= item[:photo] %>')"></div>
+          <ul class="details">
+            <li class="author"><a href="#">XXXXX</a></li>
+            <li class="date">XXX</li>
+            <li class="tags">
+            <ul>
+              <li><a href="#">XXX</a></li>
+              <li><a href="#">XXX</a></li>
+              <li><a href="#">XXX</a></li>
+              <li><a href="#">XXX</a></li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+
+        <div class="description">
+          <h1><%= item[:name] %></h1>
+          <h2>Niveau de difficulté :<%= item[:difficulty] %></h2>
+          <p> <%= item[:description] %></p>
+          <p class="read-more">
+            <a data-toggle="collapse" data-target="#collapseExample<%= @letter %>" aria-expanded="false" aria-controls="collapseExample<%= @letter %>">Voir la recette</a>
+          </p>
+        </div>
+
+
+    </div>
+
+    <div class="collapse drop-card" id="collapseExample<%= @letter %>">
+      <div>
+      <h4>Préparation</h4>
+       <p class="fullrecette"><%= item[:lesetapes].gsub(/\n/, '') %></p>
+      </div>
+    </div>
+
+
+
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -62,7 +62,10 @@ class UserProductsController < ApplicationController
   end
 
   def email
-    @email = email_parser
+    @email_content = email_parser_content
+    @email_date = email_parser_date
+    @email_user = email_parser_user
+    @email_from = email_parser_email_from
   end
 
   private
@@ -85,8 +88,10 @@ class UserProductsController < ApplicationController
       status: :unprocessable_entity
   end
 
-  def email_parser
-    item_list = InboundEmail.first.content["TextBody"].split(/Produits commandés/).last.split(/Montant du panier/).first
+  def email_parser_content
+
+    email = InboundEmail.where( user_id: current_user ).last
+    item_list = email.content["TextBody"].split(/Produits commandés/).last.split(/Montant du panier/).first
 
     item_list2 = item_list.split(/\r\n/).reject! { |string| string == "" }
 
@@ -102,11 +107,39 @@ class UserProductsController < ApplicationController
       string.last(2) =~ /((m|M)|(g|G))/ ||
       string.last(2) =~ /((d|D)|(g|G))/ ||
       string =~ /.+\d{2,}(\s|)g.+/ ||
-      string.last(7) =~ /A payer/ ||
+      string =~ /.+\sPrix\sunitaire.+/ ||
+      string.last(5) =~ /payer/ ||
       string.length < 3 ||
       string.last(1) =~ /€/ }
+
+      require 'csv'
+      filepath = 'app/controllers/blacklist_items.csv'
+      blacklist = []
+      CSV.foreach(filepath) do |row|
+        blacklist << row
+      end
+
+      blacklist.flatten!
+
+      blacklist.each do |item|
+         item_list2.reject! { |string| string.upcase.include? item.upcase }
+      end
 
       return item_list2
   end
 
+  def email_parser_date
+    email = InboundEmail.where( user_id: current_user ).last
+    email.content["Date"]
+  end
+
+  def email_parser_user
+    email = InboundEmail.where( user_id: current_user ).last
+    email.user.email
+  end
+
+  def email_parser_email_from
+    email = InboundEmail.where( user_id: current_user ).last
+    email.content["From"]
+  end
 end

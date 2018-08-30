@@ -1,6 +1,8 @@
 import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { addreturntab } from '../components/recette';
 initUpdateNavbarOnScroll();
+
 
 import $ from 'jquery';
 import 'select2';                       // globally assign select2 fn to $ element
@@ -49,3 +51,9 @@ $(document).ready(function(){
       allowClear: true
     });
 })
+
+
+addreturntab();
+
+
+
