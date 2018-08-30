@@ -34,11 +34,12 @@ class PagesController < ApplicationController
 
 
         url_target = "https://www.marmiton.org#{element.search('a').attribute('href').value}"
+        url_photo = "#{element.search('img').attribute('src').value}"
         html_file_target = open(url_target).read
         html_doc_target = Nokogiri::HTML(html_file_target, nil, 'utf-8')
         difficulty = html_doc_target.search('.recipe-infos__level .recipe-infos__item-title').text.strip
         lesetapes = html_doc_target.search('.recipe-preparation__list').text.strip
-        listing = {"name": name, "description": description, "duration": duration, "difficulty": difficulty, "lesetapes": lesetapes}
+        listing = {"name": name, "description": description, "duration": duration, "difficulty": difficulty, "lesetapes": lesetapes, "photo": url_photo}
 
         @array_top << listing
 
