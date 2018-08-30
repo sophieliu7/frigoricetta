@@ -4,11 +4,12 @@
 <p>Email from : <%= @email_from %></p>
 <p>User email Frigoricetta : <%= @email_user %></p>
 
-<ul>
-<% @email_content.each do |user_product| %>
-<li><%= user_product %></li>
+<% if !@email_content.nil? %>
+  <ul>
+      <% @email_content.each do |user_product| %>
+      <li><%= user_product %></li>
+    <% end %>
+  </ul>
+
+  <%= @hash_food_category %>
 <% end %>
-</ul>
-
-
-<%= @hash_food_category %>

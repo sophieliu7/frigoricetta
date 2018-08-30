@@ -62,6 +62,7 @@ class UserProductsController < ApplicationController
   end
 
   def email
+    return nil if email_parser_content.nil?
     @email_content = email_parser_content
     @email_date = email_parser_date
     @email_user = email_parser_user
@@ -95,6 +96,8 @@ class UserProductsController < ApplicationController
   def email_parser_content
 
     email = InboundEmail.where( user_id: current_user ).last
+    return nil if email.nil?
+
     item_list = email.content["TextBody"].split(/Produits commandés/).last.split(/Montant du panier/).first
 
     item_list2 = item_list.split(/\r\n/).reject! { |string| string == "" }
@@ -137,16 +140,19 @@ class UserProductsController < ApplicationController
 
   def email_parser_date
     email = InboundEmail.where( user_id: current_user ).last
+    return nil if email.nil?
     email.content["Date"]
   end
 
   def email_parser_user
     email = InboundEmail.where( user_id: current_user ).last
+    return nil if email.nil?
     email.user.email
   end
 
   def email_parser_email_from
     email = InboundEmail.where( user_id: current_user ).last
+    return nil if email.nil?
     email.content["From"]
   end
 
