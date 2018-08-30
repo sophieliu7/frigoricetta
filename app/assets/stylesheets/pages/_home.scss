@@ -10,9 +10,8 @@
   justify-content: center;
 }
 .banner h1 {
-  font-family: 'Oleo Script', cursive;
-  font-size: 70px;
-  font-weight: bold;
+  font-family: 'Damion', cursive;
+  font-size: 90px;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 .banner p {
@@ -21,4 +20,14 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+#about-frigoricetta {
+  margin-top: 20px;
+}
+
+.about-food-waste {
+  height: 100px;
+  width: 100vh;
+  background-size: cover !important;
 }
