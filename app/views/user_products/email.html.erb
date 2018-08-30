@@ -1,0 +1,11 @@
+<h1>Hello</h1>
+
+<p>Date d'envoi du mail : <%= @email_date %></p>
+<p>Email from : <%= @email_from %></p>
+<p>User email Frigoricetta : <%= @email_user %></p>
+
+<ul>
+<% @email_content.each do |user_product| %>
+<li><%= user_product %></li>
+<% end %>
+</ul>

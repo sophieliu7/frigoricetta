@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/recettes', to: 'pages#recettes', as: :recette
+  get 'user_products/email', to: 'user_products#email'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
