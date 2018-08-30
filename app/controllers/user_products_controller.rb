@@ -40,6 +40,7 @@ class UserProductsController < ApplicationController
     @email_date = email_parser_date
     @email_user = email_parser_user
     @email_from = email_parser_email_from
+    @hash_food_category = hash_food_category(email_parser_content)
   end
 
   private
@@ -61,6 +62,9 @@ class UserProductsController < ApplicationController
     render json: { errors: @user_product.errors.full_messages },
       status: :unprocessable_entity
   end
+
+# Fonction qui renvoit un ARRAY de string correspondant aux noms des produits de la liste
+# de course Carrefour du DERNIER email envoyé par le Current User
 
   def email_parser_content
 
@@ -102,6 +106,9 @@ class UserProductsController < ApplicationController
       return item_list2
   end
 
+# Fonction qui renvoit 1 string correspondant à la date de Forward
+# du DERNIER email envoyé par le Current User
+
   def email_parser_date
     email = InboundEmail.where( user_id: current_user ).last
     email.content["Date"]
@@ -116,4 +123,70 @@ class UserProductsController < ApplicationController
     email = InboundEmail.where( user_id: current_user ).last
     email.content["From"]
   end
+
+####################### CARREFOUR API CALLS ####################################
+require 'uri'
+require 'openssl'
+require 'net/http'
+require 'json'
+
+ # FONCTION appelant Carrefour et retournant la catégorie HypSubCLassDesc
+
+  def post_with_string(word)
+    url = URI("https://api.fr.carrefour.io/v1/openapi/items")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    request = Net::HTTP::Post.new(url)
+    request["x-ibm-client-id"] = ENV['CARREFOUR_CLIENT_ID']
+    request["x-ibm-client-secret"] = ENV['CARREFOUR_CLIENT_SECRET']
+    request["content-type"] = 'application/json'
+    request["accept"] = 'application/json'
+    request.body = "{\"queries\":[{\"query\":\"#{word}\"}]}"
+
+    response = http.request(request)
+
+    if response.read_body.nil?
+      return 'RIEN TROUVE'
+    elsif response.read_body.start_with?('<?xml')
+      return 'API INTERNAL ERROR'
+    else
+      data = JSON.parse(response.read_body)
+      # return data
+      return data['list'][0]['category_structures']['hyper']['hypSubClassDesc']
+    end
+  end
+
+
+ # ALGO qui réitère sur le nombre de mots de la string juqu'a trouver un résultat via post_with_string
+
+  def find_categories(word)
+
+    carrefour_api_response = post_with_string(word)
+
+    if carrefour_api_response == 'API INTERNAL ERROR' || word == ""
+      return nil
+
+    else
+
+      number_of_words = word.split.size
+
+      while carrefour_api_response == 'RIEN TROUVE' && number_of_words > 1 && carrefour_api_response != 'API INTERNAL ERROR'
+        word = word.split.first(word.split.length - 1).join(' ')
+        number_of_words = word.split.count
+        carrefour_api_response = post_with_string(word)
+      end
+
+      return carrefour_api_response
+    end
+  end
+
+  def hash_food_category(array_of_food)
+    result = Hash.new
+    array_of_food.each do |food|
+      result[food] = find_categories(food)
+    end
+    return result
+  end
+
 end
