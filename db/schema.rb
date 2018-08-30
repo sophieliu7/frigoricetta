@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_08_28_083522) do
-=======
 ActiveRecord::Schema.define(version: 2018_08_29_090250) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +22,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_090250) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "inbound_emails", force: :cascade do |t|
     t.jsonb "content"
     t.boolean "processed"
@@ -37,7 +31,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_090250) do
     t.index ["user_id"], name: "index_inbound_emails_on_user_id"
   end
 
->>>>>>> master
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.bigint "category_id"
@@ -71,10 +64,7 @@ ActiveRecord::Schema.define(version: 2018_08_29_090250) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-=======
   add_foreign_key "inbound_emails", "users"
->>>>>>> master
   add_foreign_key "products", "categories"
   add_foreign_key "user_products", "products"
   add_foreign_key "user_products", "users"
