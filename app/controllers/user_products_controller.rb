@@ -58,7 +58,8 @@ class UserProductsController < ApplicationController
 
   def destroy
     @user_product.destroy
-    redirect_to user_products_path
+
+    # redirect_to user_products_path
   end
 
   def email
