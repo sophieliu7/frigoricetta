@@ -141,148 +141,146 @@ Category.create! name: 'SOFTS DRINKS"', SubCategory: 'LIQUIDES', peremption_dura
 puts "end category"
 
 puts "create product"
-Product.create!(name: "poulet fermier", category: Category.first, validated: true )
-Product.create!(name: "courgette", category: Category.last, validated: true )
-Product.create name: 'Abricots Bergeron bio' category: 'PETIT DEJEUNER BIO' validated: true
-Product.create name: 'Aiguillettes de canard du Sud-Ouest Reflets de France' category: 'DECOUPE CANARD COUPE' validated: true
-Product.create name: 'Aiguillettes de poulet grillé Fleury Michon' category: 'DECOUPES DE POULET BLANC' validated: true
-Product.create name: 'Aiguillettes de poulet panées Carrefour' category: 'VOLAILLE PANEE' validated: true
-Product.create name: 'Aligot de l'Aubrac Jeune Montagne' category: 'PLATS CUISINES PATES ET PDT' validated: true
-Product.create name: 'Asperges blanches miniatures Géant Vert' category: 'ARTICHAUTS ET ASPERGES' validated: true
-Product.create name: 'Aubergines bio' category: 'LEGUME/CUIRE BIO CONDITIONNE' validated: true
-Product.create name: 'Avocat Hass bio Mandar' category: 'CRUDITE BIO CONDIT.' validated: true
-Product.create name: 'Barres céréales Extra Kellogg's' category: 'CASHER' validated: true
-Product.create name: 'Barres céréales fraises/framboises Grany' category: 'MATIERES PREMIERES FRAIS' validated: true
-Product.create name: 'Barres céréales myrtilles Jordans' category: 'MATIERES PREMIERES FRAIS' validated: true
-Product.create name: 'Barres céréales/pommes Grany' category: 'PISCINE RIGIDE' validated: true
-Product.create name: 'Barres glacées noix de coco Bounty' category: 'BARRES GLACEES' validated: true
-Product.create name: 'Betteraves' category: 'SALADES CRUDITE LS INDUS' validated: true
-Product.create name: 'Bière aromatisée tequila lemon cactus Lime Desperados' category: 'BIERES DE LUXE' validated: true
-Product.create name: 'Bière blonde premium 1664' category: 'BIERES SPECIALES' validated: true
-Product.create name: 'Biscuits piccolos choco noisette Carrefour' category: 'AUTRES GRDE PIECES SPECIFIQUES' validated: true
-Product.create name: 'Blanc de poulet doré au four Carrefour' category: 'CASHER' validated: true
-Product.create name: 'Boisson au thé bio pêche & romarin Honest' category: 'AUTRES MONO FRUITS' validated: true
-Product.create name: 'Bordeaux Vin Blanc' category: 'BORDEAUX GENERIQUE' validated: true
-Product.create name: 'Boulettes au bœuf halal 15% MG Carrefour' category: 'HALAL' validated: true
-Product.create name: 'Box pâtes poulet crème Sodebo' category: 'SNACKING SALADES ET SNACKS CHA' validated: true
-Product.create name: 'Brandade de morue à la nîmoise Reflets de France' category: 'BASE POISSON' validated: true
-Product.create name: 'Bresaola Bioetika' category: 'TRANCHES EXTRA FINS LS' validated: true
-Product.create name: 'Café en grain' category: 'DEGUSTATION NOIR' validated: true
-Product.create name: 'Café moulu Carte Noire' category: 'CAFES ARABICA STANDARD' validated: true
-Product.create name: 'Carottes conserves' category: 'PETIT POIS CAROTTES' validated: true
-Product.create name: 'Céleri remoulade au fromage blanc Bonduelle' category: 'BASE LEGUME' validated: true
-Product.create name: 'Céréales' category: 'SPECIAUX' validated: true
-Product.create name: 'Cervelas pur porc Carrefour' category: 'SAUCISSONS CUITS' validated: true
-Product.create name: 'Chair à saucisse pur porc Carrefour' category: 'CHAIR A SAUCISSE' validated: true
-Product.create name: 'Champagne Mercier' category: 'CHAMPAGNES BRUTS' validated: true
-Product.create name: 'Champignons cèpes Sabarot' category: 'CHAMPIGNON DE PARIS VRAC' validated: true
-Product.create name: 'Champignons de Paris entiers' category: 'CHAMPIGNONS DE PARIS' validated: true
-Product.create name: "Chips à l'ancienne nature Lay's" category: 'CHIPS FORMAT FAMILIAL' validated: true
-Product.create name: 'Chocolat bio noir Haïti 72% Ethiquable' category: 'BIO PETIT DEJEUNER' validated: true
-Product.create name: 'Chorizo fort Carrefour' category: 'CHARCUTERIE TRANCHEE' validated: true
-Product.create name: 'Chou, céleri' category: 'CELERI' validated: true
-Product.create name: "Colin d'Alaska à la bordelaise Findus" category: 'PLATS CUISINES POISSON' validated: true
-Product.create name: 'Compote pêches Bonne Maman' category: 'COMPOTES FAMILIALES' validated: true
-Product.create name: 'Concombre Mandar' category: 'SALADES A PARTAGER' validated: true
-Product.create name: 'Cordons bleus de dinde Carrefour' category: 'PANES ENFANTS' validated: true
-Product.create name: 'Côte de porc sans os Les Bons Morceaux' category: 'PORC STD COTES' validated: true
-Product.create name: 'Côtes de porc avec os' category: 'PORC STD COTES' validated: true
-Product.create name: 'Crème semi-épaisse 18% MG Bridélice' category: 'BIO PETIT DEJEUNER' validated: true
-Product.create name: 'Crevettes Jumbo décortiquées Carrefour' category: 'CREVETTES' validated: true
-Product.create name: 'Dessert Tiramisu Carrefour' category: 'PATISSERIE - VIENNOISERIE' validated: true
-Product.create name: 'Desserts de fruits pêche morceaux Andros' category: 'COMMANDE CLIENTS FROMAGE' validated: true
-Product.create name: 'Dos de cabillaud' category: 'FILET DE POISSON LS' validated: true
-Product.create name: 'Eau de coco pure Vita Coco' category: 'BOISSON AUX FRUIT ET PLANTE' validated: true
-Product.create name: 'Eau minérale naturelle Volvic' category: 'EAUX PLATES' validated: true
-Product.create name: 'Epinards feuilles préservées Bonduelle' category: 'AUTRES LEGUMES' validated: true
-Product.create name: 'Escalopes de dinde Douce France' category: 'DECOUPE DINDE COUPE' validated: true
-Product.create name: 'Farine blanche' category: 'FARINES' validated: true
-Product.create name: 'Faux filet race charolaise Les Bons Morceaux' category: 'FQC RACE VDE STEACK' validated: true
-Product.create name: 'Feuilletés samon/légumes du soleil Blini' category: 'FLUTES FEUILLETES FOURRES' validated: true
-Product.create name: 'Filet de cabillaud Fish & Chips Cité Marine' category: 'FILET DE POISSON STAND' validated: true
-Product.create name: 'Filet de poulet blanc Le Gaulois' category: 'DECOUPES DE POULET BLANC' validated: true
-Product.create name: 'Filets de sardines citron-basilic s/arêtes Saupiquet' category: 'SARDINES' validated: true
-Product.create name: 'Financier au beurre frais  Astruc' category: 'PATISSERIE SECHE' validated: true
-Product.create name: 'Frites au four Carrefour' category: 'FRITES' validated: true
-Product.create name: 'Gazpacho Alvalle' category: 'JUS LACTES' validated: true
-Product.create name: 'Glace pistache Carrefour' category: 'BACS 1L ET 900ML' validated: true
-Product.create name: 'Glace vanille Haagen-dazs' category: 'BUCHES' validated: true
-Product.create name: 'Glace vanille pécan Haagen-dazs' category: 'POTS 750ML ET 500ML' validated: true
-Product.create name: 'Glaces vanille pêche framboise Oasis' category: 'BUCHES' validated: true
-Product.create name: 'Gnocchi pommes de terre' category: 'PATES SIMPLES' validated: true
-Product.create name: 'Guacamole Blini' category: 'AUTRES PRODUITS A TARTINER' validated: true
-Product.create name: 'Hachés spécial Burger Tendre et Plus' category: 'ASSIETTE BOL BLANC & CRISTAL' validated: true
-Product.create name: 'Huile d’assaisonnement' category: 'AUTRES HUILES' validated: true
-Product.create name: 'Jambon avec couenne réduit en sel Carrefour' category: 'JAMBON CUIT SUPERIEUR AC' validated: true
-Product.create name: 'Jambon cru artisanal bio Bioetika' category: 'PORC A ROTIR A LA COUPE' validated: true
-Product.create name: 'Jambon Serrano 11 mois Carrefour' category: 'JAMBON SEC ESPAGNOL' validated: true
-Product.create name: 'Jus de carotte Bio Bjorg' category: 'DIETETIQUE ET JUS DE LEGUMES' validated: true
-Product.create name: 'Jus de pamplemousse rose Tropicana' category: 'JUS DE FRUITS REFRIGERES' validated: true
-Product.create name: 'Lait bio demi-écrémé Candia' category: 'LAIT FRAIS' validated: true
-Product.create name: 'Lait de coco Original Vita Coco' category: 'BOISSONS VEGETALES' validated: true
-Product.create name: 'Lait demi-écrémé Candia' category: 'LAIT UHT 1/2 ECREME' validated: true
-Product.create name: 'Lapin morceaux choisis Carrefour' category: 'VOLAILLE BARBECUE COUPE' validated: true
-Product.create name: 'Limonade artisanale' category: 'LIMONADES ET LIMES' validated: true
-Product.create name: 'Maasdam  Carrefour' category: 'FROMAGE LIBRE-SERVICE' validated: true
-Product.create name: 'Manchons de poulet grillés Maître Coq' category: 'VOLAILLE A GRIGNOTER' validated: true
-Product.create name: 'Margarine tartine & cuisson doux Le Fleurier' category: 'MARGARINE' validated: true
-Product.create name: 'Merguez de volaille Le Gaulois' category: 'PRODUITS A GRILLER' validated: true
-Product.create name: 'Merguez fortes boeuf/mouton Socopa' category: 'BARQUETTES MERGUEZ' validated: true
-Product.create name: 'Mini saucisson Bâton de Berger nature Justin Bridou' category: 'SAUCISSONS SAUCISSES SECS' validated: true
-Product.create name: 'Morceaux de poulet blanc Le Gaulois' category: 'FRIANDISES CHIEN PETCARE' validated: true
-Product.create name: "Œuf de poules plein air l'Œuf de nos Villages" category: 'OEUFS VRACS PLEIN AIR' validated: true
-Product.create name: 'Oignons' category: 'LEGUMES CONDIMENTAIRES' validated: true
-Product.create name: 'Oignons émincés Carrefour' category: 'AUTRES LEGUMES BRUTS' validated: true
-Product.create name: 'Oignons Le Geste Saveur Mandar' category: "LEGUMES PRETS A L'EMPLOI" validated: true
-Product.create name: "Olives entières cassées à l'ail, doux Croc'frais" category: 'ESPAGNE PORTUGAL' validated: true
-Product.create name: "Pain de mie complet s/croûte Harry's" category: 'PAIN AU LAIT,BRIOCHETTE NATURE' validated: true
-Product.create name: 'Pains au lait Carrefour' category: 'PETITS PAINS SPEC.SUCRES' validated: true
-Product.create name: 'Pains burger classic Carrefour' category: 'PETITS REPAS' validated: true
-Product.create name: 'Panier de fruits bio Mandar' category: 'AUTRES FRUITS BIO CONDIT.' validated: true
-Product.create name: 'Pastrami de boeuf tranché Charal' category: 'SALAISONS,SEC LS INDUST' validated: true
-Product.create name: 'Pâté en croûte cocktail Carrefour' category: 'APERITIFS' validated: true
-Product.create name: 'Pâte feuilletée Tarte en Or farine complète Herta' category: 'PATES' validated: true
-Product.create name: 'Pâtes Linguine Academia Barilla' category: 'PATES SPECIALITES' validated: true
-Product.create name: 'Pavés de saumon avec peau sans arêtes' category: 'SAUMON STAND' validated: true
-Product.create name: 'Pêches, abricots' category: 'FRUITS SIMPLES' validated: true
-Product.create name: 'Persil Ducros' category: 'HERBES ET AROMATES' validated: true
-Product.create name: 'Pizza 4 fromages Sodebo' category: 'PIZZAS + 400 GR' validated: true
-Product.create name: 'Pizza Mozzarella Tomates Basilic Buitoni' category: 'PIZZAS' validated: true
-Product.create name: 'Pommes de terre' category: 'POMM/TERRE CONSERV BLANCHE' validated: true
-Product.create name: 'Pommes fruits' category: 'POMMES CONDITIONNEES' validated: true
-Product.create name: 'Porc : roti filet' category: 'PORC FQC A ROTIR CAISSETTE' validated: true
-Product.create name: "Pur Jus citron vert bio Jardin Bio'logique" category: 'BIO INGREDIENT SALE' validated: true
-Product.create name: 'Raisins secs' category: 'AUTRES AIDES PATISSERIE' validated: true
-Product.create name: 'Rillettes de poulet rôti en cocotte Carrefour' category: 'RILLETTES' validated: true
-Product.create name: 'Salade Laitue Mandar' category: 'SALADES VERTES VRAC' validated: true
-Product.create name: 'Sauce tomate aux olives Barilla' category: 'SAUCES' validated: true
-Product.create name: 'Sauce tomate basilic Barilla' category: 'ITALIE' validated: true
-Product.create name: 'Sauce tomate Napoletana Barilla' category: 'SAUCES LS' validated: true
-Product.create name: 'Saucisson sec pur porc' category: 'SAUCISSON' validated: true
-Product.create name: 'Saumon fumé Norvège Filière Qualité Carrefour' category: 'SAUMON FUME' validated: true
-Product.create name: 'Sel fin iodé Cérébos' category: 'SELS' validated: true
-Product.create name: 'Soda cola Classic Carrefour' category: 'ACC QUALITE ENVIRONNEMENT' validated: true
-Product.create name: 'Soda indian tonic' category: 'SOFTS DRINKS"' validated: true
-Product.create name: "Soupe bio tomates Amy's kitchen" category: 'POTAGES LIQUIDES' validated: true
-Product.create name: 'Sucre en poudre extra fin Béghin Say' category: 'BIO INGREDIENT SUCRE CONFISERI' validated: true
-Product.create name: 'Surimi tendre Carrefour' category: 'POISSON TRANSFORME' validated: true
-Product.create name: 'Taboulé aux légumes bio Carrefour Bio' category: 'SALADES CRUDITE LS INDUS' validated: true
-Product.create name: 'Tarama Blini' category: 'TARAMA' validated: true
-Product.create name: 'Tarte citron & agrumes Labeyrie' category: 'QUATRE-QUART - GAT.FAMILIAUX' validated: true
-Product.create name: 'Thé' category: 'BOISSON A BASE DE THE' validated: true
-Product.create name: 'Thon albacore au naturel Petit Navire' category: 'THON' validated: true
-Product.create name: "Tomates cerise confites à l'origan Ensoleil'ade" category: 'SALADES DE CRUDITES' validated: true
-Product.create name: 'Tomates cerises panaché Mandar' category: 'SALADES DE CRUDITES' validated: true
-Product.create name: 'Viande bovine : 2 hampes Charal' category: 'FQC RCE MIXTE A GRILLER,POELER' validated: true
-Product.create name: 'Viande bovine Bourguignon à mijoter Les Bons Morceaux' category: 'BOEUF BRAISER/BOUILLIR CPE' validated: true
-Product.create name: 'Vinaigre' category: 'VINAIGRES SPECIALITES VERRES' validated: true
-Product.create name: 'Yaourts aux fruits 0% Panier de Yoplait' category: 'GOURMANDISE FROMAGERE' validated: true
-Product.create name: 'Yaourts mûre myrtille Panier de Yoplait' category: 'YAOURT BRASSE PULPE ADULTE' validated: true
+Product.create! name: 'Abricots Bergeron bio', category: Category.find_by(name: 'PETIT DEJEUNER BIO'), validated: true
+Product.create! name: 'Aiguillettes de canard du Sud-Ouest Reflets de France', category: Category.find_by(name: 'DECOUPE CANARD COUPE'), validated: true
+Product.create! name: 'Aiguillettes de poulet grillé Fleury Michon', category: Category.find_by(name: 'DECOUPES DE POULET BLANC'), validated: true
+Product.create! name: 'Aiguillettes de poulet panées Carrefour', category: Category.find_by(name: 'VOLAILLE PANEE'), validated: true
+Product.create! name: "Aligot de l'Aubrac Jeune Montagne", category: Category.find_by(name: 'PLATS CUISINES PATES ET PDT'), validated: true
+Product.create! name: 'Asperges blanches miniatures Géant Vert', category: Category.find_by(name: 'ARTICHAUTS ET ASPERGES'), validated: true
+Product.create! name: 'Aubergines bio', category: Category.find_by(name: 'LEGUME/CUIRE BIO CONDITIONNE'), validated: true
+Product.create! name: 'Avocat Hass bio Mandar', category: Category.find_by(name: 'CRUDITE BIO CONDIT.'), validated: true
+Product.create! name: "Barres céréales Extra Kellogg's", category: Category.find_by(name: 'CASHER'), validated: true
+Product.create! name: 'Barres céréales fraises/framboises Grany', category: Category.find_by(name: 'MATIERES PREMIERES FRAIS'), validated: true
+Product.create! name: 'Barres céréales myrtilles Jordans', category: Category.find_by(name: 'MATIERES PREMIERES FRAIS'), validated: true
+Product.create! name: 'Barres céréales/pommes Grany', category: Category.find_by(name: 'PISCINE RIGIDE'), validated: true
+Product.create! name: 'Barres glacées noix de coco Bounty', category: Category.find_by(name: 'BARRES GLACEES'), validated: true
+Product.create! name: 'Betteraves', category: Category.find_by(name: 'SALADES CRUDITE LS INDUS'), validated: true
+Product.create! name: 'Bière aromatisée tequila lemon cactus Lime Desperados', category: Category.find_by(name: 'BIERES DE LUXE'), validated: true
+Product.create! name: 'Bière blonde premium 1664', category: Category.find_by(name: 'BIERES SPECIALES'), validated: true
+Product.create! name: 'Biscuits piccolos choco noisette Carrefour', category: Category.find_by(name: 'AUTRES GRDE PIECES SPECIFIQUES'), validated: true
+Product.create! name: 'Blanc de poulet doré au four Carrefour', category: Category.find_by(name: 'CASHER'), validated: true
+Product.create! name: 'Boisson au thé bio pêche & romarin Honest', category: Category.find_by(name: 'AUTRES MONO FRUITS'), validated: true
+Product.create! name: 'Bordeaux Vin Blanc', category: Category.find_by(name: 'BORDEAUX GENERIQUE'), validated: true
+Product.create! name: 'Boulettes au bœuf halal 15% MG Carrefour', category: Category.find_by(name: 'HALAL'), validated: true
+Product.create! name: 'Box pâtes poulet crème Sodebo', category: Category.find_by(name: 'SNACKING SALADES ET SNACKS CHA'), validated: true
+Product.create! name: 'Brandade de morue à la nîmoise Reflets de France', category: Category.find_by(name: 'BASE POISSON'), validated: true
+Product.create! name: 'Bresaola Bioetika', category: Category.find_by(name: 'TRANCHES EXTRA FINS LS'), validated: true
+Product.create! name: 'Café en grain', category: Category.find_by(name: 'DEGUSTATION NOIR'), validated: true
+Product.create! name: 'Café moulu Carte Noire', category: Category.find_by(name: 'CAFES ARABICA STANDARD'), validated: true
+Product.create! name: 'Carottes conserves', category: Category.find_by(name: 'PETIT POIS CAROTTES'), validated: true
+Product.create! name: 'Céleri remoulade au fromage blanc Bonduelle', category: Category.find_by(name: 'BASE LEGUME'), validated: true
+Product.create! name: 'Céréales', category: Category.find_by(name: 'SPECIAUX'), validated: true
+Product.create! name: 'Cervelas pur porc Carrefour', category: Category.find_by(name: 'SAUCISSONS CUITS'), validated: true
+Product.create! name: 'Chair à saucisse pur porc Carrefour', category: Category.find_by(name: 'CHAIR A SAUCISSE'), validated: true
+Product.create! name: 'Champagne Mercier', category: Category.find_by(name: 'CHAMPAGNES BRUTS'), validated: true
+Product.create! name: 'Champignons cèpes Sabarot', category: Category.find_by(name: 'CHAMPIGNON DE PARIS VRAC'), validated: true
+Product.create! name: 'Champignons de Paris entiers', category: Category.find_by(name: 'CHAMPIGNONS DE PARIS'), validated: true
+Product.create! name: "Chips à l'ancienne nature Lay's", category: Category.find_by(name: 'CHIPS FORMAT FAMILIAL'), validated: true
+Product.create! name: 'Chocolat bio noir Haïti 72% Ethiquable', category: Category.find_by(name: 'BIO PETIT DEJEUNER'), validated: true
+Product.create! name: 'Chorizo fort Carrefour', category: Category.find_by(name: 'CHARCUTERIE TRANCHEE'), validated: true
+Product.create! name: 'Chou, céleri', category: Category.find_by(name: 'CELERI'), validated: true
+Product.create! name: "Colin d'Alaska à la bordelaise Findus", category: Category.find_by(name: 'PLATS CUISINES POISSON'), validated: true
+Product.create! name: 'Compote pêches Bonne Maman', category: Category.find_by(name: 'COMPOTES FAMILIALES'), validated: true
+Product.create! name: 'Concombre Mandar', category: Category.find_by(name: 'SALADES A PARTAGER'), validated: true
+Product.create! name: 'Cordons bleus de dinde Carrefour', category: Category.find_by(name: 'PANES ENFANTS'), validated: true
+Product.create! name: 'Côte de porc sans os Les Bons Morceaux', category: Category.find_by(name: 'PORC STD COTES'), validated: true
+Product.create! name: 'Côtes de porc avec os', category: Category.find_by(name: 'PORC STD COTES'), validated: true
+Product.create! name: 'Crème semi-épaisse 18% MG Bridélice', category: Category.find_by(name: 'BIO PETIT DEJEUNER'), validated: true
+Product.create! name: 'Crevettes Jumbo décortiquées Carrefour', category: Category.find_by(name: 'CREVETTES'), validated: true
+Product.create! name: 'Dessert Tiramisu Carrefour', category: Category.find_by(name: 'PATISSERIE - VIENNOISERIE'), validated: true
+Product.create! name: 'Desserts de fruits pêche morceaux Andros', category: Category.find_by(name: 'COMMANDE CLIENTS FROMAGE'), validated: true
+Product.create! name: 'Dos de cabillaud', category: Category.find_by(name: 'FILET DE POISSON LS'), validated: true
+Product.create! name: 'Eau de coco pure Vita Coco', category: Category.find_by(name: 'BOISSON AUX FRUIT ET PLANTE'), validated: true
+Product.create! name: 'Eau minérale naturelle Volvic', category: Category.find_by(name: 'EAUX PLATES'), validated: true
+Product.create! name: 'Epinards feuilles préservées Bonduelle', category: Category.find_by(name: 'AUTRES LEGUMES'), validated: true
+Product.create! name: 'Escalopes de dinde Douce France', category: Category.find_by(name: 'DECOUPE DINDE COUPE'), validated: true
+Product.create! name: 'Farine blanche', category: Category.find_by(name: 'FARINES'), validated: true
+Product.create! name: 'Faux filet race charolaise Les Bons Morceaux', category: Category.find_by(name: 'FQC RACE VDE STEACK'), validated: true
+Product.create! name: 'Feuilletés samon/légumes du soleil Blini', category: Category.find_by(name: 'FLUTES FEUILLETES FOURRES'), validated: true
+Product.create! name: 'Filet de cabillaud Fish & Chips Cité Marine', category: Category.find_by(name: 'FILET DE POISSON STAND'), validated: true
+Product.create! name: 'Filet de poulet blanc Le Gaulois', category: Category.find_by(name: 'DECOUPES DE POULET BLANC'), validated: true
+Product.create! name: 'Filets de sardines citron-basilic s/arêtes Saupiquet', category: Category.find_by(name: 'SARDINES'), validated: true
+Product.create! name: 'Financier au beurre frais  Astruc', category: Category.find_by(name: 'PATISSERIE SECHE'), validated: true
+Product.create! name: 'Frites au four Carrefour', category: Category.find_by(name: 'FRITES'), validated: true
+Product.create! name: 'Gazpacho Alvalle', category: Category.find_by(name: 'JUS LACTES'), validated: true
+Product.create! name: 'Glace pistache Carrefour', category: Category.find_by(name: 'BACS 1L ET 900ML'), validated: true
+Product.create! name: 'Glace vanille Haagen-dazs', category: Category.find_by(name: 'BUCHES'), validated: true
+Product.create! name: 'Glace vanille pécan Haagen-dazs', category: Category.find_by(name: 'POTS 750ML ET 500ML'), validated: true
+Product.create! name: 'Glaces vanille pêche framboise Oasis', category: Category.find_by(name: 'BUCHES'), validated: true
+Product.create! name: 'Gnocchi pommes de terre', category: Category.find_by(name: 'PATES SIMPLES'), validated: true
+Product.create! name: 'Guacamole Blini', category: Category.find_by(name: 'AUTRES PRODUITS A TARTINER'), validated: true
+Product.create! name: 'Hachés spécial Burger Tendre et Plus', category: Category.find_by(name: 'ASSIETTE BOL BLANC & CRISTAL'), validated: true
+Product.create! name: 'Huile d’assaisonnement', category: Category.find_by(name: 'AUTRES HUILES'), validated: true
+Product.create! name: 'Jambon avec couenne réduit en sel Carrefour', category: Category.find_by(name: 'JAMBON CUIT SUPERIEUR AC'), validated: true
+Product.create! name: 'Jambon cru artisanal bio Bioetika', category: Category.find_by(name: 'PORC A ROTIR A LA COUPE'), validated: true
+Product.create! name: 'Jambon Serrano 11 mois Carrefour', category: Category.find_by(name: 'JAMBON SEC ESPAGNOL'), validated: true
+Product.create! name: 'Jus de carotte Bio Bjorg', category: Category.find_by(name: 'DIETETIQUE ET JUS DE LEGUMES'), validated: true
+Product.create! name: 'Jus de pamplemousse rose Tropicana', category: Category.find_by(name: 'JUS DE FRUITS REFRIGERES'), validated: true
+Product.create! name: 'Lait bio demi-écrémé Candia', category: Category.find_by(name: 'LAIT FRAIS'), validated: true
+Product.create! name: 'Lait de coco Original Vita Coco', category: Category.find_by(name: 'BOISSONS VEGETALES'), validated: true
+Product.create! name: 'Lait demi-écrémé Candia', category: Category.find_by(name: 'LAIT UHT 1/2 ECREME'), validated: true
+Product.create! name: 'Lapin morceaux choisis Carrefour', category: Category.find_by(name: 'VOLAILLE BARBECUE COUPE'), validated: true
+Product.create! name: 'Limonade artisanale', category: Category.find_by(name: 'LIMONADES ET LIMES'), validated: true
+Product.create! name: 'Maasdam  Carrefour', category: Category.find_by(name: 'FROMAGE LIBRE-SERVICE'), validated: true
+Product.create! name: 'Manchons de poulet grillés Maître Coq', category: Category.find_by(name: 'VOLAILLE A GRIGNOTER'), validated: true
+Product.create! name: 'Margarine tartine & cuisson doux Le Fleurier', category: Category.find_by(name: 'MARGARINE'), validated: true
+Product.create! name: 'Merguez de volaille Le Gaulois', category: Category.find_by(name: 'PRODUITS A GRILLER'), validated: true
+Product.create! name: 'Merguez fortes boeuf/mouton Socopa', category: Category.find_by(name: 'BARQUETTES MERGUEZ'), validated: true
+Product.create! name: 'Mini saucisson Bâton de Berger nature Justin Bridou', category: Category.find_by(name: 'SAUCISSONS SAUCISSES SECS'), validated: true
+Product.create! name: 'Morceaux de poulet blanc Le Gaulois', category: Category.find_by(name: 'FRIANDISES CHIEN PETCARE'), validated: true
+Product.create! name: "Œuf de poules plein air l'Œuf de nos Villages", category: Category.find_by(name: 'OEUFS VRACS PLEIN AIR'), validated: true
+Product.create! name: 'Oignons', category: Category.find_by(name: 'LEGUMES CONDIMENTAIRES'), validated: true
+Product.create! name: 'Oignons émincés Carrefour', category: Category.find_by(name: 'AUTRES LEGUMES BRUTS'), validated: true
+Product.create! name: 'Oignons Le Geste Saveur Mandar', category: Category.find_by(name: "LEGUMES PRETS A L'EMPLOI"), validated: true
+Product.create! name: "Olives entières cassées à l'ail, doux Croc'frais", category: Category.find_by(name: 'ESPAGNE PORTUGAL'), validated: true
+Product.create! name: "Pain de mie complet s/croûte Harry's", category: Category.find_by(name: 'PAIN AU LAIT,BRIOCHETTE NATURE'), validated: true
+Product.create! name: 'Pains au lait Carrefour', category: Category.find_by(name: 'PETITS PAINS SPEC.SUCRES'), validated: true
+Product.create! name: 'Pains burger classic Carrefour', category: Category.find_by(name: 'PETITS REPAS'), validated: true
+Product.create! name: 'Panier de fruits bio Mandar', category: Category.find_by(name: 'AUTRES FRUITS BIO CONDIT.'), validated: true
+Product.create! name: 'Pastrami de boeuf tranché Charal', category: Category.find_by(name: 'SALAISONS,SEC LS INDUST'), validated: true
+Product.create! name: 'Pâté en croûte cocktail Carrefour', category: Category.find_by(name: 'APERITIFS'), validated: true
+Product.create! name: 'Pâte feuilletée Tarte en Or farine complète Herta', category: Category.find_by(name: 'PATES'), validated: true
+Product.create! name: 'Pâtes Linguine Academia Barilla', category: Category.find_by(name: 'PATES SPECIALITES'), validated: true
+Product.create! name: 'Pavés de saumon avec peau sans arêtes', category: Category.find_by(name: 'SAUMON STAND'), validated: true
+Product.create! name: 'Pêches, abricots', category: Category.find_by(name: 'FRUITS SIMPLES'), validated: true
+Product.create! name: 'Persil Ducros', category: Category.find_by(name: 'HERBES ET AROMATES'), validated: true
+Product.create! name: 'Pizza 4 fromages Sodebo', category: Category.find_by(name: 'PIZZAS + 400 GR'), validated: true
+Product.create! name: 'Pizza Mozzarella Tomates Basilic Buitoni', category: Category.find_by(name: 'PIZZAS'), validated: true
+Product.create! name: 'Pommes de terre', category: Category.find_by(name: 'POMM/TERRE CONSERV BLANCHE'), validated: true
+Product.create! name: 'Pommes fruits', category: Category.find_by(name: 'POMMES CONDITIONNEES'), validated: true
+Product.create! name: 'Porc : roti filet', category: Category.find_by(name: 'PORC FQC A ROTIR CAISSETTE'), validated: true
+Product.create! name: "Pur Jus citron vert bio Jardin Bio'logique", category: Category.find_by(name: 'BIO INGREDIENT SALE'), validated: true
+Product.create! name: 'Raisins secs', category: Category.find_by(name: 'AUTRES AIDES PATISSERIE'), validated: true
+Product.create! name: 'Rillettes de poulet rôti en cocotte Carrefour', category: Category.find_by(name: 'RILLETTES'), validated: true
+Product.create! name: 'Salade Laitue Mandar', category: Category.find_by(name: 'SALADES VERTES VRAC'), validated: true
+Product.create! name: 'Sauce tomate aux olives Barilla', category: Category.find_by(name: 'SAUCES'), validated: true
+Product.create! name: 'Sauce tomate basilic Barilla', category: Category.find_by(name: 'ITALIE'), validated: true
+Product.create! name: 'Sauce tomate Napoletana Barilla', category: Category.find_by(name: 'SAUCES LS'), validated: true
+Product.create! name: 'Saucisson sec pur porc', category: Category.find_by(name: 'SAUCISSON'), validated: true
+Product.create! name: 'Saumon fumé Norvège Filière Qualité Carrefour', category: Category.find_by(name: 'SAUMON FUME'), validated: true
+Product.create! name: 'Sel fin iodé Cérébos', category: Category.find_by(name: 'SELS'), validated: true
+Product.create! name: 'Soda cola Classic Carrefour', category: Category.find_by(name: 'ACC QUALITE ENVIRONNEMENT'), validated: true
+Product.create! name: 'Soda indian tonic', category: Category.find_by(name: 'SOFTS DRINKS"'), validated: true
+Product.create! name: "Soupe bio tomates Amy's kitchen", category: Category.find_by(name: 'POTAGES LIQUIDES'), validated: true
+Product.create! name: 'Sucre en poudre extra fin Béghin Say', category: Category.find_by(name: 'BIO INGREDIENT SUCRE CONFISERI'), validated: true
+Product.create! name: 'Surimi tendre Carrefour', category: Category.find_by(name: 'POISSON TRANSFORME'), validated: true
+Product.create! name: 'Taboulé aux légumes bio Carrefour Bio', category: Category.find_by(name: 'SALADES CRUDITE LS INDUS'), validated: true
+Product.create! name: 'Tarama Blini', category: Category.find_by(name: 'TARAMA'), validated: true
+Product.create! name: 'Tarte citron & agrumes Labeyrie', category: Category.find_by(name: 'QUATRE-QUART - GAT.FAMILIAUX'), validated: true
+Product.create! name: 'Thé', category: Category.find_by(name: 'BOISSON A BASE DE THE'), validated: true
+Product.create! name: 'Thon albacore au naturel Petit Navire', category: Category.find_by(name: 'THON'), validated: true
+Product.create! name: "Tomates cerise confites à l'origan Ensoleil'ade", category: Category.find_by(name: 'SALADES DE CRUDITES'), validated: true
+Product.create! name: 'Tomates cerises panaché Mandar', category: Category.find_by(name: 'SALADES DE CRUDITES'), validated: true
+Product.create! name: 'Viande bovine : 2 hampes Charal', category: Category.find_by(name: 'FQC RCE MIXTE A GRILLER,POELER'), validated: true
+Product.create! name: 'Viande bovine Bourguignon à mijoter Les Bons Morceaux', category: Category.find_by(name: 'BOEUF BRAISER/BOUILLIR CPE'), validated: true
+Product.create! name: 'Vinaigre', category: Category.find_by(name: 'VINAIGRES SPECIALITES VERRES'), validated: true
+Product.create! name: 'Yaourts aux fruits 0% Panier de Yoplait', category: Category.find_by(name: 'GOURMANDISE FROMAGERE'), validated: true
+Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
 puts "end product"
 
-puts "create user"
-User.create!(email: "test@frigo.com", password: '123456')
-puts "end user"
+# puts "create user"
+# User.create!(email: "test@frigo.com", password: '123456')
+# puts "end user"
 
 puts "create use Product"
 UserProduct.create!(user: User.first, product: Product.first, place: "frigo", purchase_date: Date.today, peremption_date: Date.today)
