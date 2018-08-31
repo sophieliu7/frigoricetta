@@ -8,9 +8,9 @@ class Category < ApplicationRecord
     hash = {"BIO" => []}
     sub_categories.each do |object|
       if hash.keys.include?(object.SubCategory)
-       hash[object.SubCategory] << object
+       hash[object.SubCategory] << [object.name, object.id]
       else
-        hash[object.SubCategory] = [object]
+        hash[object.SubCategory] = [[object.name, object.id]]
       end
     end
     return hash
