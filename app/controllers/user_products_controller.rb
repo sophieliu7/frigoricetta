@@ -17,8 +17,12 @@ class UserProductsController < ApplicationController
   end
 
   def load_form
+
     params[:products][:product_id]
+
     # binding.pry
+
+
     if (params[:products][:product_id] =~(/\d+/)).nil?
       # binding.pry
       name = params[:products][:product_id]
@@ -38,7 +42,7 @@ class UserProductsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:categories][:category_id])
+    @category = Category.find(params[:categories])
     @product = Product.find_by(name: params[:product_name]) || Product.new(name: params[:product_name])
     @product.category = @category
     @product.save

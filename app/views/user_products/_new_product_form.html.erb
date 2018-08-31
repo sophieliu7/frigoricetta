@@ -1,6 +1,15 @@
 <%= simple_form_for user_product do |f| %>
 
+  <%= hidden_field_tag :product_name, @product_name %>
+
   <!-- search pour catégories -->
+
+  <%= select_tag("categories", grouped_options_for_select(Category.order), id: "categories_subcat", class: "search-form-new") %>
+
+  <%# collection_select(:categories, :category_id, Category.order.values.map { |a| a }.flatten.uniq, :id, :name, {}, class: "search-form-new", id: "testing") %>
+
+  <%= f.input :place %>
+
 
 <!--   <select id="testing">
     <%# Category.order.each do |key, value| %>
@@ -12,13 +21,10 @@
     <%# end %>
   </select> -->
 
-  <%= hidden_field_tag :product_name, @product_name %>
+
   <%= f.input :purchase_date %>
 
-  <%#= select_tag("categories", options_from_collection_for_select(Category.order, "id", "SubCategory", params[:category_name]))%>
-  <%= collection_select(:categories, :category_id, Category.order.values.map { |a| a }.flatten.uniq, :id, :name, {}, class: "search-form-new") %>
 
-  <%= f.input :place %>
   <%= f.input :peremption_date %>
   <%= f.button :submit %>
 <% end %>
