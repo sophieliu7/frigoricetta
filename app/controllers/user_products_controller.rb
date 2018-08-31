@@ -93,6 +93,14 @@ class UserProductsController < ApplicationController
 
   end
 
+
+  def destroy_emails
+    @emails = current_user.inbound_email.all.destroy
+  end
+
+
+
+
   private
 
   def user_products_params
