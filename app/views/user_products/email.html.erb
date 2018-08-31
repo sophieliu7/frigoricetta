@@ -1,4 +1,15 @@
-<h1>Hello</h1>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+
+<h1>Hello! </h1>
+<h3>Voici les aliments du dernier email que tu nous as forwardé !</h3>
+
+<p><%= link_to "Retour au frigo", user_products_path %></p>
+
 
 <p>Date d'envoi du mail : <%= @email_date %></p>
 <p>Email from : <%= @email_from %></p>
@@ -17,3 +28,5 @@
     <%= @hash_food_category %>
   </div>
 <% end %>
+
+</div>

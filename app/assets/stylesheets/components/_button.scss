@@ -8,10 +8,10 @@
 }
 
 .btn-frigo:hover {
-  margin: -5px;
-  padding-right: 23px;
-  padding-left: 23px;
-  transition: 0.4s ease;
+  margin: -1px;
+  padding-right: 22px;
+  padding-left: 22px;
+  transition: 0.3s ease;
   font-weight: bold;
 }
 
@@ -19,4 +19,13 @@
   width: 100%;
   color: white;
   font-weight: lighter;
+}
+
+.two-btn-container {
+  width: 60%;
+  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  justify-content: space-around;
 }
