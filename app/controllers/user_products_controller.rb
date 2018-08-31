@@ -81,7 +81,7 @@ class UserProductsController < ApplicationController
     @email_date = email_parser_date
     @email_user = email_parser_user
     @email_from = email_parser_email_from
-    @hash_food_category = hash_food_category(email_parser_content)
+    # @hash_food_category = hash_food_category(email_parser_content)
   end
 
   private
