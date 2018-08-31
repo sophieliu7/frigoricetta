@@ -1,15 +1,11 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script|Poiret+One|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Raleway');
 
 // Define fonts for body and headers
-// $body-font: "Raleway", "Helvetica", "sans-serif";
-$body-font: 'Source Sans Pro', 'sans-serif';
+$body-font: "Raleway", "Helvetica", "sans-serif";
 
-
-    // font-family: 'Source Sans Pro', sans-serif;
-
-
-$headers-font:  'Source Sans Pro', 'sans-serif';
+$headers-font: 'Julius Sans One', 'sans-serif';
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

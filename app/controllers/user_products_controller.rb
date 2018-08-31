@@ -17,8 +17,7 @@ class UserProductsController < ApplicationController
   end
 
   def load_form
-    params[:products][:product_id]
-    binding.pry
+
     if (params[:products][:product_id] =~(/\d+/)).nil?
       # binding.pry
       name = params[:products][:product_id]
