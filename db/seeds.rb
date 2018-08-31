@@ -11,7 +11,7 @@ puts "destroying all seeds"
 UserProduct.destroy_all
 Product.destroy_all
 Category.destroy_all
-User.destroy_all
+# User.destroy_all
 
 puts "destroy done !"
 
