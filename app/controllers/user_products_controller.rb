@@ -18,7 +18,9 @@ class UserProductsController < ApplicationController
 
   def load_form
     params[:products][:product_id]
-    binding.pry
+
+    # binding.pry
+
     if (params[:products][:product_id] =~(/\d+/)).nil?
       # binding.pry
       name = params[:products][:product_id]
@@ -81,7 +83,7 @@ class UserProductsController < ApplicationController
     @email_date = email_parser_date
     @email_user = email_parser_user
     @email_from = email_parser_email_from
-    @hash_food_category = hash_food_category(email_parser_content)
+    # @hash_food_category = hash_food_category(email_parser_content)
   end
 
   private

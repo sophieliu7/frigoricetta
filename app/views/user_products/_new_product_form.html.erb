@@ -1,16 +1,16 @@
 <%= simple_form_for user_product do |f| %>
 
   <!-- search pour catégories -->
-  <select id="testing">
 
-    <% Category.order.each do |key, value| %>
-      <optgroup label='<%= key %>'>
-        <% value.each do |val| %>
-          <option><%= val.name.capitalize %></option>
-        <% end %>
+<!--   <select id="testing">
+    <%# Category.order.each do |key, value| %>
+      <optgroup label='<%#= key %>'>
+        <%# value.each do |val| %>
+          <option><%#= val.name.capitalize %></option>
+        <%# end %>
       </optgroup>
-    <% end %>
-  </select>
+    <%# end %>
+  </select> -->
 
   <%= hidden_field_tag :product_name, @product_name %>
   <%= f.input :purchase_date %>
