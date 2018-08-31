@@ -17,12 +17,18 @@ class UserProductsController < ApplicationController
   end
 
   def load_form
-    if params[:products][:product_id].is_a?(String)
-      product = Product.create(name: params[:products][:product_id])
+    params[:products][:product_id]
+    # binding.pry
+    if (params[:products][:product_id] =~(/\d+/)).nil?
+      # binding.pry
+      name = params[:products][:product_id]
+      product = Product.create(name: name)
+      @product_name = product.name
     else
-      product = Product.find(params[:products][:product_id])
+      product = Product.find(params[:products][:product_id]).name
+      @product_name = product
+
     end
-    @product_name = product.name
     # format JS > load_form.js.erb
     respond_to do |format|
       format.js # actually means: if the client ask for js -> return file.js
@@ -36,6 +42,7 @@ class UserProductsController < ApplicationController
     @product = Product.find_by(name: params[:product_name]) || Product.new(name: params[:product_name])
     @product.category = @category
     @product.save
+
     # raise
     @user_product = UserProduct.new(user_products_params)
     @user_product.user = current_user
@@ -47,6 +54,8 @@ class UserProductsController < ApplicationController
     else
       render :new
     end
+
+
   end
 
   def edit
@@ -68,15 +77,16 @@ class UserProductsController < ApplicationController
 
   def email
     return nil if email_parser_content.nil?
-    @email_content = email_parser_content
-    @email_date = email_parser_date
-    @email_user = email_parser_user
-    @email_from = email_parser_email_from
-    @hash_food_category = hash_food_category(email_parser_content)
-    # @email_content = ['poulet de bresse', 'clafoutis']
-    # @email_date = '2018_08_30'
-    # @email_user = 'sliu@sarenza.com'
-    # @email_from = 'sliu@sarenza.com'
+    # @email_content = email_parser_content
+    # @email_date = email_parser_date
+    # @email_user = email_parser_user
+    # @email_from = email_parser_email_from
+    # @hash_food_category = hash_food_category(email_parser_content)
+    @email_content = ['Brandade de morue à la nîmoise Reflets de France', 'clafoutis', 'Thon à la provencale', "Mini saucisson Bâton de Berger nature Justin Bridou"]
+    @email_date = '2018_08_30'
+    @email_user = 'sliu@sarenza.com'
+    @email_from = 'sliu@sarenza.com'
+
   end
 
   private

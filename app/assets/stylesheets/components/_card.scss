@@ -10,7 +10,7 @@
  /* justify-content: flex-start;
   align-items: flex-start;
   */
-  height:130px;
+  height:100px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.6);
   // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-position: center;
@@ -18,12 +18,12 @@
   position: relative;
   background-color: white;
   h4 {
-    padding: 10px 20px;
+    padding: 5px 20px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 18px;
   }
     p {
-    padding: 10px 20px;
+    padding: 2px 20px;
 
 
   }
@@ -40,8 +40,12 @@
 flex-basis : 200px;
 padding-left: 50px;
 padding-top : 40px;
-font-size:50px;
+font-size:25px;
+color: #71B280;
 
+a{
+    color: $light-green;
+}
 }
 
 
@@ -50,7 +54,7 @@ font-size:50px;
   @media (max-width: 640px) {
 
 h4{
-font-size: 18px;
+font-size: 50px;
 padding-left: 20px;
 }
 
@@ -68,7 +72,12 @@ padding-left: 20px;
   flex-basis: 200px;
   padding-left: 50px;
   padding-top : 40px;
-  font-size:30px;
+  font-size:25px;
+
+
+a{
+    color: $light-green;
+}
 
   }
 
