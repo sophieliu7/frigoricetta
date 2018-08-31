@@ -5,7 +5,7 @@ class UserProductsController < ApplicationController
     if params[:query].present?
       @user_products = UserProduct.joins(:product).where("products.name ILIKE :query", query: "%#{params[:query]}%")
     else
-      @user_products = UserProduct.where(user_id: current_user)
+      @user_products = UserProduct.where(user_id: current_user).order('peremption_date ASC')
     end
   end
 
