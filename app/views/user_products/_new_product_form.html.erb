@@ -3,13 +3,13 @@
   <%= hidden_field_tag :product_name, @product_name %>
 
   <!-- search pour catégories -->
-<<<<<<< HEAD
+
   <%= select_tag("categories", grouped_options_for_select(Category.order), class: "search-form-new") %>
 
   <%# collection_select(:categories, :category_id, Category.order.values.map { |a| a }.flatten.uniq, :id, :name, {}, class: "search-form-new", id: "testing") %>
 
   <%= f.input :place %>
-=======
+
 
 <!--   <select id="testing">
     <%# Category.order.each do |key, value| %>
@@ -20,7 +20,7 @@
       </optgroup>
     <%# end %>
   </select> -->
->>>>>>> master
+
 
   <%= f.input :purchase_date %>
 
