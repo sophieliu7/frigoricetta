@@ -22,3 +22,52 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+
+.features{
+
+margin-top:50px;
+margin-bottom: 50px;
+}
+
+.carte {
+ border: 1px solid #d3d3d3;
+ border-radius: .25rem;
+ height:430px;
+ position:relative;
+
+.bg-img-first {
+background-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ba2b9dcc1af593a7d93ed9b4ed952ac&auto=format&fit=crop&w=1353&q=80");
+ background-size: cover;
+ min-height: 180px;
+ background-position: center;
+ background-color: #ccc;
+}
+
+.bg-img-second {
+background-image: url("https://images.unsplash.com/photo-1494597706938-de2cd7341979?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6dc5376ce585ce0df0d44232b9bab53c&auto=format&fit=crop&w=1380&q=80");
+ background-size: cover;
+ min-height: 180px;
+ background-position: center;
+ background-color: #ccc;
+}
+
+
+.content {
+ padding: 15px;
+
+}
+button {
+  position: absolute;
+  bottom:10px;
+  left:10px;
+ background-color: transparent;
+ border: 1px solid $gray;
+ padding: .5rem 1rem;
+ cursor: pointer;
+ border-radius: .25rem;
+}
+
+
+}
+
