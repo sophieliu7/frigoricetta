@@ -152,6 +152,23 @@ puts "end category"
 puts "create product"
 Product.create!(name: "poulet fermier", category: Category.first, validated: true )
 Product.create!(name: "courgette", category: Category.last, validated: true )
+Product.create name: 'Guacamole Blini' category: 'AUTRES PRODUITS A TARTINER' validated: true
+Product.create name: 'Filet de poulet blanc Le Gaulois' category: 'DECOUPES DE POULET BLANC' validated: true
+Product.create name: 'Merguez de volaille Le Gaulois' category: 'PRODUITS A GRILLER' validated: true
+Product.create name: 'Porc : roti filet' category: 'PORC FQC A ROTIR CAISSETTE' validated: true
+Product.create name: 'Côtes de porc avec os' category: 'PORC STD COTES' validated: true
+Product.create name: 'Hachés spécial Burger Tendre et Plus' category: 'ASSIETTE BOL BLANC & CRISTAL' validated: true
+Product.create name: 'Côte de porc sans os Les Bons Morceaux' category: 'PORC STD COTES' validated: true
+Product.create name: 'Pains au lait Carrefour' category: 'PETITS PAINS SPEC.SUCRES' validated: true
+Product.create name: "Barres céréales Extra Kellogg's" category: 'CASHER' validated: true
+Product.create name: "Barres céréales/pommes Grany" category: 'PISCINE RIGIDE' validated: true
+Product.create name: 'Barres céréales fraises/framboises Grany' category: 'MATIERES PREMIERES FRAIS' validated: true
+Product.create name: 'Olives entières cassées à l'ail, doux Croc'frais' category: 'ESPAGNE PORTUGAL' validated: true
+Product.create name: 'Yaourts aux fruits 0% Panier de Yoplait' category: 'GOURMANDISE FROMAGERE' validated: true
+Product.create name: 'Champignons de Paris entiers' category: 'CHAMPIGNONS DE PARIS' validated: true
+Product.create name: 'Thon albacore au naturel Petit Navire' category: 'THON' validated: true
+Product.create name: 'Pâtes Spaghetti n°5 Barilla' category: 'PATES SPECIALITES' validated: true
+Product.create name: 'Filets de sardines citron-basilic s/arêtes Saupiquet' category: 'SARDINES' validated: true
 puts "end product"
 
 puts "create user"
