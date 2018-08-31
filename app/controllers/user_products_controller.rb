@@ -84,6 +84,11 @@ class UserProductsController < ApplicationController
     @email_user = email_parser_user
     @email_from = email_parser_email_from
     # @hash_food_category = hash_food_category(email_parser_content)
+    # @email_content = ['Brandade de morue à la nîmoise Reflets de France', 'clafoutis', 'Thon à la provencale', "Mini saucisson Bâton de Berger nature Justin Bridou"]
+    # @email_date = '2018_08_30'
+    # @email_user = 'sliu@sarenza.com'
+    # @email_from = 'sliu@sarenza.com'
+
   end
 
   private
