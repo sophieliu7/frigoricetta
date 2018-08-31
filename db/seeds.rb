@@ -278,12 +278,13 @@ Product.create! name: 'Yaourts aux fruits 0% Panier de Yoplait', category: Categ
 Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
 puts "end product"
 
-# puts "create user"
-# User.create!(email: "test@frigo.com", password: '123456')
-# puts "end user"
+puts "create user"
+User.create!(email: "clarabcps@gmail.com", password: '123456')
+puts "end user"
 
 puts "create use Product"
-UserProduct.create!(user: User.first, product: Product.first, place: "frigo", purchase_date: Date.today, peremption_date: Date.today)
-puts "end user product"
-
+UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Pâtes Linguine Academia Barilla'), place: 'placard', purchase_date: ('2018-08-16')
+UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Crevettes Jumbo décortiquées Carrefour'), place: 'frigo', purchase_date: ('2018-08-30')
+UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Escalopes de dinde Douce France'), place: 'frigo', purchase_date: Date.parse('2018-08-30')
+UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Chocolat bio noir Haïti 72% Ethiquable'), place: 'frigo', purchase_date: Date.parse('2018-08-16')
 puts "finished"
