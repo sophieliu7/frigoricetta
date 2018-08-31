@@ -43,11 +43,11 @@
       <div class="card" data-date="<%= user_product.id %>">
 
         <div>
-          <h4><%= user_product.product.name %></h4>
+          <h4><%= user_product.product.name.capitalize %></h4>
           <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s).</p>
         </div>
         <div class="card-menu">
-          <%= link_to user_product_path(user_product), method: :patch do %>
+          <%= link_to user_products_path, method: :get do %>
           <%= icon("fas", 'edit') %>
           <% end %>
           <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
