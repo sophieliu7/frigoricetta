@@ -17,12 +17,18 @@ class UserProductsController < ApplicationController
   end
 
   def load_form
-    if params[:products][:product_id].is_a?(String)
-      product = Product.create(name: params[:products][:product_id])
+    params[:products][:product_id]
+    # binding.pry
+    if (params[:products][:product_id] =~(/\d+/)).nil?
+      # binding.pry
+      name = params[:products][:product_id]
+      product = Product.create(name: name)
+      @product_name = product.name
     else
-      product = Product.find(params[:products][:product_id])
+      product = Product.find(params[:products][:product_id]).name
+      @product_name = product
+
     end
-    @product_name = product.name
     # format JS > load_form.js.erb
     respond_to do |format|
       format.js # actually means: if the client ask for js -> return file.js
@@ -49,7 +55,7 @@ class UserProductsController < ApplicationController
       render :new
     end
 
-    @alluserproducts = UserProduct.where(user_id: @user_product.user)
+
   end
 
   def edit
