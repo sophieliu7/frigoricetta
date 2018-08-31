@@ -4,7 +4,7 @@
 
   <!-- search pour catégories -->
 
-  <%= select_tag("categories", grouped_options_for_select(Category.order), class: "search-form-new") %>
+  <%= select_tag("categories", grouped_options_for_select(Category.order), id: "categories_subcat", class: "search-form-new") %>
 
   <%# collection_select(:categories, :category_id, Category.order.values.map { |a| a }.flatten.uniq, :id, :name, {}, class: "search-form-new", id: "testing") %>
 
