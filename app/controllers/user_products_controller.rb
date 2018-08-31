@@ -49,7 +49,7 @@ class UserProductsController < ApplicationController
       render :new
     end
 
-    @alluserproducts = UserProduct.where(user_id: @user_product.user)
+
   end
 
   def edit
