@@ -279,11 +279,11 @@ Product.create! name: 'Thé', category: Category.find_by(name: 'BOISSON A BASE D
 Product.create! name: 'Thon albacore au naturel Petit Navire', category: Category.find_by(name: 'THON'), validated: true
 Product.create! name: "Tomates cerise confites à l'origan Ensoleil'ade", category: Category.find_by(name: 'SALADES DE CRUDITES'), validated: true
 Product.create! name: 'Tomates cerises panaché Mandar', category: Category.find_by(name: 'SALADES DE CRUDITES'), validated: true
-Product.create! name: 'Viande bovine : 2 hampes Charal', category: Category.find_by(name: 'FQC RCE MIXTE A GRILLER,POELER'), validated: true
-Product.create! name: 'Viande bovine Bourguignon à mijoter Les Bons Morceaux', category: Category.find_by(name: 'BOEUF BRAISER/BOUILLIR CPE'), validated: true
-Product.create! name: 'Vinaigre', category: Category.find_by(name: 'VINAIGRES SPECIALITES VERRES'), validated: true
-Product.create! name: 'Yaourts aux fruits 0% Panier de Yoplait', category: Category.find_by(name: 'GOURMANDISE FROMAGERE'), validated: true
-Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
+# Product.create! name: 'Viande bovine : 2 hampes Charal', category: Category.find_by(name: 'FQC RCE MIXTE A GRILLER,POELER'), validated: true
+# Product.create! name: 'Viande bovine Bourguignon à mijoter Les Bons Morceaux', category: Category.find_by(name: 'BOEUF BRAISER/BOUILLIR CPE'), validated: true
+# Product.create! name: 'Vinaigre', category: Category.find_by(name: 'VINAIGRES SPECIALITES VERRES'), validated: true
+# Product.create! name: 'Yaourts aux fruits 0% Panier de Yoplait', category: Category.find_by(name: 'GOURMANDISE FROMAGERE'), validated: true
+# Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
 puts "end product"
 
 # puts "create user"

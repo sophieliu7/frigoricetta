@@ -106,9 +106,9 @@ class UserProductsController < ApplicationController
         # si n'existe pas alors on créé le Product, la catégorie (selon les cas) et le user product associé
         temp_category = Category.find_by_name(category)
           if temp_category.nil?
-            new_category = Category.create!(name: category)
+            Category.create!(name: category)
           end
-        new_product = Product.create!(name: food, category: new_category)
+        new_product = Product.create!(name: food, category: Category.find_by_name(category))
         UserProduct.create!(user: current_user, product: new_product, purchase_date: Date.today)
       else
         # si il existe alors on créé juste le user product avec l'association product
