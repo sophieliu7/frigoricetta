@@ -97,11 +97,11 @@ class UserProductsController < ApplicationController
   def create_user_products_from_emails
 
     # pour chaque string du mail parsé on boucle :
-    email_parser_content.each do |food|
+    hash_email_food_with_category_from_db_or_carrefour.each do |food, category|
       # check si le Product existe ou pas
       if temp_product = Product.find_by_name(food).nil?
         # si n'existe pas alors on créé le Product et le user product associé
-        new_product = Product.create!(name: food, category: "other")
+        new_product = Product.create!(name: food, category: category)
         UserProduct.create!(user: current_user, product: new_product)
       else
         # si il existe alors on créé juste le user product avec l'association product
