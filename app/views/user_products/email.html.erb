@@ -19,6 +19,7 @@
         <p>Date d'envoi du mail : <%= @email_date %></p>
         <p>Email en provenance de : <%= @email_from %></p>
         <p>Utilisateur Frigoricetta : <%= @email_user %></p>
+        <p>Nombre de produits : <%= @email_content.length %></p>
 
     </div>
 
@@ -45,9 +46,9 @@
           <% end %>
         <% end %>
 
-        <div>
-          <%= @hash_food_category %>
-        </div>
+
+
+
 
     </div>
   </div>

@@ -138,6 +138,14 @@ Category.create! name: 'SAUMON FUME', SubCategory: 'VIANDE & POISSONS', perempti
 Category.create! name: 'SELS', SubCategory: 'SALé', peremption_duration: 14400
 Category.create! name: 'ACC QUALITE ENVIRONNEMENT', SubCategory: 'LIQUIDES', peremption_duration: 680
 Category.create! name: 'SOFTS DRINKS"', SubCategory: 'LIQUIDES', peremption_duration: 680
+Category.create! name: 'POTAGES LIQUIDES', SubCategory: 'LIQUIDES', peremption_duration: 60
+Category.create! name: 'BIO INGREDIENT SUCRE CONFISERI', SubCategory: 'SUCRé', peremption_duration: 45
+Category.create! name: 'POISSON TRANSFORME', SubCategory: 'VIANDES & POISSONS', peremption_duration: 25
+Category.create! name: 'TARAMA', SubCategory: 'VIANDES & POISSONS', peremption_duration: 25
+Category.create! name: 'QUATRE-QUART - GAT.FAMILIAUX', SubCategory: 'SUCRé', peremption_duration: 45
+Category.create! name: 'BOISSON A BASE DE THE', SubCategory: 'LIQUIDES', peremption_duration: 60
+Category.create! name: 'THON', SubCategory: 'VIANDES & POISSONS', peremption_duration: 25
+Category.create! name: 'SALADES DE CRUDITES', SubCategory: 'LEGUMES', peremption_duration: 170
 puts "end category"
 
 puts "create product"

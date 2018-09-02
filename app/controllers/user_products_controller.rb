@@ -85,7 +85,7 @@ class UserProductsController < ApplicationController
     @email_date = email_parser_date
     @email_user = email_parser_user
     @email_from = email_parser_email_from
-    # @hash_food_category = hash_food_category(email_parser_content)
+    # @hash_food_category = hash_email_food_with_category_from_db_or_carrefour
     # @email_content = ['Brandade de morue à la nîmoise Reflets de France', 'clafoutis', 'Thon à la provencale', "Mini saucisson Bâton de Berger nature Justin Bridou"]
     # @email_date = '2018_08_30'
     # @email_user = 'sliu@sarenza.com'
@@ -96,16 +96,23 @@ class UserProductsController < ApplicationController
 
   def create_user_products_from_emails
 
+    #raise
+
     # pour chaque string du mail parsé on boucle :
     hash_email_food_with_category_from_db_or_carrefour.each do |food, category|
       # check si le Product existe ou pas
-      if temp_product = Product.find_by_name(food).nil?
-        # si n'existe pas alors on créé le Product et le user product associé
-        new_product = Product.create!(name: food, category: category)
-        UserProduct.create!(user: current_user, product: new_product)
+      temp_product = Product.find_by_name(food)
+      if temp_product.nil?
+        # si n'existe pas alors on créé le Product, la catégorie (selon les cas) et le user product associé
+        temp_category = Category.find_by_name(category)
+          if temp_category.nil?
+            new_category = Category.create!(name: category)
+          end
+        new_product = Product.create!(name: food, category: new_category)
+        UserProduct.create!(user: current_user, product: new_product, purchase_date: Date.today)
       else
         # si il existe alors on créé juste le user product avec l'association product
-        UserProduct.create!(user: current_user, product: temp_product)
+        UserProduct.create!(user: current_user, product: temp_product, purchase_date: Date.today)
       end
     end
     # on détruit l'email ensuite
@@ -202,7 +209,7 @@ class UserProductsController < ApplicationController
   end
 
   def destroy_emails
-    current_user.inbound_email.all.destroy
+    current_user.inbound_emails.last.destroy
   end
 ####################### CARREFOUR API CALLS ####################################
 require 'uri'
@@ -275,15 +282,16 @@ require 'json'
     result = Hash.new
     email_parser_content.each do |food|
       # regarde si le produit existe déja en base ou pas
-      if temp_product = Product.find_by_name(food).nil?
-      # si existe pas en base alors on appelle l'API de carrefour
-        result[food] = find_carrefour_categories(food)
-      else
-      # si il existe en base alors on prend la categories en base
-        result[food] = temp_product.category
+      temp_product = Product.find_by_name(food)
+        if temp_product.nil?
+        # si existe pas en base alors on appelle l'API de carrefour
+          result[food] = find_carrefour_categories(food)
+        else
+        # si il existe en base alors on prend la categories en base
+          result[food] = temp_product.category.name
+        end
       end
-      return result
-    end
+    return result
   end
 
 

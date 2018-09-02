@@ -29,6 +29,7 @@
 
   </div>
 
+<h2><%= @user_products.count %> produits</h2>
 
  <div class="row">
   <% @user_products.each do |user_product| %>
@@ -58,7 +59,11 @@
     </div>
   </div>
 
-  <% if (user_product.peremption_date - Date.today).to_i < 1 %>
+  <% if (user_product.peremption_date.nil?) %>
+  <script>
+    document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid black";
+  </script>
+  <% elsif (user_product.peremption_date - Date.today).to_i < 1 %>
   <script>
     document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
   </script>
