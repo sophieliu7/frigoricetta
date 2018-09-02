@@ -4,3 +4,31 @@
 .index-container {
   margin-top: 30px;
 }
+
+
+.polygon {
+  position: relative;
+  clip-path: polygon(50% 0%, 100% 0, 100% 32%, 18% 67%, 0 49%, 0 0);
+  background: linear-gradient(to left, #134e5e, #71b280);
+  height: 800px;
+}
+
+
+.header {
+  position: relative;
+  height: 300px;
+  background-image: linear-gradient(to left, #134e5e, #71b280);
+  border-bottom-left-radius: 100% 60%;
+  border-bottom-right-radius: 100% 60%;
+}
+
+h1 {
+  margin: 0;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  color: white;
+}
