@@ -94,12 +94,26 @@ class UserProductsController < ApplicationController
   end
 
 
-  def destroy_emails
-    @emails = current_user.inbound_email.all.destroy
+  def create_user_products_from_emails
+
+    # pour chaque string du mail parsé on boucle :
+    email_parser_content.each do |food|
+      # check si le Product existe ou pas
+      if temp_product = Product.find_by_name(food).nil?
+        # si n'existe pas alors on créé le Product et le user product associé
+        new_product = Product.create!(name: food, category: "other")
+        UserProduct.create!(user: current_user, product: new_product)
+      else
+        # si il existe alors on créé juste le user product avec l'association product
+        UserProduct.create!(user: current_user, product: temp_product)
+      end
+    end
+    # on détruit l'email ensuite
+    destroy_emails
+    redirect_to user_products_path
   end
 
-
-
+  ################ PRIVATE FUNCTIONS ###########################################
 
   private
 
@@ -187,6 +201,9 @@ class UserProductsController < ApplicationController
     email.content["From"]
   end
 
+  def destroy_emails
+    current_user.inbound_email.all.destroy
+  end
 ####################### CARREFOUR API CALLS ####################################
 require 'uri'
 require 'openssl'
@@ -223,7 +240,7 @@ require 'json'
 
  # ALGO qui réitère sur le nombre de mots de la string juqu'a trouver un résultat via post_with_string
 
-  def find_categories(word)
+  def find_carrefour_categories(word)
 
     carrefour_api_response = post_with_string(word)
 
@@ -244,12 +261,30 @@ require 'json'
     end
   end
 
+
   def hash_food_category(array_of_food)
     result = Hash.new
     array_of_food.each do |food|
-      result[food] = find_categories(food)
+
+      result[food] = find_carrefour_categories(food)
     end
     return result
   end
+
+  def hash_email_food_with_category_from_db_or_carrefour
+    result = Hash.new
+    email_parser_content.each do |food|
+      # regarde si le produit existe déja en base ou pas
+      if temp_product = Product.find_by_name(food).nil?
+      # si existe pas en base alors on appelle l'API de carrefour
+        result[food] = find_carrefour_categories(food)
+      else
+      # si il existe en base alors on prend la categories en base
+        result[food] = temp_product.category
+      end
+      return result
+    end
+  end
+
 
 end
