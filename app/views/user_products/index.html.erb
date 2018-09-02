@@ -45,7 +45,8 @@
 
         <div>
           <h4><%= user_product.product.name.capitalize %></h4>
-          <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s).</p>
+          <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s). Category :
+            <%=  user_product.category.name %> Peremption duration : <%= user_product.category.peremption_duration %></p>
         </div>
         <div class="card-menu">
           <%= link_to user_products_path, method: :get do %>
