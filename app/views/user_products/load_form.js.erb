@@ -8,6 +8,21 @@ function addForm(formHTML) {
 
 addForm('<%= j render "new_product_form", user_product: UserProduct.new, product_name: @product_name %>')
 
+
+flatpickr(".datepicker-purchase", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+    defaultDate: "today"
+})
+
+flatpickr(".datepicker-peremption", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+    minDate: "today"
+})
+
 $("#categories_category_id").select2({
   tags: true,
   matcher: matchCustom,
