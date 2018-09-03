@@ -1,43 +1,34 @@
-<!-- <div class="banner-index text-center">
-  <h1>Hi, <%#= current_user.email %></h1>
-</div>
-<div class="index-happy-line index-happy-line-background"></div>
--->
+<div class="wrapper-index">
 
-<br>
+  <%= render "shared/side_navbar" %>
+  <div class="demo">
 
-
-<!-- <div class="header text-center">
-</div> -->
-
-<section class="demo">
-
-  <div class="container index-container text-center">
-    <div class="header-hi">
-      <h1>Hi, Clara</h1>
-      <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 1 %>
-        <!-- <h3>Tu as <%#= @user_products.count %> produits dans ta cuisine</h3> -->
-        <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
-        <h5>Let's cook it !</h5>
-      <% else %>
-        <h4>What's in your fridge today ?</h4>
-      <% end %>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-       <%= form_tag user_products_path, method: :get do%>
-       <%= text_field_tag :query,
-       params[:query],
-       class: "form-control",
-         placeholder: "Trouver un aliment"
-         %>
-         <% end %>
+    <div class="container index-container text-center">
+      <div class="header-hi">
+        <h1>Hi, Clara</h1>
+        <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 1 %>
+          <!-- <h3>Tu as <%#= @user_products.count %> produits dans ta cuisine</h3> -->
+          <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
+          <h5>Let's cook it !</h5>
+        <% else %>
+          <h4>What's in your fridge today ?</h4>
+        <% end %>
       </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+         <%= form_tag user_products_path, method: :get do%>
+         <%= text_field_tag :query,
+         params[:query],
+         class: "form-control",
+           placeholder: "Trouver un aliment"
+           %>
+           <% end %>
+        </div>
 
-
-      <div class="two-btn-container">
-       <%= link_to "Ajouter un aliment", new_user_product_path, class:"btn btn-lg btn-primary btn-frigo-index" %>
-       <%= link_to "Mon dernier email", user_products_email_path, class:"btn btn-lg btn-primary btn-frigo-index" %>
+        <div class="two-btn-container">
+         <%= link_to "Ajouter un aliment", new_user_product_path, class:"btn btn-lg btn-primary btn-frigo-index" %>
+         <%= link_to "Mon dernier email", user_products_email_path, class:"btn btn-lg btn-primary btn-frigo-index" %>
+        </div>
       </div>
     </div>
 
@@ -76,9 +67,10 @@
                 <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
                 <%= icon("fas", 'trash-alt') %>
                 <% end %>
+
               </div>
             </div>
-          </div>
+
 
 
           <% if (user_product.peremption_date.nil?) %>
@@ -99,12 +91,15 @@
             </script>
           <% end %>
 
-        </div>
 
-      <% end %>
+          </div>
+
+      </div>
+        <% end %>
     </div>
   </div>
-</section>
+</div>
+
 
 
 

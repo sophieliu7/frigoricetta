@@ -1,5 +1,6 @@
 require 'open-uri'
 
+
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
@@ -13,16 +14,27 @@ class PagesController < ApplicationController
   def recettes
 
     @user = current_user
-    @userproducts = @user.user_products
+    @userproducts = @user.user_products.order('peremption_date ASC')
     @userproductlist = []
-    @userproducts.each do |pdt|
-      @userproductlist << Product.find(pdt.product_id).name
+    @userproducts.first(2).each do |pdt|
+      @userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
     end
 
 
-    @userproductlist = @userproductlist.join('-').gsub(' ', '-')
+
+
+    #@userproductlist = @userproductlist.join('-').gsub(' ', '-')
+
+    @userproductlist = @userproductlist.join('-')
+    @phrase = URI.encode(@userproductlist)
+
+
+    #@phrase = URI.parse URI.encode("aqt=utf8=\u{2713}&#{@userproductlist}")
+
+
     @array_top = []
-    url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@userproductlist}"
+    url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{@phrase}"
+
 
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file, nil, 'utf-8')
