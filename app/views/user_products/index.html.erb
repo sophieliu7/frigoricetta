@@ -3,7 +3,7 @@
   <%= render "shared/side_navbar" %>
   <div class="demo">
 
-    <div class="container index-container text-center">
+    <div class="container text-center index-header">
       <div class="header-hi">
         <h1>Hi, Clara</h1>
         <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 1 %>
@@ -16,71 +16,73 @@
       </div>
     </div>
 
+    <div class="index-container">
 
-    <div class="row">
-      <% @user_products.order(:peremption_date).each_with_index do |user_product, index| %>
-        <div data-user-product-id="<%= user_product.id %>">
-          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-            <div class="card" data-date="<%= user_product.id %>">
+      <div class="row">
+        <% @user_products.order(:peremption_date).each_with_index do |user_product, index| %>
+          <div data-user-product-id="<%= user_product.id %>">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+              <div class="card" data-date="<%= user_product.id %>">
 
-              <div>
-                <h4><%= user_product.product.name.capitalize %></h4>
-                <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s)</p>
-              </div>
-              <div class="card-menu">
+                <div>
+                  <h4><%= user_product.product.name.capitalize %></h4>
+                  <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s)</p>
+                </div>
+                <div class="card-menu">
 
-               <button type="button" class="btn-neutre fas fa-edit" data-toggle="modal" data-target="#test<%= index %>">
-              </button>
+                 <button type="button" class="btn-neutre fas fa-edit" data-toggle="modal" data-target="#test<%= index %>">
+                </button>
 
 
-              <div class="modal fade" id="test<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="myModalLabel">Modifier</h4>
-                    </div>
-                    <div class="modal-body">
-                      <%= render "edit", user_product: user_product %>
+                <div class="modal fade" id="test<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modifier</h4>
+                      </div>
+                      <div class="modal-body">
+                        <%= render "edit", user_product: user_product %>
+                      </div>
                     </div>
                   </div>
+                </div>
+
+
+
+                  <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
+                  <%= icon("fas", 'trash-alt') %>
+                  <% end %>
+
                 </div>
               </div>
 
 
 
-                <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
-                <%= icon("fas", 'trash-alt') %>
-                <% end %>
+            <% if (user_product.peremption_date.nil?) %>
+              <script>
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid black";
+              </script>
+            <% elsif (user_product.peremption_date - Date.today).to_i < 4 %>
+              <script>
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
+              </script>
+            <% elsif (user_product.peremption_date - Date.today).to_i  > 4 || (user_product.peremption_date - Date.today).to_i < 8 %>
+              <script>
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid orange";
+              </script>
+            <% else %>
+              <script>
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid green";
+              </script>
+            <% end %>
 
-              </div>
+
             </div>
 
-
-
-          <% if (user_product.peremption_date.nil?) %>
-            <script>
-              document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid black";
-            </script>
-          <% elsif (user_product.peremption_date - Date.today).to_i < 4 %>
-            <script>
-              document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
-            </script>
-          <% elsif (user_product.peremption_date - Date.today).to_i  > 4 || (user_product.peremption_date - Date.today).to_i < 8 %>
-            <script>
-              document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid orange";
-            </script>
-          <% else %>
-            <script>
-              document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid green";
-            </script>
+        </div>
           <% end %>
-
-
-          </div>
-
       </div>
-        <% end %>
     </div>
   </div>
 </div>
