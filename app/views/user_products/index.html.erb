@@ -49,9 +49,9 @@
             <%=  user_product.category.name %> Peremption duration : <%= user_product.category.peremption_duration %></p>
         </div>
         <div class="card-menu">
-          <%= link_to user_products_path, method: :get do %>
+          <%= link_to edit_user_product_path(user_product) do%>
           <%= icon("fas", 'edit') %>
-          <% end %>
+          <% end  %>
           <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
           <%= icon("fas", 'trash-alt') %>
           <% end %>

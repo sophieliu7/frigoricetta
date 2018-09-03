@@ -286,9 +286,6 @@ Product.create! name: 'Tomates cerises panaché Mandar', category: Category.find
 # Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
 puts "end product"
 
-# puts "create user"
-# User.create!(email: "test@frigo.com", password: '123456')
-# puts "end user"
 
 puts "create use Product"
 UserProduct.create!(user: User.first, product: Product.first, place: "frigo", purchase_date: Date.today, peremption_date: Date.today)

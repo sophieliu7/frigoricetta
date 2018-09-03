@@ -1,3 +1,4 @@
+
 class UserProductsController < ApplicationController
   before_action :set_user_product, only: [:edit, :update, :destroy]
 
@@ -106,7 +107,7 @@ class UserProductsController < ApplicationController
         # si n'existe pas alors on créé le Product, la catégorie (selon les cas) et le user product associé
         temp_category = Category.find_by_name(category)
           if temp_category.nil?
-            Category.create!(name: category)
+            Category.create!(name: category, SubCategory: "autre", peremption_duration: 30)
           end
         new_product = Product.create!(name: food, category: Category.find_by_name(category))
         UserProduct.create!(user: current_user, product: new_product, purchase_date: Date.today)
