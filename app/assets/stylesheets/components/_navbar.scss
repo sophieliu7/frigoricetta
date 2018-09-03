@@ -76,6 +76,9 @@
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
+  max-height: 100%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .sidenav {
@@ -86,18 +89,20 @@
   left: 0;
   background-color: #fff;
   overflow-x: hidden;
-  transition: 0.5s;
   padding-top: 20px;
   width: 25%;
   box-shadow: 0 0 40px rgba(0,0,0,.3);
   text-align: center;
+}
+#accueil {
+  font-family: 'Oleo Script', cursive;
 }
 .sidenav-content {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100%
+  height: 79vh;
 }
 .sidenav-content-menu {
   list-style: none;
@@ -142,5 +147,18 @@
   }
   .sidenav a {
     font-size: 18px;
+  }
+}
+.sidenav-general {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  .sidenav-profil, .sidenav-logout {
+    border: 1px solid #EBECED;
+    width: 100%;
+    a {
+      font-size: 18px;
+    }
   }
 }
