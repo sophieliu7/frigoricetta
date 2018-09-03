@@ -35,7 +35,7 @@
 
 
 .demo {
-  width:100%;
+  width:80%;
   height:100vh;
   background-image:
     linear-gradient( 60deg, #4BA255 25%, transparent 0 ),
@@ -43,13 +43,19 @@
     linear-gradient( 125deg, transparent 70%, #81BE88 70% ),
     linear-gradient( 125deg, #5DAB66 45%, transparent 0 ),
     linear-gradient( 125deg, #6FB477 70%, transparent 0 );
-
+  position: absolute;
+  right: 0;
 }
-
+.wrapper-index {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
 .index-container {
-  height: 100vh;
+  max-height: 100vh;
   overflow: scroll;
   .header-hi {
     color: white;
   }
+  max-width:80%
 }
