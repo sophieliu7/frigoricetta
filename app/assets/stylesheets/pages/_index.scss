@@ -7,9 +7,6 @@
   flex-direction: row;
   position: relative;
 }
-.index-container {
-  margin-top: 30px;
-}
 
 .demo {
   width:80%;
@@ -24,15 +21,20 @@
   right: 0;
   top: 0;
   bottom: 0;
+  overflow: scroll;
 }
 .index-container {
+  margin-top: 30px;
+  margin-right: 0;
   max-height: 100vh;
-  overflow: scroll;
   .header-hi {
     color: white;
   }
-  max-width:80%
 }
 .header-hi {
   margin-bottom: 30px;
+}
+.index-header {
+  max-width: 80%;
+  color: white;
 }
