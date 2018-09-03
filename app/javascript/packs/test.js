@@ -1,72 +1,9 @@
-import "bootstrap";
-import { initUpdateNavbarOnScroll } from '../components/navbar';
-import { addreturntab } from '../components/recette';
-
-initUpdateNavbarOnScroll();
-
-
-import $ from 'jquery';
-import 'select2';                       // globally assign select2 fn to $ element
-import 'select2/dist/css/select2.css';  // optional if you have css loader
-
-
-function matchCustom(params, data) {
-    console.log('match')
-    // If there are no search terms, return all of the data
-    if ($.trim(params.term) === '') {
-      return data;
-    }
-
-    // Do not display the item if there is no 'text' property
-    if (typeof data.text === 'undefined') {
-      return null;
-    }
-
-    // `params.term` should be the term that is used for searching
-    // `data.text` is the text that is displayed for the data object
-    if (data.text.indexOf(params.term) > -1) {
-      var modifiedData = $.extend({}, data, true);
-      modifiedData.text += ' (matched)';
-
-      // You can return modified objects from here
-      // This includes matching the `children` how you want in nested data sets
-      return modifiedData;
-    }
-
-    // Return `null` if the term should not be displayed
-    return null;
-}
-
-
-
-$(document).ready(function(){
-    // $('#search').select2();
-    $("#products_product_id").select2({
-      tags: true,
-      matcher: matchCustom,
-      minimumInputLength: 3,
-      minimumResultsForSearch: 5,
-      placeholder: {
-        id: '-1', // the value of the option
-        text: 'Select an option'
-      },
-      allowClear: true
-    });
-
-})
-
-window.matchCustom = matchCustom
-window.$ = $
-
-addreturntab();
-
-
 /*
 Triangles.js - v0.8
 Copyright (c) 2015 Taylor Lei
 Licensed under the MIT license.
 */
-var TriangleBG = function(opts) {
+function TriangleBG(opts) {
    if (opts.canvas.tagName !== "CANVAS") {
       console.log("Warning: triangles.js requires a canvas element!");
       return;
@@ -253,7 +190,7 @@ TriangleBG.prototype.renderLoop = function() {
 
    this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
    this.ctx.translate(this.render.offset.x, this.render.offset.y);
-   for (let x = 0; x < this.net.w-1; x++) {
+   for (x = 0; x < this.net.w-1; x++) {
       var y;
       for (y = 0; y < this.net.h-1; y++) {
          var drawX, drawY;
@@ -361,9 +298,9 @@ TriangleBG.prototype.delete = function() {
 };
 
 
-var canvas = document.getElementById("canvas");
-var altBG = document.getElementById("altBG");
-var triangle = new TriangleBG({
+const canvas = document.getElementById("canvas");
+const altBG = document.getElementById("altBG");
+let triangle = new TriangleBG({
          canvas : canvas,
          alternateElem : altBG,
          cellHeight : 60,
@@ -375,14 +312,14 @@ var triangle = new TriangleBG({
          variance : 1.1,
          pattern : "x*y",
          baseColor1 : {
-            baseHue : 165,
+            baseHue : 201,
             baseSaturation : 80,
-            baseLightness : 30
+            baseLightness : 26
          },
          baseColor2 : {
-            baseHue : 165,
+            baseHue : 201,
             baseSaturation : 80,
-            baseLightness : 30.5
+            baseLightness : 26.5
          },
          colorDelta : {
             hue : 0.2,
