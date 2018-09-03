@@ -1,6 +1,9 @@
 import "bootstrap";
+import flatpickr from "flatpickr"
+window.flatpickr = flatpickr;
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { addreturntab } from '../components/recette';
+import "../plugins/flatpickr"
 
 initUpdateNavbarOnScroll();
 
@@ -59,6 +62,4 @@ window.matchCustom = matchCustom
 window.$ = $
 
 addreturntab();
-
-
 
