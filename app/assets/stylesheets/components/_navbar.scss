@@ -72,6 +72,7 @@
 
 // side_navbar
 #mySidenav {
+  // width: 25%;
   flex: 0 0 20%;
   height: 100vh;
   position: sticky !important;
@@ -90,7 +91,6 @@
   background-color: #fff;
   overflow-x: hidden;
   padding-top: 20px;
-  width: 25%;
   box-shadow: 0 0 40px rgba(0,0,0,.3);
   text-align: center;
 }

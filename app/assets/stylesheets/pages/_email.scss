@@ -1,0 +1,34 @@
+.email-container {
+  position: relative;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 80%;
+  height: 100vh;
+}
+.email-message {
+  position: absolute;
+  margin-top: 40px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  top: 25%;
+}
+.empty-mail {
+  color: white;
+  .far {
+    font-size: 80px;
+  }
+}
+.empty-mail-logo {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 6px solid white;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
