@@ -1,3 +1,4 @@
+
 class UserProductsController < ApplicationController
   before_action :set_user_product, only: [:edit, :update, :destroy]
 
@@ -5,7 +6,7 @@ class UserProductsController < ApplicationController
     if params[:query].present?
       @user_products = UserProduct.joins(:product).where("products.name ILIKE :query", query: "%#{params[:query]}%")
     else
-      @user_products = UserProduct.where(user_id: current_user)
+      @user_products = UserProduct.where(user_id: current_user).order('peremption_date ASC')
     end
   end
 
@@ -85,13 +86,42 @@ class UserProductsController < ApplicationController
     @email_date = email_parser_date
     @email_user = email_parser_user
     @email_from = email_parser_email_from
-    # @hash_food_category = hash_food_category(email_parser_content)
+    # @hash_food_category = hash_email_food_with_category_from_db_or_carrefour
     # @email_content = ['Brandade de morue à la nîmoise Reflets de France', 'clafoutis', 'Thon à la provencale', "Mini saucisson Bâton de Berger nature Justin Bridou"]
     # @email_date = '2018_08_30'
     # @email_user = 'sliu@sarenza.com'
     # @email_from = 'sliu@sarenza.com'
 
   end
+
+
+  def create_user_products_from_emails
+
+    #raise
+
+    # pour chaque string du mail parsé on boucle :
+    hash_email_food_with_category_from_db_or_carrefour.each do |food, category|
+      # check si le Product existe ou pas
+      temp_product = Product.find_by_name(food)
+      if temp_product.nil?
+        # si n'existe pas alors on créé le Product, la catégorie (selon les cas) et le user product associé
+        temp_category = Category.find_by_name(category)
+          if temp_category.nil?
+            Category.create!(name: category, SubCategory: "autre", peremption_duration: 30)
+          end
+        new_product = Product.create!(name: food, category: Category.find_by_name(category))
+        UserProduct.create!(user: current_user, product: new_product, purchase_date: Date.today)
+      else
+        # si il existe alors on créé juste le user product avec l'association product
+        UserProduct.create!(user: current_user, product: temp_product, purchase_date: Date.today)
+      end
+    end
+    # on détruit l'email ensuite
+    destroy_emails
+    redirect_to user_products_path
+  end
+
+  ################ PRIVATE FUNCTIONS ###########################################
 
   private
 
@@ -179,6 +209,9 @@ class UserProductsController < ApplicationController
     email.content["From"]
   end
 
+  def destroy_emails
+    current_user.inbound_emails.last.destroy
+  end
 ####################### CARREFOUR API CALLS ####################################
 require 'uri'
 require 'openssl'
@@ -215,7 +248,7 @@ require 'json'
 
  # ALGO qui réitère sur le nombre de mots de la string juqu'a trouver un résultat via post_with_string
 
-  def find_categories(word)
+  def find_carrefour_categories(word)
 
     carrefour_api_response = post_with_string(word)
 
@@ -236,12 +269,31 @@ require 'json'
     end
   end
 
+
   def hash_food_category(array_of_food)
     result = Hash.new
     array_of_food.each do |food|
-      result[food] = find_categories(food)
+
+      result[food] = find_carrefour_categories(food)
     end
     return result
   end
+
+  def hash_email_food_with_category_from_db_or_carrefour
+    result = Hash.new
+    email_parser_content.each do |food|
+      # regarde si le produit existe déja en base ou pas
+      temp_product = Product.find_by_name(food)
+        if temp_product.nil?
+        # si existe pas en base alors on appelle l'API de carrefour
+          result[food] = find_carrefour_categories(food)
+        else
+        # si il existe en base alors on prend la categories en base
+          result[food] = temp_product.category.name
+        end
+      end
+    return result
+  end
+
 
 end

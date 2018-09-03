@@ -29,6 +29,7 @@
 
   </div>
 
+<h2><%= @user_products.count %> produits</h2>
 
  <div class="row">
   <% @user_products.each do |user_product| %>
@@ -44,12 +45,13 @@
 
         <div>
           <h4><%= user_product.product.name.capitalize %></h4>
-          <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s).</p>
+          <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s). Category :
+            <%=  user_product.category.name %> Peremption duration : <%= user_product.category.peremption_duration %></p>
         </div>
         <div class="card-menu">
-          <%= link_to user_products_path, method: :get do %>
+          <%= link_to edit_user_product_path(user_product) do%>
           <%= icon("fas", 'edit') %>
-          <% end %>
+          <% end  %>
           <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
           <%= icon("fas", 'trash-alt') %>
           <% end %>
@@ -58,20 +60,23 @@
     </div>
   </div>
 
-  <% if user_product.peremption_date %>
-    <% if (user_product.peremption_date - Date.today).to_i < 1 %>
-    <script>
-      document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
-    </script>
-    <% elsif (user_product.peremption_date - Date.today).to_i  == 1 || (user_product.peremption_date - Date.today).to_i < 3 %>
-    <script>
-      document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid orange";
-    </script>
-    <% else %>
-    <script>
-      document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid green";
-    </script>
-    <% end %>
+
+  <% if (user_product.peremption_date.nil?) %>
+  <script>
+    document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid black";
+  </script>
+  <% elsif (user_product.peremption_date - Date.today).to_i < 1 %>
+  <script>
+    document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
+  </script>
+  <% elsif (user_product.peremption_date - Date.today).to_i  == 1 || (user_product.peremption_date - Date.today).to_i < 3 %>
+  <script>
+    document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid orange";
+  </script>
+  <% else %>
+  <script>
+    document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid green";
+  </script>
   <% end %>
 
 
