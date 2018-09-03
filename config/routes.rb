@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'user_products/email', to: 'user_products#email'
   get 'test', to: 'pages#test'
 
+  get '/user_products/email/create', to: "user_products#create_user_products_from_emails", as: :create_from_email
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
