@@ -1,0 +1,18 @@
+<div class="row new-form-user-prod-edit">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+      <h3><%= user_product.product.name %></h3>
+
+      <%= simple_form_for user_product do |f| %>
+      <p>
+
+      <%= f.input :place, class: "input-light" %>
+      </p>
+      <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase"} %>
+      <%= f.input :peremption_date, as: :string, required: false, input_html: {class: "datepicker-peremption"} %>
+      <%= f.button :submit, class: "btn-frigo" %>
+      <% end %>
+
+  </div>
+</div>
+
