@@ -2,37 +2,14 @@
 @import "home";
 @import "test";
 
+.wrapper-index {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
 .index-container {
   margin-top: 30px;
 }
-
-
-// .polygon {
-//   position: relative;
-//   clip-path: polygon(50% 0%, 100% 0, 100% 32%, 18% 67%, 0 49%, 0 0);
-//   background: linear-gradient(to left, #134e5e, #71b280);
-//   height: 800px;
-// }
-
-
-// .header {
-//   position: relative;
-//   height: 300px;
-//   background-image: linear-gradient(to left, #134e5e, #71b280), url('<%= cl_image_tag("toa-heftiba-616938-unsplash.jpg", :height=>300, :crop=>"fit")%>');
-//   border-bottom-left-radius: 100% 60%;
-//   border-bottom-right-radius: 100% 60%;
-//   h1, h4, h5 {
-//     color: white;
-//   }
-// }
-
-// h1 {
-//   margin: 0;
-//   padding-top: 100px;
-//   text-align: center;
-//   color: white;
-// }
-
 
 .demo {
   width:80%;
@@ -45,11 +22,8 @@
     linear-gradient( 125deg, #6FB477 70%, transparent 0 );
   position: absolute;
   right: 0;
-}
-.wrapper-index {
-  display: flex;
-  flex-direction: row;
-  position: relative;
+  top: 0;
+  bottom: 0;
 }
 .index-container {
   max-height: 100vh;
@@ -58,4 +32,7 @@
     color: white;
   }
   max-width:80%
+}
+.header-hi {
+  margin-bottom: 30px;
 }
