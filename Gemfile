@@ -38,3 +38,5 @@ gem 'pg_search'
 # gem 'select2-rails'
 # gem 'underscore-rails'
 
+#gem 'addressable', '~> 2.4'
+
