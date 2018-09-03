@@ -10,18 +10,14 @@
   background-color: transparent;
   transition: 0.5s background-color ease;
 }
-
-
 .navbar-wagon-dropdown-menu {
   height: 90vh;
   width: 300px;
   transition: 1s;
 }
-
 .navbar-wagon-dropdown-menu a {
   text-align: center
 }
-
 .navbar-wagon-white {
   background-color: white;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -39,8 +35,6 @@
     color: $light-green;
   }
 }
-
-
 .navbar-wagon-left {
   display: flex;
   a {
@@ -48,7 +42,6 @@
     margin-right: 20px;
   }
 }
-
 .navbar-wagon-right {
   display: flex;
   a {
@@ -61,7 +54,6 @@
     color: $light-green;
   }
 }
-
 .navbar-wagon-not-sign-in {
   display: flex;
   justify-content: flex-end;
@@ -69,13 +61,86 @@
     text-align: right;
   }
 }
-
 .dropdown-font {
   font-family: 'Oleo Script', cursive;
   font-weight: bold;
   font-size: 40px;
 }
-
 .navbar-wagon-item {
   font-size: 20px;
+}
+
+// side_navbar
+#mySidenav {
+  flex: 0 0 20%;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.sidenav {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  width: 25%;
+  box-shadow: 0 0 40px rgba(0,0,0,.3);
+  text-align: center;
+}
+.sidenav-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%
+}
+.sidenav-content-menu {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: $light-green;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+#main {
+  transition: margin-right 0.5s;
+  padding: 16px;
+  float: right;
+}
+
+#main span {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0px 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
