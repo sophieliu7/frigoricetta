@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     @userproducts = @user.user_products.order('peremption_date ASC')
     @userproductlist = []
     @userproducts.first(2).each do |pdt|
-      @userproductlist << Product.find(pdt.product_id).name
+      @userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
     end
 
 
@@ -27,6 +27,7 @@ class PagesController < ApplicationController
 
     @userproductlist = @userproductlist.join('-')
     @phrase = URI.encode(@userproductlist)
+
 
     #@phrase = URI.parse URI.encode("aqt=utf8=\u{2713}&#{@userproductlist}")
 
