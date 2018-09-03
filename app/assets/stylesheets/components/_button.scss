@@ -2,7 +2,7 @@
   color: white;
   border: $green;
   border-radius: 50px;
-  background:linear-gradient(-225deg, $light-green 0%, $green 50%);
+  background:linear-gradient(-225deg, $light-green 0%, $green 99%);
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -28,4 +28,16 @@
   flex-direction: row;
   padding: 30px;
   justify-content: space-around;
+}
+
+.btn-frigo-index {
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 50px;
+}
+.btn-frigo-index:hover {
+  transition: 0.3s ease;
+  background-color: white;
+  color: $light-green;
+  border: 2px solid white;
 }

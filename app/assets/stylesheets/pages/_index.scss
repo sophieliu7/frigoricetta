@@ -1,6 +1,54 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "test";
 
 .index-container {
   margin-top: 30px;
+}
+
+
+// .polygon {
+//   position: relative;
+//   clip-path: polygon(50% 0%, 100% 0, 100% 32%, 18% 67%, 0 49%, 0 0);
+//   background: linear-gradient(to left, #134e5e, #71b280);
+//   height: 800px;
+// }
+
+
+// .header {
+//   position: relative;
+//   height: 300px;
+//   background-image: linear-gradient(to left, #134e5e, #71b280), url('<%= cl_image_tag("toa-heftiba-616938-unsplash.jpg", :height=>300, :crop=>"fit")%>');
+//   border-bottom-left-radius: 100% 60%;
+//   border-bottom-right-radius: 100% 60%;
+//   h1, h4, h5 {
+//     color: white;
+//   }
+// }
+
+// h1 {
+//   margin: 0;
+//   padding-top: 100px;
+//   text-align: center;
+//   color: white;
+// }
+
+
+.demo {
+  width:100%;
+  height:100vh;
+  background-image:
+    linear-gradient( 60deg, #4BA255 25%, transparent 0 ),
+    linear-gradient( 350deg, #93C799 20%, transparent 0 ),
+    linear-gradient( 125deg, transparent 70%, #81BE88 70% ),
+    linear-gradient( 125deg, #5DAB66 45%, transparent 0 ),
+    linear-gradient( 125deg, #6FB477 70%, transparent 0 );
+}
+
+.index-container {
+  height: 100vh;
+  overflow: scroll;
+  .header-hi {
+    color: white;
+  }
 }
