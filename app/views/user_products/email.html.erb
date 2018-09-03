@@ -5,24 +5,25 @@
 <br>
 <br>
 
-<h2>Buongiorno! </h2>
+<h2>Bonjour! </h2>
 
 
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
   <% if @email_content.nil? %>
     <p>Pour rajouter automatiquement ta dernière liste de course online, forward ton email
-    récapitulatif de ta commande à l'adresse suivante : f4b95b1aae9794804844ce5fbf32a11d@inbound.postmarkapp.com</p>
+    récapitulatif de ta commande à l'adresse suivante : monfrigo@frigoricetta.com</p>
   <% else %>
     <h4>Voici les aliments du dernier email que tu nous as forwardé !</h4>
-  <% end %>
         <p>Date d'envoi du mail : <%= @email_date %></p>
         <p>Email en provenance de : <%= @email_from %></p>
         <p>Utilisateur Frigoricetta : <%= @email_user %></p>
+        <p>Nombre de produits : <%= @email_content.length %></p>
 
+  <% end %>
     </div>
 
-      <h5><%= link_to "Rangez les courses ?", user_products_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
+      <h5><%= link_to "Rangez les courses ?", create_from_email_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
 
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <% if !@email_content.nil? %>
@@ -45,9 +46,9 @@
           <% end %>
         <% end %>
 
-        <div>
-          <%= @hash_food_category %>
-        </div>
+
+
+
 
     </div>
   </div>
