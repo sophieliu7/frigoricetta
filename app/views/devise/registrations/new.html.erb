@@ -14,12 +14,19 @@
                       required: true,
                       autofocus: true ,
                       input_html: { autocomplete: "email" }%>
+          <%= f.input :name,
+                      placeholder: 'Sophie',
+                      required: true,
+                      label: 'Nom',
+                      input_html: { autocomplete: "name" }%>
           <%= f.input :password,
                       required: true,
                       placeholder: '*********',
+                      label: 'Mot de Passe',
                       hint: ("#{@minimum_password_length} caratères minimum" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
+                      label: 'Confirmation du mot de Passe',
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
