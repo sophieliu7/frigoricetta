@@ -138,6 +138,14 @@ Category.create! name: 'SAUMON FUME', SubCategory: 'VIANDE & POISSONS', perempti
 Category.create! name: 'SELS', SubCategory: 'SALé', peremption_duration: 14400
 Category.create! name: 'ACC QUALITE ENVIRONNEMENT', SubCategory: 'LIQUIDES', peremption_duration: 680
 Category.create! name: 'SOFTS DRINKS"', SubCategory: 'LIQUIDES', peremption_duration: 680
+Category.create! name: 'POTAGES LIQUIDES', SubCategory: 'LIQUIDES', peremption_duration: 60
+Category.create! name: 'BIO INGREDIENT SUCRE CONFISERI', SubCategory: 'SUCRé', peremption_duration: 45
+Category.create! name: 'POISSON TRANSFORME', SubCategory: 'VIANDES & POISSONS', peremption_duration: 25
+Category.create! name: 'TARAMA', SubCategory: 'VIANDES & POISSONS', peremption_duration: 25
+Category.create! name: 'QUATRE-QUART - GAT.FAMILIAUX', SubCategory: 'SUCRé', peremption_duration: 45
+Category.create! name: 'BOISSON A BASE DE THE', SubCategory: 'LIQUIDES', peremption_duration: 60
+Category.create! name: 'THON', SubCategory: 'VIANDES & POISSONS', peremption_duration: 25
+Category.create! name: 'SALADES DE CRUDITES', SubCategory: 'LEGUMES', peremption_duration: 170
 puts "end category"
 
 puts "create product"
@@ -271,20 +279,17 @@ Product.create! name: 'Thé', category: Category.find_by(name: 'BOISSON A BASE D
 Product.create! name: 'Thon albacore au naturel Petit Navire', category: Category.find_by(name: 'THON'), validated: true
 Product.create! name: "Tomates cerise confites à l'origan Ensoleil'ade", category: Category.find_by(name: 'SALADES DE CRUDITES'), validated: true
 Product.create! name: 'Tomates cerises panaché Mandar', category: Category.find_by(name: 'SALADES DE CRUDITES'), validated: true
-Product.create! name: 'Viande bovine : 2 hampes Charal', category: Category.find_by(name: 'FQC RCE MIXTE A GRILLER,POELER'), validated: true
-Product.create! name: 'Viande bovine Bourguignon à mijoter Les Bons Morceaux', category: Category.find_by(name: 'BOEUF BRAISER/BOUILLIR CPE'), validated: true
-Product.create! name: 'Vinaigre', category: Category.find_by(name: 'VINAIGRES SPECIALITES VERRES'), validated: true
-Product.create! name: 'Yaourts aux fruits 0% Panier de Yoplait', category: Category.find_by(name: 'GOURMANDISE FROMAGERE'), validated: true
-Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
+# Product.create! name: 'Viande bovine : 2 hampes Charal', category: Category.find_by(name: 'FQC RCE MIXTE A GRILLER,POELER'), validated: true
+# Product.create! name: 'Viande bovine Bourguignon à mijoter Les Bons Morceaux', category: Category.find_by(name: 'BOEUF BRAISER/BOUILLIR CPE'), validated: true
+# Product.create! name: 'Vinaigre', category: Category.find_by(name: 'VINAIGRES SPECIALITES VERRES'), validated: true
+# Product.create! name: 'Yaourts aux fruits 0% Panier de Yoplait', category: Category.find_by(name: 'GOURMANDISE FROMAGERE'), validated: true
+# Product.create! name: 'Yaourts mûre myrtille Panier de Yoplait', category: Category.find_by(name: 'YAOURT BRASSE PULPE ADULTE'), validated: true
 puts "end product"
 
-puts "create user"
-User.create!(email: "clarabcps@gmail.com", password: '123456')
-puts "end user"
 
 puts "create use Product"
-UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Pâtes Linguine Academia Barilla'), place: 'placard', purchase_date: ('2018-08-16')
-UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Crevettes Jumbo décortiquées Carrefour'), place: 'frigo', purchase_date: ('2018-08-30')
-UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Escalopes de dinde Douce France'), place: 'frigo', purchase_date: Date.parse('2018-08-30')
-UserProduct.create! user: User.find_by(email: 'clarabcps@gmail.com'), product: Product.find_by(name: 'Chocolat bio noir Haïti 72% Ethiquable'), place: 'frigo', purchase_date: Date.parse('2018-08-16')
+UserProduct.create!(user: User.first, product: Product.first, place: "frigo", purchase_date: Date.today, peremption_date: Date.today)
+puts "end user product"
+
 puts "finished"
+
