@@ -50,6 +50,10 @@ class UserProductsController < ApplicationController
 
     # raise
     @user_product = UserProduct.new(user_products_params)
+    if @user_product.peremption_date.nil?
+      @user_product.peremption_date = Date.today + @category.peremption_duration.days
+    end
+
     @user_product.user = current_user
     # @user_product.save
     # raise
@@ -105,15 +109,16 @@ class UserProductsController < ApplicationController
       temp_product = Product.find_by_name(food)
       if temp_product.nil?
         # si n'existe pas alors on créé le Product, la catégorie (selon les cas) et le user product associé
-        temp_category = Category.find_by_name(category)
-          if temp_category.nil?
+          if Category.find_by_name(category).nil?
             Category.create!(name: category, SubCategory: "autre", peremption_duration: 30)
           end
-        new_product = Product.create!(name: food, category: Category.find_by_name(category))
-        UserProduct.create!(user: current_user, product: new_product, purchase_date: Date.today)
+        temp_category = Category.find_by_name(category)
+        new_product = Product.create!(name: food, category: temp_category)
+        UserProduct.create!(user: current_user, product: new_product, purchase_date: Date.today, peremption_date: Date.today + temp_category.peremption_duration.days)
       else
+        temp_category = Category.find_by_name(category)
         # si il existe alors on créé juste le user product avec l'association product
-        UserProduct.create!(user: current_user, product: temp_product, purchase_date: Date.today)
+        UserProduct.create!(user: current_user, product: temp_product, purchase_date: Date.today, peremption_date: Date.today + temp_category.peremption_duration.days)
       end
     end
     # on détruit l'email ensuite
