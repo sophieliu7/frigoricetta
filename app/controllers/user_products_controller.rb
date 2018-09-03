@@ -68,9 +68,9 @@ class UserProductsController < ApplicationController
 
   def update
     if @user_product.update(user_products_params)
-      render :index
+      redirect_to user_products_path
     else
-      render_error
+      render :edit
     end
   end
 
