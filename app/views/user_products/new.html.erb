@@ -5,13 +5,14 @@
       <%= form_tag load_form_path, method: :get, remote: true do %>
 
         <%= collection_select :products, :product_id, Product.all, :id, :name, {}, class: "search-form-new" %>
+        <br>
 
-        <%= submit_tag "Entrer" %>
+        <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
       <% end %>
       <div id="followingform"></div>
 
-
-      <%= link_to "Back to products", user_products_path %>
+      <br>
+      <%= link_to "Back to products", user_products_path, class: "btn btn-frigo" %>
     </div>
   </div>
 </div>
