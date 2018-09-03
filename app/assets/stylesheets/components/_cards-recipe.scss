@@ -6,6 +6,7 @@
 
 body {
   background: #f1f1f1;
+  margin-top:100px;
 }
 
 $color_white: #fff;
@@ -13,12 +14,15 @@ $color_prime: #5ad67d;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
 
+
+
+
 .blog-card {
   display: flex;
   flex-direction: column;
-  margin: 1rem auto;
+  margin: 1rem auto 0rem;
   box-shadow: 0 3px 7px -1px rgba(#000, .1);
-  margin-bottom: 1.6%;
+  // margin-bottom: 1.6%;
   background: $color_white;
   line-height: 1.4;
   border-radius: 5px;
@@ -62,7 +66,7 @@ $color_grey_dark: #a2a2a2;
     top: 0;
     bottom: 0;
     left: -100%;
-    margin: auto;
+    // margin: auto;
     transition: left .2s;
     background: rgba(#000, .6);
     color: $color_white;
@@ -74,22 +78,23 @@ $color_grey_dark: #a2a2a2;
     }
     ul li {
       display: inline-block;
+
     }
     .author:before {
-      font-family: FontAwesome;
+      // font-family: FontAwesome;
       margin-right: 10px;
       content: "\f007";
     }
 
     .date:before {
-      font-family: FontAwesome;
+      // font-family: FontAwesome;
       margin-right: 10px;
       content: "\f133";
     }
 
     .tags {
       ul:before {
-        font-family: FontAwesome;
+        //font-family: FontAwesome;
         content: "\f02b";
         margin-right: 10px;
       }
@@ -108,7 +113,7 @@ $color_grey_dark: #a2a2a2;
     z-index: 1;
     h1,
     h2 {
-      font-family: Poppins, sans-serif;
+      // font-family: Poppins, sans-serif;
     }
     h1 {
       line-height: 1;
@@ -117,7 +122,7 @@ $color_grey_dark: #a2a2a2;
     }
     h2 {
       font-size: 1rem;
-      font-weight: 300;
+      // font-weight: 300;
       text-transform: uppercase;
       color: $color_grey_dark;
       margin-top: 5px;
@@ -130,7 +135,7 @@ $color_grey_dark: #a2a2a2;
         position: relative;
         &:after {
           content: "\f061";
-          font-family: FontAwesome;
+          // font-family: FontAwesome;
           margin-left: -10px;
           opacity: 0;
           vertical-align: middle;
@@ -170,6 +175,8 @@ $color_grey_dark: #a2a2a2;
 
 
   @media (min-width: 640px) {
+
+
     flex-direction: row;
     max-width: 700px;
     .meta {
@@ -211,15 +218,20 @@ $color_grey_dark: #a2a2a2;
 .drop-card {
   display: hidden;
   width:700px;
-  margin: 1rem auto;
+  margin: 0 auto;
   box-shadow: 0 3px 7px -1px rgba(#000, .1);
-  margin-bottom: 1.6%;
+  // margin-bottom: 1.6%;
   background: $color_white;
   line-height: 1.4;
   border-radius: 5px;
   overflow: hidden;
   z-index: 0;
-  padding: 15px;
+  padding: 10px;
+  margin-bottom:5px;
+
+  h4{
+    background-color:#eee;
+  }
 }
 
   @media (max-width: 640px) {
@@ -227,4 +239,15 @@ $color_grey_dark: #a2a2a2;
   width:100%;
 
 }
+
+h1{
+      font-size:20px;
+}
+
+h4{
+      font-size:15px;
+      background-color:#eee;
+}
+
+
   }
