@@ -63,3 +63,15 @@ window.$ = $
 
 addreturntab();
 
+
+/* blur on modal NEW aliment open, unblur on close */
+$('#add-aliment').on('show.bs.modal', function () {
+   $('.demo').addClass('blur');
+})
+
+$('#add-aliment').on('hide.bs.modal', function () {
+   $('.demo').removeClass('blur');
+})
+
+
+
