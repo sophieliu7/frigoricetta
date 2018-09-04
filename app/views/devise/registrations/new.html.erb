@@ -1,6 +1,6 @@
 <div class="container form-sign-in">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <br>
       <h2>Créer un compte</h2>
       <br>
@@ -13,30 +13,33 @@
                       placeholder: 'sophie@domain.com',
                       required: true,
                       autofocus: true ,
-                      input_html: { autocomplete: "email" }%>
+                      input_html: { autocomplete: "email" ,class: "input-light"}%>
           <%= f.input :name,
                       placeholder: 'Sophie',
                       required: true,
                       label: 'Nom',
-                      input_html: { autocomplete: "name" }%>
+                      input_html: { autocomplete: "name" ,class: "input-light"}%>
           <%= f.input :password,
                       required: true,
                       placeholder: '*********',
-                      label: 'Mot de Passe',
+                      label: 'Mot de passe',
                       hint: ("#{@minimum_password_length} caratères minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { autocomplete: "new-password",class: "input-light" } %>
           <%= f.input :password_confirmation,
-                      label: 'Confirmation du mot de Passe',
+                      label: 'Confirmation du mot de passe',
                       required: true,
-                      input_html: { autocomplete: "new-password" } %>
+                      input_html: { autocomplete: "new-password",class: "input-light" } %>
         </div>
-        <br>
+
         <div class="form-actions">
           <%= f.button :submit, "C'est parti !", class:"btn-frigo btn-form" %>
         </div>
       <% end %>
+      <br>
+      <div class="text-center">
 
       <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
