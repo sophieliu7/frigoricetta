@@ -1,17 +1,15 @@
 
 <div class="container">
   <div class="row new-form-user-prod">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
       <h1>Ajouter un aliment</h1>
-        <%= form_tag load_form_path, method: :get, remote: true do %>
-
-          <%= collection_select :products, :product_id, Product.all, :id, :name, {}, input_html: {class: "form-search-new"}, placeholder: "Tape ton aliment" %>
-
+      <div class="new-form-search">
+        <%= form_tag load_form_path, method: :get, remote: true, style: "width: 100%"  do %>
+          <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment", style: "width: 80%" %>
           <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
         <% end %>
+      </div>
       <div id="followingform"></div>
-
-
     </div>
   </div>
 </div>
