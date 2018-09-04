@@ -110,7 +110,7 @@
                       Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jours
                     <% end %>
 
-                    <% if user_product.place != '' %>
+                    <% if !user_product.place.nil? %>
                       - <%=  user_product.place %>
                     <% end %>
                   </p>
