@@ -72,11 +72,13 @@
 
 // side_navbar
 #mySidenav {
+  width: 20%;
+  display: flex;
   flex: 0 0 20%;
   height: 100vh;
   position: sticky !important;
   top: 0 !important;
-  max-height: 100%;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
@@ -90,7 +92,6 @@
   background-color: #fff;
   overflow-x: hidden;
   padding-top: 20px;
-  width: 25%;
   box-shadow: 0 0 40px rgba(0,0,0,.3);
   text-align: center;
 }
@@ -151,6 +152,7 @@
 }
 .sidenav-general {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
