@@ -4,7 +4,7 @@
   flex-direction:row;
   justify-content: space-between;
   border-left: 5px solid;
-
+  border-radius: 5px;
 
 
  /* justify-content: flex-start;
@@ -87,6 +87,53 @@ a{
 
 }
 
+
+.card-email {
+  margin-bottom:10px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  border-left: 5px solid;
+  border-radius: 5px;
+
+
+ /* justify-content: flex-start;
+  align-items: flex-start;
+  */
+  height:80px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-position: center;
+  color: black;
+  position: relative;
+  background-color: white;
+  h4 {
+    // vertical-align: middle;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+
+  }
+  p {
+    padding: 2px 20px;
+  }
+
+
+
+
+&:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  }
+
+}
+
+ .centre-vertical {
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center;
+  }
+
 .font-25 {
   font-size:25px;
 }
+
