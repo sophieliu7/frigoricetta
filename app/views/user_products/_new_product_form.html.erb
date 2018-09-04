@@ -3,11 +3,11 @@
   <%= hidden_field_tag :product_name, @product_name %>
 
   <!-- search pour catégories -->
-  <%= select_tag("main_category", options_for_select(Category.main_categories), id: "main_category", class: "search-form-new") %>
+  <%= select_tag("main_category", options_for_select(Category.main_categories), id: "main_category", class: "new-main-cat") %>
 
   <div class="js-categories-container">
     <% Category.grouped_by_main_category.each do |main_category, categories| %>
-      <%= select_tag("category_#{main_category.downcase}", options_from_collection_for_select(categories, :id, :name), class: "search-form-new js-categories #{'hidden' unless main_category == Category.main_categories.first}") %>
+      <%= select_tag("category_#{main_category.downcase}", options_from_collection_for_select(categories, :id, :name), class: "js-categories #{'hidden' unless main_category == Category.main_categories.first}") %>
     <% end %>
   </div>
 
