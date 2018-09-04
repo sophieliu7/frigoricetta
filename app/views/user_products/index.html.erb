@@ -30,23 +30,23 @@
                 </div>
                 <div class="card-menu">
 
-                 <button type="button" class="btn-neutre fas fa-edit" data-toggle="modal" data-target="#test<%= index %>">
-                </button>
+                  <button type="button" class="btn-neutre fas fa-edit" data-toggle="modal" data-target="#test<%= index %>">
+                  </button>
 
 
-                <div class="modal fade" id="test<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modifier</h4>
-                      </div>
-                      <div class="modal-body">
-                        <%= render "edit", user_product: user_product %>
+                  <div class="modal fade" id="test<%= index %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Modifier</h4>
+                        </div>
+                        <div class="modal-body">
+                          <%= render "edit", user_product: user_product %>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
 
 
@@ -80,8 +80,8 @@
 
             </div>
 
-        </div>
-          <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 .email-container {
   position: relative;
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -9,16 +9,18 @@
 }
 .email-message {
   position: absolute;
+  flex-direction: column;
   margin-top: 40px;
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   top: 25%;
-}
-.empty-mail {
   color: white;
-  .far {
-    font-size: 80px;
+  p {
+    font-size: 20px;
+    strong {
+      text-decoration: underline;
+    }
   }
 }
 .empty-mail-logo {
@@ -31,4 +33,9 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  .far {
+    font-size: 90px;
+    color: white;
+    font-weight: lighter;
+  }
 }

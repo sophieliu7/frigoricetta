@@ -6,12 +6,10 @@
 
       <div class="email-message">
         <% if @email_content.nil? %>
-          <div class="empty-mail">
-            <div class="empty-mail-logo"><i class="far fa-envelope-open"></i></div>
-            <div class="empty-mail-message">
-              <p>Pour rajouter automatiquement ta dernière liste de course online, forward ton email
-            récapitulatif de ta commande à l'adresse suivante : monfrigo@frigoricetta.com</p>
-            </div>
+          <div class="empty-mail-logo"><i class="far fa-envelope-open"></i></div>
+          <div class="empty-mail-message">
+            <p>Pour rajouter automatiquement ta dernière liste de course online, forward ton email
+          récapitulatif de ta commande à l'adresse suivante : <strong>monfrigo@frigoricetta.com</strong></p>
           </div>
         <% else %>
           <div data-user-product-id>
