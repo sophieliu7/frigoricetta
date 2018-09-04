@@ -393,7 +393,7 @@ puts "end product"
 puts "create use Product"
 UserProduct.create! user: User.find_by(email: "clarabcps@gmail.com"), product: Product.find_by(name: "Pâtes Spaghetti Barilla"), place: "placard", purchase_date: ('2018-08-16'), peremption_date: ('2019-08-16')
 UserProduct.create! user: User.find_by(email: "clarabcps@gmail.com"), product: Product.find_by(name: "Crevettes Jumbo décortiquées Carrefour"), place: "frigo", purchase_date: ('2018-08-30'), peremption_date: ('2018-09-03')
-UserProduct.create! user: User.find_by(email: "clarabcps@gmail.com"), product: Product.find_by(name: "Escalopes de dinde Douce France"), place: "frigo", purchase_date: ('2018-08-30'), peremption_date: ('2018-08-30')
+UserProduct.create! user: User.find_by(email: "clarabcps@gmail.com"), product: Product.find_by(name: "Escalopes de dinde Douce France"), place: "frigo", purchase_date: ('2018-08-30'), peremption_date: ('2018-09-30')
 UserProduct.create! user: User.find_by(email: "clarabcps@gmail.com"), product: Product.find_by(name: "Chocolat bio noir Haïti 72% Ethiquable"), place: "frigo", purchase_date: ('2018-08-16'), peremption_date: ('2020-08-16')
 puts "end user product"
 
