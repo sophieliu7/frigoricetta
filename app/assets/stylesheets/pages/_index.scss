@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "test";
+@import "email";
 
 .wrapper-index {
   display: flex;
@@ -27,6 +28,9 @@
   margin-top: 30px;
   margin-right: 0;
   max-height: 100vh;
+  h1 {
+    color: white;
+  }
   .header-hi {
     color: white;
   }
