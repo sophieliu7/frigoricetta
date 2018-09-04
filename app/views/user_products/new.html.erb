@@ -6,8 +6,7 @@
       <h1>Ajouter un aliment</h1>
       <%= form_tag load_form_path, method: :get, remote: true do %>
 
-        <%= collection_select :products, :product_id, Product.all, :id, :name, {}, class: "search-form-new" %>
-        <br>
+        <%= collection_select :products, :product_id, Product.all, :id, :name, {}, class: "search-form-new", placeholder: "Tape ton aliment" %>
 
         <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
       <% end %>

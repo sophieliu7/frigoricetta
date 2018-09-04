@@ -1,7 +1,8 @@
 class Category < ApplicationRecord
   has_many :products
   has_many :user_products, through: :products
-    IMAGECATEGORY = {
+
+  IMAGECATEGORY = {
     "LEGUMES": "https://cdn.iconscout.com/icon/premium/png-256-thumb/vegetables-18-591002.png",
     "CHARCUTERIE": "https://www.shareicon.net/data/512x512/2015/12/29/695073_food_512x512.png",
     "SURGELES": "https://www.shareicon.net/download/2016/02/14/718828_snow_512x512.png",
@@ -16,10 +17,18 @@ class Category < ApplicationRecord
     "PAINSPATISSERIE": "https://image.flaticon.com/icons/svg/108/108019.svg",
     "CONSERVES": "https://cdn.icon-icons.com/icons2/732/PNG/512/canned-food_icon-icons.com_62916.png",
     "VIANDEPOISSONS": "c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png"
-}
+  }
+
+  def self.main_categories
+    group(:SubCategory).order(:SubCategory).pluck(:SubCategory)
+  end
+
+  def self.grouped_by_main_category
+    Category.order(:name).group_by(&:SubCategory)
+  end
 
 
-  def self.order
+  def self.categories_for_select
     sub_categories = self.all.sort_by(&:SubCategory)
     hash = {"BIO" => []}
     sub_categories.each do |object|
