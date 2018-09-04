@@ -5,7 +5,7 @@
 
     <div class="container text-center index-header">
       <div class="header-hi">
-        <h1>Hi, Clara</h1>
+        <h1>Salut, <%= @user.name %></h1>
 
         <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
             <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
@@ -160,8 +160,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 
