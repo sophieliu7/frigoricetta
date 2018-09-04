@@ -13,7 +13,15 @@
   </div>
   <div class="sidenav-general">
     <div class="sidenav-profil"><h5><%= link_to "Profil", "#" %></h5></div>
-    <div class="sidenav-logout"><h5><%= link_to "Log Out", "#" %></h5></div>
+
+    <div class="sidenav-logout">
+      <h5>
+        <%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+      </h5>
+    </div>
+
   </div>
 </div>
 
