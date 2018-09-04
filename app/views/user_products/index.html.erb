@@ -82,7 +82,7 @@
 
                   <% else %>
                   <div class="food-icon" style="padding:15px;">
-                    <div style="background-image: url('https://images.vexels.com/media/users/3/143184/isolated/preview/c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png'); width:50px; height:50px; background-size: 50px 50px;opacity: 0.5;"></div>
+                    <div style="background-image: url('https://images.vexels.com/media/users/3/143184/isolated/preview/c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png'); width:50px; height:50px; background-size: 50px 50px;opacity: 0.5; margin-top: 10px; margin-left: 5px;"></div>
                   </div>
 
                   <% end %>
@@ -91,8 +91,14 @@
 
 
 
-                  <h4><%= user_product.product.name.capitalize %></h4>
-                  <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s)</p>
+                  <h4><%= user_product.product.name.capitalize.first(35) %></h4>
+                  <p>Ajouté il y a
+                    <% if (Date.today - user_product.purchase_date).to_i > 1 %>
+                      <%= (Date.today - user_product.purchase_date).to_i %> jours
+                    <% else %>
+                      <%= (Date.today - user_product.purchase_date).to_i %> jour
+                    <% end %>
+                  </p>
                 </div>
 
 
@@ -104,7 +110,7 @@
 
                 <div class="card-menu">
 
-                  <button type="button" class="btn-neutre fas fa-edit font25" data-toggle="modal" data-target="#test<%= index %>">
+                  <button type="button" class="btn-neutre fas fa-edit font25 light-green" data-toggle="modal" data-target="#test<%= index %>">
                   </button>
 
 
@@ -139,9 +145,9 @@
               </script>
             <% elsif (user_product.peremption_date - Date.today).to_i < 4 %>
               <script>
-                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid #e94f37";
               </script>
-            <% elsif (user_product.peremption_date - Date.today).to_i  > 4 || (user_product.peremption_date - Date.today).to_i < 8 %>
+            <% elsif (user_product.peremption_date - Date.today).to_i  > 4 && (user_product.peremption_date - Date.today).to_i < 8 %>
               <script>
                 document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid orange";
               </script>
