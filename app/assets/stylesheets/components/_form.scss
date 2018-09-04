@@ -33,6 +33,7 @@
   h1 {
     margin-bottom: 15px;
   }
+  padding-bottom: 20px;
 }
 
 .search-form-new {
@@ -53,13 +54,18 @@
 
 .input-light {
   border: none;
-  font-size: 20px;
   border-bottom: 1px solid #c9c1c1;
   box-shadow: none;
+  background-color: white !important
 }
 
 .input-light:focus {
   border: none;
   border-bottom: 1px solid $light-green;
   box-shadow: none;
+  background-color: white !important
+}
+
+.font-20 {
+  font-size: 20px;
 }

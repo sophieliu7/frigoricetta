@@ -5,16 +5,16 @@
 
     <div class="container text-center index-header">
       <div class="header-hi">
-        <h1>Salut, <%= @user.name %></h1>
+        <h4>Salut, <%= @user.name %></h4>
 
         <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
-            <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
+            <h1><%= @user_products.count %> produits dans ta cuisine</h4>
             <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
             <h3>Tu as <%= @user_products.count %> produits dans ta cuisine</h3>
             <h5>Let's cook it !</h5>
         <% else %>
-            <h4>What's in your fridge today ?</h4>
-            <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
+            <h1>Ma cuisine</h1>
+            <h4>Tu as <strong><%= @user_products.count %></strong> produits dans ta cuisine</h4>
         <% end %>
 
       </div>
@@ -87,7 +87,7 @@
 
                   <% end %>
 
-                <div>
+                <div style="width: 500px;">
 
 
 
@@ -104,7 +104,7 @@
 
                 <div class="card-menu">
 
-                  <button type="button" class="btn-neutre fas fa-edit" data-toggle="modal" data-target="#test<%= index %>">
+                  <button type="button" class="btn-neutre fas fa-edit font25" data-toggle="modal" data-target="#test<%= index %>">
                   </button>
 
 

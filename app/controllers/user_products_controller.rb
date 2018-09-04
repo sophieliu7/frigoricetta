@@ -44,7 +44,7 @@ class UserProductsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:categories])
+    @category = Category.find(params[:category_id])
     @product = Product.find_by(name: params[:product_name]) || Product.new(name: params[:product_name])
     @product.category = @category
     @product.save

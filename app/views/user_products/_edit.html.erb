@@ -4,14 +4,15 @@
       <h3><%= user_product.product.name %></h3>
 
       <%= simple_form_for user_product do |f| %>
-      <p>
 
-      <%= f.input :place, label: "Où est-il rangé?", placeholder: "placard, frigo...", input_html: { class: "input-light" } %>
-      </p>
-      <%= f.input :purchase_date, label: "Date d'achat", as: :string, required: false, input_html: { class: "datepicker-purchase"} %>
-      <%= f.input :peremption_date, label: "Date de péremption", as: :string, required: false, input_html: {class: "datepicker-peremption"} %>
+      <%= f.input :place, label: "Où veux-tu le ranger ?", placeholder: "placard, frigo...", input_html: { class: "input-light" }, label_html: { class: "font-20"} %>
 
-      <%= f.button :submit, 'Modifier', class: "btn-frigo"%>
+      <%= f.input :purchase_date, label: "Date d'achat", as: :string, required: false, input_html: { class: "datepicker-purchase input-light"}, label_html: { class: "font-20"}  %>
+      <%= f.input :peremption_date, label: "Date de péremption", as: :string, required: false, input_html: {class: "datepicker-peremption input-light"}, label_html: { class: "font-20"}  %>
+
+      <div class="text-center">
+      <%= f.button :submit, 'Modifier cet aliment', class: "btn-frigo btn-form"%>
+      </div>
       <% end %>
 
   </div>
