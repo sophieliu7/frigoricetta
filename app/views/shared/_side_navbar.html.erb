@@ -9,6 +9,17 @@
       <li><%= link_to "Ajouter un aliment", new_user_product_path, class: "ma-cuisine" %></li>
       <li><%= link_to "Ajouter une liste de courses", user_products_email_path, class: "ma-cuisine" %></li>
       <li><%= link_to "Recettes", recette_path, id: "mes-recettes" %></li>
+
+
+<div class="email-notif">
+
+        <% if InboundEmail.where(user: current_user).count > 0 %>
+          email reçu!
+        <% end %>
+
+</div>
+
+
     </ul>
   </div>
   <div class="sidenav-general">
