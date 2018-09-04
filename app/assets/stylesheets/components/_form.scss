@@ -52,5 +52,13 @@
 
 .input-light {
   border: none;
+  border-bottom: 1px solid #c9c1c1;
+  box-shadow: none;
+}
+
+.input-light:focus {
+  border: none;
+  border-bottom: 1px solid $light-green;
+  box-shadow: none;
 }
 
