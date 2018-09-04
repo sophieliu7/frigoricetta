@@ -3,6 +3,7 @@ class UserProductsController < ApplicationController
   before_action :set_user_product, only: [:edit, :update, :destroy]
 
   def index
+    @user = current_user
     if params[:query].present?
       @user_products = UserProduct.joins(:product).where("products.name ILIKE :query", query: "%#{params[:query]}%")
     else
