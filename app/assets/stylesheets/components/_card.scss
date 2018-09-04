@@ -118,10 +118,7 @@ a{
     padding: 2px 20px;
   }
 
-  .centre-vertical {
-    flex-direction: column; /* direction d'affichage verticale */
-    justify-content: center;
-  }
+
 
 
 &:hover {
@@ -129,3 +126,8 @@ a{
   }
 
 }
+
+ .centre-vertical {
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center;
+  }

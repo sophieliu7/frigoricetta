@@ -1,0 +1,41 @@
+.email-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 80%;
+  height: 100vh;
+}
+.email-message {
+  position: absolute;
+  flex-direction: column;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 25%;
+  color: white;
+  p {
+    font-size: 20px;
+    strong {
+      text-decoration: underline;
+    }
+  }
+}
+.empty-mail-logo {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 6px solid white;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  .far {
+    font-size: 90px;
+    color: white;
+    font-weight: lighter;
+  }
+}
