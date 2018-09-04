@@ -6,7 +6,7 @@
       <%= simple_form_for user_product do |f| %>
       <p>
 
-      <%= f.input :place, class: "input-light" %>
+      <%= f.input :place, class: "input-light", label: "Ou est-il rangé?", placeholder: "placard", class:"form-control" %>
       </p>
       <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase"} %>
       <%= f.input :peremption_date, as: :string, required: false, input_html: {class: "datepicker-peremption"} %>
