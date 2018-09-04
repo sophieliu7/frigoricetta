@@ -20,6 +20,15 @@
       </div>
     </div>
 
+    <%= form_tag user_products_path, method: :get do %>
+       <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-bar",
+        placeholder: "🔍  Rechercher un aliment de mon frigo ou un lieu de stockage"
+        # placeholder: "&#xF002; Search",style="font-family:Arial, FontAwesome"
+      %>
+    <% end %>
+
     <div class="index-container">
 
       <div class="row">
@@ -91,12 +100,18 @@
 
 
 
-                  <h4><%= user_product.product.name.capitalize.first(35) %></h4>
-                  <p>Ajouté il y a
-                    <% if (Date.today - user_product.purchase_date).to_i > 1 %>
-                      <%= (Date.today - user_product.purchase_date).to_i %> jours
+                  <h4><%= truncate(user_product.product.name.capitalize,length: 35) %></h4>
+                  <p> 🗓
+                    <% if (Date.today - user_product.purchase_date).to_i == 0 %>
+                        Ajouté aujourd'hui
+                    <% elsif (Date.today - user_product.purchase_date).to_i == 1 %>
+                      Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour
                     <% else %>
-                      <%= (Date.today - user_product.purchase_date).to_i %> jour
+                      Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jours
+                    <% end %>
+
+                    <% if !user_product.place.nil? %>
+                      - <%=  user_product.place %>
                     <% end %>
                   </p>
                 </div>
