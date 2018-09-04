@@ -1,12 +1,9 @@
 
 <div class="container index-container text-center">
   <div data-user-product-id>
-
-<br>
-<br>
-
-<h2>Bonjour! </h2>
-
+    <br>
+    <br>
+    <h2> <%= current_user.name %> , </h2>
 
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
@@ -19,34 +16,22 @@
         <p>Email en provenance de : <%= @email_from %></p>
         <p>Utilisateur Frigoricetta : <%= @email_user %></p>
         <p>Nombre de produits : <%= @email_content.length %></p>
-
   <% end %>
+
     </div>
 
       <h5><%= link_to "Rangez les courses ?", create_from_email_path, class:"btn btn-lg btn-primary btn-frigo" %></h5>
 
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <% if !@email_content.nil? %>
-
           <% @email_content.each do |food| %>
 
-
-            <div class="card">
-            <h4><%= food %></h4>
-              <div class="card-menu">
-
-                <%= link_to user_product_path(food), method: :delete, remote: true do %>
-                <%= icon("fas", 'trash-alt') %>
-                <% end %>
-              </div>
+            <div class="card-email centre-vertical">
+              <h4><%= food %></h4>
             </div>
 
           <% end %>
         <% end %>
-
-
-
-
 
     </div>
   </div>
