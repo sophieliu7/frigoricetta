@@ -23,24 +23,57 @@ flatpickr(".datepicker-peremption", {
     minDate: "today"
 })
 
-$("#categories_category_id").select2({
+function hide_categories() {
+  $(".js-categories-container .select2-container").addClass("hidden")
+}
+
+function display_first_category(main_category_name) {
+  // display categories that belong to main category
+  $("#select2-category_" + main_category_name + "-container").closest(".select2-container").removeClass("hidden");
+
+  // and set the category id to the FIRST category
+  var category_id = $("#category_" + main_category_name + ":first").val();
+  $("#category_id").val(category_id);
+}
+
+
+// MAIN CATEGORY
+$("#main_category").select2({
   tags: true,
   matcher: matchCustom,
-  minimumResultsForSearch: 5,
   placeholder: {
     id: '-1', // the value of the option
     text: 'Select an option'
   },
   allowClear: true
 });
-$("#categories_subcat").select2({
-      tags: true,
-      matcher: matchCustom,
-      placeholder: {
-        id: '-1', // the value of the option
-        text: 'Select an option'
-      },
-      allowClear: true
-    });
+
+$('#main_category').on('select2:select', function (e) {
+  var main_category_name = $('#main_category').val().toLowerCase();
+
+  hide_categories();
+  display_first_category(main_category_name);
+});
+
+// CATEGORIES
+$(".js-categories").select2({
+  tags: true,
+  matcher: matchCustom,
+  placeholder: {
+    id: '-1', // the value of the option
+    text: 'Select an option'
+  },
+  allowClear: true
+});
+
+$('.js-categories').on('select2:select', function (e) {
+  var category_id = $(e.target).val();
+  $("#category_id").val(category_id);
+});
+
+hide_categories();
+
+var main_category_name = $('#main_category').val().toLowerCase();
+display_first_category(main_category_name);
 
 // matchCustom()
