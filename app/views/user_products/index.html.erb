@@ -5,20 +5,29 @@
 
     <div class="container text-center index-header">
       <div class="header-hi">
-        <h1>Hi, Clara</h1>
+        <h4>Salut, <%= @user.name %></h4>
 
         <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
-            <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
+            <h1><%= @user_products.count %> produits dans ta cuisine</h4>
             <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
             <h3>Tu as <%= @user_products.count %> produits dans ta cuisine</h3>
             <h5>Let's cook it !</h5>
         <% else %>
-            <h4>What's in your fridge today ?</h4>
-            <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
+            <h1>Ma cuisine</h1>
+            <h4>Tu as <strong><%= @user_products.count %></strong> produits dans ta cuisine</h4>
         <% end %>
 
       </div>
     </div>
+
+    <%= form_tag user_products_path, method: :get do %>
+       <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search-bar",
+        placeholder: "🔍  Rechercher un aliment de mon frigo ou un lieu de stockage"
+        # placeholder: "&#xF002; Search",style="font-family:Arial, FontAwesome"
+      %>
+    <% end %>
 
     <div class="index-container">
 
@@ -82,17 +91,29 @@
 
                   <% else %>
                   <div class="food-icon" style="padding:15px;">
-                    <div style="background-image: url('https://images.vexels.com/media/users/3/143184/isolated/preview/c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png'); width:50px; height:50px; background-size: 50px 50px;opacity: 0.5;"></div>
+                    <div style="background-image: url('https://images.vexels.com/media/users/3/143184/isolated/preview/c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png'); width:50px; height:50px; background-size: 50px 50px;opacity: 0.5; margin-top: 10px; margin-left: 5px;"></div>
                   </div>
 
                   <% end %>
 
-                <div>
+                <div style="width: 500px;">
 
 
 
-                  <h4><%= user_product.product.name.capitalize %></h4>
-                  <p>Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour(s)</p>
+                  <h4><%= truncate(user_product.product.name.capitalize,length: 35) %></h4>
+                  <p> 🗓
+                    <% if (Date.today - user_product.purchase_date).to_i == 0 %>
+                        Ajouté aujourd'hui
+                    <% elsif (Date.today - user_product.purchase_date).to_i == 1 %>
+                      Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jour
+                    <% else %>
+                      Ajouté il y a <%= (Date.today - user_product.purchase_date).to_i %> jours
+                    <% end %>
+
+                    <% if !user_product.place.nil? %>
+                      - <%=  user_product.place %>
+                    <% end %>
+                  </p>
                 </div>
 
 
@@ -104,7 +125,7 @@
 
                 <div class="card-menu">
 
-                  <button type="button" class="btn-neutre fas fa-edit" data-toggle="modal" data-target="#test<%= index %>">
+                  <button type="button" class="btn-neutre fas fa-edit font25 light-green" data-toggle="modal" data-target="#test<%= index %>">
                   </button>
 
 
@@ -139,9 +160,9 @@
               </script>
             <% elsif (user_product.peremption_date - Date.today).to_i < 4 %>
               <script>
-                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid #e94f37";
               </script>
-            <% elsif (user_product.peremption_date - Date.today).to_i  > 4 || (user_product.peremption_date - Date.today).to_i < 8 %>
+            <% elsif (user_product.peremption_date - Date.today).to_i  > 4 && (user_product.peremption_date - Date.today).to_i < 8 %>
               <script>
                 document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid orange";
               </script>
@@ -160,8 +181,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 

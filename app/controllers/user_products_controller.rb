@@ -3,8 +3,9 @@ class UserProductsController < ApplicationController
   before_action :set_user_product, only: [:edit, :update, :destroy]
 
   def index
+    @user = current_user
     if params[:query].present?
-      @user_products = UserProduct.joins(:product).where("products.name ILIKE :query", query: "%#{params[:query]}%")
+      @user_products = UserProduct.global_search(params[:query])
     else
       @user_products = UserProduct.where(user_id: current_user).order('peremption_date ASC')
     end
