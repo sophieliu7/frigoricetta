@@ -10,12 +10,14 @@ class UserProduct < ApplicationRecord
   include PgSearch
 
   pg_search_scope :global_search,
+    against: [ :place, :peremption_date, :purchase_date ],
     associated_against: {
-      product: [ :name],
-      using: {
-        tsearch: { prefix: true}
-      }
+      product: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true}
     }
+
 
   def category
     product.category
