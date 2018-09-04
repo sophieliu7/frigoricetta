@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="wrapper-mail">
   <%= render "shared/side_navbar" %>
   <div class="demo">
@@ -26,25 +27,24 @@
         <% end %>
       </div>
 
-
       <% if !@email_content.nil? %>
-      <div class="row">
-        <% @email_content.each do |user_product| %>
-          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-            <div class="card">
-              <h4><%= user_product %></h4>
-              <div class="card-menu">
-                <%= link_to user_product_path(user_product), method: :patch do %>
-                <%= icon("fas", 'edit') %>
-                <% end %>
-                <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
-                <%= icon("fas", 'trash-alt') %>
-                <% end %>
+        <div class="row">
+          <% @email_content.each do |user_product| %>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+              <div class="card">
+
+                <h4><%= user_product %></h4>
+
+                <div class="card-menu">
+
+                  <%= link_to user_product_path(food), method: :delete, remote: true do %>
+                  <%= icon("fas", 'trash-alt') %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
       <% end %>
 
     </div>

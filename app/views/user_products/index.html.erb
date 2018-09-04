@@ -6,13 +6,17 @@
     <div class="container text-center index-header">
       <div class="header-hi">
         <h1>Hi, Clara</h1>
-        <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 1 %>
-          <!-- <h3>Tu as <%#= @user_products.count %> produits dans ta cuisine</h3> -->
-          <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
-          <h5>Let's cook it !</h5>
+
+        <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
+            <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
+            <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
+            <h3>Tu as <%= @user_products.count %> produits dans ta cuisine</h3>
+            <h5>Let's cook it !</h5>
         <% else %>
-          <h4>What's in your fridge today ?</h4>
+            <h4>What's in your fridge today ?</h4>
+            <h4>Tu as <%= @user_products.count %> produits dans ta cuisine</h4>
         <% end %>
+
       </div>
     </div>
 
