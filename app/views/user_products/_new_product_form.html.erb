@@ -13,7 +13,7 @@
 
   <%= hidden_field_tag :category_id %>
 
-  <%= f.input :place %>
+  <%= f.input :place, label: "Où veux-tu le ranger ?", placeholder: "placard, frigo...", input_html: { class: "input-light" }, label_html: { class: "font-20"} %>
 
   <div class="form-select-date">
     <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase form-date"} %>

@@ -38,6 +38,10 @@
 
 // new-form
 
+.new-form-modal {
+  width: 100%;
+}
+
 .search-form-new {
   border: 1px solid black;
   border-radius: 3px;
@@ -61,8 +65,10 @@
   }
 }
 .new-form-search {
-  display: flex;
-  align-items: center;
+  display: block;
+  // align-items: center;
+  // justify-content: space-around;
+  // flex-direction: column;
   span {
     max-width: 100%;
     margin-bottom: 10px;

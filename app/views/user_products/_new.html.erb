@@ -1,11 +1,10 @@
 
-<div class="container">
-  <div class="row new-form-user-prod">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
-      <h1>Ajouter un aliment</h1>
+<div class="container new-form-modal">
+  <div class="new-form-user-prod">
+    <div class="text-center">
       <div class="new-form-search">
         <%= form_tag load_form_path, method: :get, remote: true, style: "width: 100%"  do %>
-          <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment", style: "width: 80%" %>
+          <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment" %>
           <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
         <% end %>
       </div>
