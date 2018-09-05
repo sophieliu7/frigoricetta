@@ -9,9 +9,12 @@
       <%= select_tag("main_category", options_for_select(Category.main_categories), id: "main_category", class: "form-new-cat") %>
     </div>
 
+    <!-- ATTENTION NE PAS CHANGER L ID CREE DANS LE SELECT TAG id: "category_#{main_category.gsub(' ', '').gsub('&', '_').downcase}" -->
     <div class="js-categories-container form-select-cat">
       <% Category.grouped_by_main_category.each do |main_category, categories| %>
-        <%= select_tag("category_#{main_category.gsub(' ', '').gsub('&', '_').downcase}", options_from_collection_for_select(categories, :id, :name), class: "js-categories #{'hidden' unless main_category == Category.main_categories.first} form-new-cat") %>
+        <%= select_tag("category_#{main_category.gsub(' ', '').gsub('&', '_').downcase}", options_from_collection_for_select(categories, :id, :name),
+          id: "category_#{main_category.gsub(' ', '').gsub('&', '_').downcase}",
+          class: "js-categories #{'hidden' unless main_category == Category.main_categories.first} form-new-cat") %>
       <% end %>
       <%= hidden_field_tag :category_id %>
     </div>
