@@ -91,7 +91,7 @@
   left: 0;
   background-color: #fff;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 10px;
   box-shadow: 0 0 40px rgba(0,0,0,.3);
   text-align: center;
 }
@@ -111,18 +111,30 @@
   padding: 0;
   margin: 0;
 }
+.sidenav-content-menu li {
+  a {
+    font-family: 'Julius Sans One', 'sans-serif';
+    font-size: 22px;
+  }
+}
 
 .sidenav a {
   padding: 8px 8px 8px 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 40px;
   color: $light-green;
   display: block;
   transition: 0.3s;
+  font-family: 'Oleo Script', cursive;
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: $green;
+}
+
+.sidenav-content a:hover {
+  color: white;
+  background-color: $light-green;
 }
 
 
@@ -164,3 +176,4 @@
     }
   }
 }
+

@@ -18,17 +18,17 @@
                 <h4>Voici les aliments du dernier email que tu nous as forwardé !</h4>
                 <p>Date d'envoi du mail : <%= @email_date %></p>
                 <p>Email en provenance de : <%= @email_from %></p>
-                <p>Nombre de produits : <%= @email_content.length %></p>
+                <p><%= @email_content.length %> produits</p>
                 <h5><%= link_to "Rangez les courses ?", create_from_email_path, class:"btn btn-lg btn-primary btn-frigo-index" %></h5>
               </div>
               <br>
               <br>
               <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <div class="card-email">
                   <% @email_content.each do |user_product| %>
+                <div class="card-email">
                     <h4><%= user_product %></h4>
-                  <% end %>
                 </div>
+                <% end %>
               </div>
             </div>
           </div>

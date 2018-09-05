@@ -27,7 +27,6 @@ class Category < ApplicationRecord
     Category.order(:name).group_by(&:SubCategory)
   end
 
-
   def self.categories_for_select
     sub_categories = self.all.sort_by(&:SubCategory)
     hash = {"BIO" => []}
