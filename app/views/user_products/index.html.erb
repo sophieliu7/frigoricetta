@@ -160,7 +160,7 @@
               </script>
             <% elsif (user_product.peremption_date - Date.today).to_i < 4 %>
               <script>
-                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid #e94f37";
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid $red";
               </script>
             <% elsif (user_product.peremption_date - Date.today).to_i  > 4 && (user_product.peremption_date - Date.today).to_i < 8 %>
               <script>
