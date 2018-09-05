@@ -1,1 +1,6 @@
 document.querySelector("[data-user-product-id='<%= @user_product.id %>']").remove();
+
+var count = document.getElementById('user-product-count');
+console.log(count.innerHTML)
+count.innerHTML = count.innerHTML - 1;
+console.log(count.innerHTML)

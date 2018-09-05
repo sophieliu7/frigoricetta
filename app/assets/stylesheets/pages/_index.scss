@@ -38,8 +38,25 @@
 }
 .header-hi {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 .index-header {
   max-width: 80%;
   color: white;
+}
+
+.product-count {
+  display: flex;
+  flex-direction: column;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
 }
