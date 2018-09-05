@@ -1,0 +1,5 @@
+meta_product_name: "Frigoricetta"
+meta_title: "Frigoricetta - Mieux gérer son garde manger"
+meta_description: "L'application Frigoricetta vous permet de mieux gérer votre stock alimentaire et vous permet d'éviter le gaspilllage."
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
