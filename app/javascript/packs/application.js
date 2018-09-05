@@ -76,3 +76,7 @@ $('#add-aliment').on('hide.bs.modal', function () {
    $('.demo').removeClass('blur');
 })
 
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    $(".tip-right").tooltip({placement : 'right'});
+});

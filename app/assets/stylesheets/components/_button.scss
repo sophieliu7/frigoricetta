@@ -35,15 +35,22 @@
 }
 
 .btn-frigo-index {
+  margin: 20px 0;
+  font-size: 20px;
   border: 2px solid white;
   background: transparent;
   border-radius: 50px;
+  color: white;
 }
 .btn-frigo-index:hover {
   transition: 0.3s ease;
   background-color: white;
   color: $light-green;
   border: 2px solid white;
+}
+
+.btn-info-index {
+  margin: 10px 0;
 }
 
 .btn-neutre {
