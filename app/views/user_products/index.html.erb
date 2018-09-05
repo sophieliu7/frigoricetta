@@ -27,63 +27,64 @@
           <div data-user-product-id="<%= user_product.id %>">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
               <div class="card" data-date="<%= user_product.id %>">
+                <%= link_to "clic", test_path(user_product.id.to_s), method: :patch, html_options: { params: user_product }, remote: true %>
 
                   <% if user_product.product.category.SubCategory == "LEGUMES" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:LEGUMES]  %>
+                   <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:LEGUMES]  %>
 
                   <% elsif user_product.product.category.SubCategory == "CHARCUTERIE" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CHARCUTERIE]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CHARCUTERIE]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "SURGELES" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:SURGELES]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:SURGELES]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "LIQUIDES" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:LIQUIDES]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:LIQUIDES]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "BIO" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:BIO]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:BIO]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "PLATS CUISINES" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:PLATSCUISINES]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:PLATSCUISINES]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "GLACES" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:GLACES]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:GLACES]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "EPICERIE SALE" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:EPICERIESALE]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:EPICERIESALE]  %>
 
                   <% elsif user_product.product.category.SubCategory == "EPICERIE SUCREE" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:EPICERIESUCREE]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:EPICERIESUCREE]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "CREMERIE" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CREMERIE]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CREMERIE]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "TRAITEUR" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:TRAITEUR]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:TRAITEUR]  %>
 
                   <% elsif user_product.product.category.SubCategory  == "PAINS & PATISSERIE" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:PAINSPATISSERIE]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:PAINSPATISSERIE]  %>
 
                   <% elsif user_product.product.category.SubCategory == "CONSERVES" %>
 
-                  <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CONSERVES]  %>
+                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CONSERVES]  %>
 
                   <% else %>
-                  <div class="food-icon" style="padding:15px;">
-                    <div style="background-image: url('https://images.vexels.com/media/users/3/143184/isolated/preview/c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png'); width:50px; height:50px; background-size: 50px 50px;opacity: 0.5;"></div>
-                  </div>
+                    <div class="food-icon" style="padding:15px;">
+                      <div style="background-image: url('https://images.vexels.com/media/users/3/143184/isolated/preview/c49a020b741b311e328cb3184943c3ac-meat-icon-beef-fish-by-vexels.png'); width:50px; height:50px; background-size: 50px 50px;opacity: 0.5;"></div>
+                    </div>
 
                   <% end %>
 

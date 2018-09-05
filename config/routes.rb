@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   end
 
   get 'pages/recettes', to: 'pages#recettes', as: :recette
+  # get 'pages/recettes/ingredients', to: 'pages#ingredients', as: :ingredients
   get 'user_products/email', to: 'user_products#email'
-  get 'test', to: 'pages#test'
+  patch 'test', to: 'pages#test'
+  get 'pages/recettes/ingredients', to: 'ingredients#new'
+  # nouvelles routes pour les ingrédients
 
   get '/user_products/email/create', to: "user_products#create_user_products_from_emails", as: :create_from_email
 
