@@ -2,23 +2,24 @@
 <div id="mySidenav" class="sidenav">
   <div id="sidenav-title">
     <h3><%= link_to "Frigoricetta", root_path %></h3>
+    <h4>Bonjour, <%= @user.name.capitalize %></h4>
   </div>
 
 
 
   <div class="sidenav-content">
     <ul class="sidenav-content-menu">
-      <li><%= link_to "Ma Cuisine", user_products_path, class: "ma-cuisine" %></li>
-      <li><%= link_to "+ aliment  ", new_user_product_path, class: "ma-cuisine" %></li>
+      <li><%= link_to "Mon Frigo", user_products_path, class: "ma-cuisine" %></li>
+      <li><%= link_to "+ aliment", new_user_product_path, class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"} %></li>
       <li><%= link_to "+ liste de courses", user_products_email_path, class: "ma-cuisine" %></li>
 
-    <li>
-      <div class="email-notif" id="ical">
-        <% if InboundEmail.where(user: current_user).count > 0 %>
-          <i class="fas fa-envelope-open"></i> !
-        <% end %>
-      </div>
-    </li>
+      <li>
+        <div class="email-notif" id="ical">
+          <% if InboundEmail.where(user: current_user).count > 0 %>
+            <i class="fas fa-envelope-open"></i> !
+          <% end %>
+        </div>
+      </li>
 
       <li><%= link_to "Recettes ( #{UserProduct.where(selected: true).count} )", recette_path, id: "mes-recettes" %></li>
     </ul>
@@ -39,3 +40,19 @@
 
 <!--    sidebar ends-->
 
+<!-- modal new-aliment -->
+<div class="modal fade" id="add-aliment" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Ajouter un aliment</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "user_products/new", user_products: @user_products %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- new aliment ends -->

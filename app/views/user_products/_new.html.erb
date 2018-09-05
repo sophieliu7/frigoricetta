@@ -1,0 +1,18 @@
+<div class="container new-form-modal">
+  <div class="new-form-user-prod">
+    <div class="text-center">
+      <div class="new-form-search">
+        <%= form_tag load_form_path, method: :get, remote: true, style: "width: 100%", class: "new-form-search"  do %>
+          <div class="new-form-search-input">
+            <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment" %>
+          </div>
+          <div class="new-form-search-enter">
+            <%= submit_tag "Entrer", class: "btn btn-frigo", id: "btn-new-form-search" %>
+          </div>
+        <% end %>
+      </div>
+      <div id="followingform"></div>
+    </div>
+  </div>
+</div>
+

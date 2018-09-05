@@ -1,4 +1,4 @@
-<div class="wrapper-index">
+<div class="wrapper-index" id="index-page">
 
   <%= render "shared/side_navbar" %>
   <div class="demo">
@@ -6,7 +6,7 @@
     <div class="container text-center index-header">
       <div class="header-hi">
         <br>
-        <h4>Salut, <%= @user.name %></h4>
+
 
         <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
             <h3>Tu as <strong><%= @user_products.count %></strong> produits dans ta cuisine</h3>
