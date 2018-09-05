@@ -3,7 +3,12 @@ import flatpickr from "flatpickr"
 window.flatpickr = flatpickr;
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { addreturntab } from '../components/recette';
-import "../plugins/flatpickr"
+import "../plugins/flatpickr";
+
+import { newAlimentForm } from '../components/form'
+if (document.getElementById("#index-page")) {
+  newAlimentForm();
+}
 
 initUpdateNavbarOnScroll();
 
@@ -74,6 +79,4 @@ $('#add-aliment').on('show.bs.modal', function () {
 $('#add-aliment').on('hide.bs.modal', function () {
    $('.demo').removeClass('blur');
 })
-
-
 
