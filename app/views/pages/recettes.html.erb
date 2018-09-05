@@ -1,11 +1,21 @@
+<div class="wrapper-index">
 
   <%= render "shared/side_navbar" %>
 
-<div class="demo">
+  <div class="demo">
 
-
-  <div class="container scroll">
-  <h1 class="text-center">Recettes suggérées</h1>
+    <div class="container text-center index-header">
+      <div class="header-hi">
+        <br>
+        <h1>Recettes suggérées</h1>
+        <p>en utilisant les produits qui périment</p>
+        <%  @userproducts.first(2).each do |item| %>
+          <div class="etiquette btn">
+            <i class="fas fa-tag"></i> <%= item.product.name %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
 
     <% @array_top.each do |item| %>
@@ -33,7 +43,7 @@
             <h2>Niveau de difficulté :<%= item[:difficulty] %></h2>
             <p> <%= item[:description] %></p>
             <p class="read-more">
-              <a data-toggle="collapse" data-target="#collapseExample<%= @letter %>" aria-expanded="false" aria-controls="collapseExample<%= @letter %>" href="#recipedescription<%= @letter %>">Voir la recette</a>
+              <a data-toggle="collapse" data-target="#collapseExample<%= @letter %>" aria-expanded="false" aria-controls="collapseExample<%= @letter %>" href="#recipedescription<%= @letter %>">Voir la recette <i class="fas fa-utensils"></i></a>
             </p>
           </div>
 
@@ -48,12 +58,11 @@
       </div>
 
 
-
     <% end %>
 
-  </div>
-</div>
 
+</div>
+</div>
 
 
 
