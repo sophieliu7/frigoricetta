@@ -24,76 +24,105 @@
 }
 
 
-.features{
+.demofullpage {
+  background-image:
+    linear-gradient( 60deg, #4BA255 25%, transparent 0 ),
+    linear-gradient( 350deg, #93C799 20%, transparent 0 ),
+    linear-gradient( 125deg, transparent 70%, #81BE88 70% ),
+    linear-gradient( 125deg, #5DAB66 45%, transparent 0 ),
+    linear-gradient( 125deg, #6FB477 70%, transparent 0 );
+}
 
+.features{
 margin-top:50px;
 margin-bottom: 50px;
+
+
 }
 
 .carte {
  border: 1px solid #d3d3d3;
- border-radius: .25rem;
+ border-radius: .28rem;
  height:430px;
  position:relative;
  margin-top:10px;
+  background-color:#FFF;
+
 
 .bg-img-first {
-background-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ba2b9dcc1af593a7d93ed9b4ed952ac&auto=format&fit=crop&w=1353&q=80");
- background-size: cover;
- min-height: 180px;
- background-position: center;
- background-color: #ccc;
+  background-image: url("https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ba2b9dcc1af593a7d93ed9b4ed952ac&auto=format&fit=crop&w=1353&q=80");
+  background-size: cover;
+  min-height: 180px;
+  background-position: center;
+  background-color: #ccc;
 }
 
 .bg-img-second {
-background-image: url("https://images.unsplash.com/photo-1494597706938-de2cd7341979?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6dc5376ce585ce0df0d44232b9bab53c&auto=format&fit=crop&w=1380&q=80");
- background-size: cover;
- min-height: 180px;
- background-position: center;
- background-color: #ccc;
+  background-image: url("https://images.unsplash.com/photo-1494597706938-de2cd7341979?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6dc5376ce585ce0df0d44232b9bab53c&auto=format&fit=crop&w=1380&q=80");
+  background-size: cover;
+  min-height: 180px;
+  background-position: center;
+  background-color: #ccc;
 }
 
 
 .content {
- padding: 15px;
+padding: 15px;
+
+
 
  h4{
 font-size: 23px;
+background-color:inherit;
 }
 
 p{
 font-size: 18px;
+
+}
+
+}
+
+button{
+  position:absolute;
+  bottom: 5px;
 }
 
 }
 
-button {
-  position: absolute;
-  bottom:10px;
-  left:10px;
- background-color: transparent;
- border: 1px solid $gray;
- padding: .5rem 1rem;
- cursor: pointer;
- border-radius: .25rem;
+
+
+
+
+
+
+
+  @media (max-width: 640px) {
+
+
+.demofullpage {
+  background-image:
+    linear-gradient( 60deg, #4BA255 25%, transparent 0 ),
+    linear-gradient( 350deg, #93C799 20%, transparent 0 ),
+    linear-gradient( 125deg, transparent 70%, #81BE88 70% ),
+    linear-gradient( 125deg, #5DAB66 45%, transparent 0 ),
+    linear-gradient( 125deg, #6FB477 70%, transparent 0 );
 }
 
 
-
-}
-
-
-  @media (min-width: 640px) {
 
 .carte {
 
 margin-top:10px;
 
 
+
 .content {
  padding: 15px;
 
- h4{
+
+
+h4{
 font-size: 20px;
 }
 
@@ -103,6 +132,12 @@ font-size: 15px;
 
 }
 
-  }
+button{
+  position:absolute;
+  bottom: 5px;
+
+}
+
+}
 
 }
