@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :user_products, except: [:show]
+  resources :user_products, except: [:show] do
+    member do
+      patch :toggle_selection
+    end
+  end
+
   get '/load_form', to: "user_products#load_form"
 
   devise_for :users
@@ -15,9 +20,7 @@ Rails.application.routes.draw do
   get 'pages/recettes', to: 'pages#recettes', as: :recette
   # get 'pages/recettes/ingredients', to: 'pages#ingredients', as: :ingredients
   get 'user_products/email', to: 'user_products#email'
-  patch 'test', to: 'pages#test'
-  get 'pages/recettes/ingredients', to: 'ingredients#new'
-  # nouvelles routes pour les ingrédients
+  get 'test', to: 'pages#test'
 
   get '/user_products/email/create', to: "user_products#create_user_products_from_emails", as: :create_from_email
 

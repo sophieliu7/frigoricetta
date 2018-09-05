@@ -8,20 +8,23 @@ class PagesController < ApplicationController
   end
 
   def test
-    binding.pry
   end
 
   def recettes
-    @user = current_user
-    @userproducts = @user.user_products.order('peremption_date ASC')
-    @userproductlist = []
-    @userproducts.first(2).each do |pdt|
-      @userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
-    end
+    # @user = current_user
+    # @userproducts = @user.user_products.order('peremption_date ASC')
+    # @userproductlist = []
+    # @userproducts.first(2).each do |pdt|
+    #   @userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
+    # end
+
+    @userproductlist = selecting_ingredient
+
 
     #@userproductlist = @userproductlist.join('-').gsub(' ', '-')
     @userproductlist = @userproductlist.join('-')
     @phrase = URI.encode(@userproductlist)
+
 
     #@phrase = URI.parse URI.encode("aqt=utf8=\u{2713}&#{@userproductlist}")
     @array_top = []
@@ -46,10 +49,28 @@ class PagesController < ApplicationController
       listing = {"name": name, "description": description, "duration": duration, "difficulty": difficulty, "lesetapes": lesetapes, "photo": url_photo}
 
       @array_top << listing
+
     end
   end
 
+  private
 
+  def selecting_ingredient
+    userproductlist = []
+    if UserProduct.find_by(selected: true).nil?
+      userproducts = current_user.user_products.order('peremption_date ASC')
+      userproducts.first(2).each do |pdt|
+        userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
+      end
+    else
+      userproducts = UserProduct.where(selected: true)
+      userproducts.each do |pdt|
+        userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
+      end
+    end
+
+    return userproductlist
+  end
 end
 
 

@@ -27,7 +27,6 @@
           <div data-user-product-id="<%= user_product.id %>">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
               <div class="card" data-date="<%= user_product.id %>">
-                <%= link_to "clic", test_path(user_product.id.to_s), method: :patch, html_options: { params: user_product }, remote: true %>
 
                   <% if user_product.product.category.SubCategory == "LEGUMES" %>
 
@@ -124,9 +123,17 @@
                   </div>
 
 
-
                   <%= link_to user_product_path(user_product), method: :delete, remote: true do %>
-                  <%= icon("fas", 'trash-alt') %>
+                    <%= icon("fas", 'trash-alt') %>
+                  <% end %>
+
+
+                  <%= link_to toggle_selection_user_product_path(user_product), method: :patch do %>
+                    <% if user_product.selected %>
+                      <i class="fas fa-utensils" style="color:black; padding-left:10px;"></i>
+                    <% else %>
+                      <i class="fas fa-utensils" style="padding-left:10px;"></i>
+                    <% end %>
                   <% end %>
 
                 </div>
