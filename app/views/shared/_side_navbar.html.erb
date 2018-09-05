@@ -2,13 +2,14 @@
 <div id="mySidenav" class="sidenav">
   <div id="sidenav-title">
     <h3><%= link_to "Frigoricetta", root_path %></h3>
+    <h4>Bonjour, <%= @user.name.capitalize %></h4>
   </div>
 
 
 
   <div class="sidenav-content">
     <ul class="sidenav-content-menu">
-      <li><%= link_to "Ma Cuisine", user_products_path, class: "ma-cuisine" %></li>
+      <li><%= link_to "Mon Frigo", user_products_path, class: "ma-cuisine" %></li>
       <li><%= link_to "+ aliment", new_user_product_path, class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"} %></li>
       <li><%= link_to "+ liste de courses", user_products_email_path, class: "ma-cuisine" %></li>
 
