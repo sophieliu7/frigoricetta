@@ -1,0 +1,7 @@
+<%= simple_form_for @frigo, url: ingredients_path do |f| %>
+  <%= f.error_notification %>
+  <% @frigo.each do |product| %>
+  <%= f.input :choises, as: :check_boxes, collection: User::CHOISES %>
+  <%= f.button :submit, 'Trouver une recette', class:"btn btn-primary btn-frigo" %>
+  <%= f.button :button, 'Annuler les choix', type: 'reset', class:"btn btn-primary btn-frigo" %>
+<% end %>
