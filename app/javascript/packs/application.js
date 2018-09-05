@@ -13,6 +13,7 @@ import 'select2';                       // globally assign select2 fn to $ eleme
 import 'select2/dist/css/select2.css';  // optional if you have css loader
 
 
+// select2 dropdown avec search
 function matchCustom(params, data) {
     console.log('match')
     // If there are no search terms, return all of the data
@@ -66,6 +67,7 @@ addreturntab();
 
 /* blur on modal NEW aliment open, unblur on close */
 $('#add-aliment').on('show.bs.modal', function () {
+   $('.modal').addClass('modal-non-blur');
    $('.demo').addClass('blur');
 })
 

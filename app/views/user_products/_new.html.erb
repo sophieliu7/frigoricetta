@@ -1,11 +1,14 @@
-
 <div class="container new-form-modal">
   <div class="new-form-user-prod">
     <div class="text-center">
       <div class="new-form-search">
-        <%= form_tag load_form_path, method: :get, remote: true, style: "width: 100%"  do %>
-          <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment" %>
-          <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
+        <%= form_tag load_form_path, method: :get, remote: true, style: "width: 100%", class: "new-form-search"  do %>
+          <div class="new-form-search-input">
+            <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment" %>
+          </div>
+          <div class="new-form-search-enter">
+            <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
+          </div>
         <% end %>
       </div>
       <div id="followingform"></div>
@@ -13,6 +16,3 @@
   </div>
 </div>
 
-<%#= form_tag load_form_path method: :get, remote: :true do %>
-  <%#= select_tag("aliment", options_from_collection_for_select(Product.all, "id", "name", params[:product_name])) %>
-<%# end %>

@@ -1,5 +1,7 @@
 console.log("yes")
 
+// ajouter la suite du form NEW
+
 function addForm(formHTML) {
   const nextNewForm = document.getElementById('followingform');
   nextNewForm.innerHTML = '';
@@ -8,6 +10,7 @@ function addForm(formHTML) {
 
 addForm('<%= j render "new_product_form", user_product: UserProduct.new, product_name: @product_name %>')
 
+// ajouter flatpickr au form NEW
 
 flatpickr(".datepicker-purchase", {
     altInput: true,
@@ -22,6 +25,8 @@ flatpickr(".datepicker-peremption", {
     dateFormat: "Y-m-d",
     minDate: "today"
 })
+
+// double catégories du form NEW
 
 function hide_categories() {
   $(".js-categories-container .select2-container").addClass("hidden")

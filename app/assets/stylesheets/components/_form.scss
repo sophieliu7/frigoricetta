@@ -66,18 +66,21 @@
 }
 .new-form-search {
   display: block;
-  // align-items: center;
+  align-items: center;
   // justify-content: space-around;
-  // flex-direction: column;
-  span {
-    max-width: 100%;
+  flex-direction: column;
+}
+.select2-container--default {
+    width: 80% !important;
     margin-bottom: 10px;
   }
-  .btn-frigo {
-    margin-bottom: 10px;
-  }
+.btn-frigo {
+  margin-bottom: 10px;
 }
 
+.new-form-search-enter {
+  margin: 20px 0;
+}
 .form-new-main-cat {
   margin-bottom: 20px;
 }
