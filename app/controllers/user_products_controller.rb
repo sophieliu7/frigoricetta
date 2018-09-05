@@ -234,7 +234,7 @@ class UserProductsController < ApplicationController
   end
 
   def destroy_emails
-    current_user.inbound_emails.last.destroy
+    current_user.inbound_emails.destroy_all
   end
 ####################### CARREFOUR API CALLS ####################################
 require 'uri'
