@@ -3,4 +3,10 @@ a:hover {
   color: red;
 }
 
+.blur {
+    -webkit-filter: blur(5px) grayscale(50%);
+}
 
+.modal-non-blur {
+  -webkit-filter: blur(0) grayscale(0);
+}

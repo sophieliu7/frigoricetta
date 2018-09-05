@@ -3,25 +3,37 @@
   <%= hidden_field_tag :product_name, @product_name %>
 
   <!-- search pour catégories -->
-  <%= select_tag("main_category", options_for_select(Category.main_categories), id: "main_category", class: "form-new-cat") %>
+  <div id="new-form-categories">
 
-  <div class="js-categories-container form-select-cat">
-    <% Category.grouped_by_main_category.each do |main_category, categories| %>
-      <%= select_tag("category_#{main_category.gsub(' ', '').gsub('&', '_').downcase}", options_from_collection_for_select(categories, :id, :name), class: "js-categories #{'hidden' unless main_category == Category.main_categories.first} form-new-cat") %>
-    <% end %>
-  </div>
+    <div class="form-new-main-cat">
+      <%= select_tag("main_category", options_for_select(Category.main_categories), id: "main_category", class: "form-new-cat") %>
+    </div>
 
-  <%= hidden_field_tag :category_id %>
-
-  <%= f.input :place %>
-
-  <div class="form-select-date">
-    <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase form-date"} %>
-
-    <%= f.input :peremption_date, as: :string, required: false, input_html: {class: "datepicker-peremption form-date"} %>
+    <div class="js-categories-container form-select-cat">
+      <% Category.grouped_by_main_category.each do |main_category, categories| %>
+        <%= select_tag("category_#{main_category.gsub(' ', '').gsub('&', '_').downcase}", options_from_collection_for_select(categories, :id, :name), class: "js-categories #{'hidden' unless main_category == Category.main_categories.first} form-new-cat") %>
+      <% end %>
+      <%= hidden_field_tag :category_id %>
+    </div>
 
   </div>
 
-  <%= f.button :submit, "Ajouter un aliment", class:"btn btn-primary btn-frigo" %>
+
+  <div id="form-new-place" class="hidden">
+
+    <%= f.input :place, label: "Où veux-tu le ranger ?", placeholder: "placard, frigo...", input_html: { class: "input-light" }, label_html: { class: "font-20"} %>
+  </div>
+
+  <div id="form-new-dates">
+    <div class="form-select-date text-center">
+      <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase form-date"}, label: "Date d'achat", label_html: {class: "font-20"} %>
+
+      <%= f.input :peremption_date, as: :string, required: false, input_html: {class: "datepicker-peremption form-date"}, label: "Date d'expiration", label_html: {class: "font-20"} %>
+
+    </div>
+
+
+    <%= f.button :submit, "Ajouter un aliment", class:"btn btn-primary btn-frigo" %>
+  </div>
 <% end %>
 
