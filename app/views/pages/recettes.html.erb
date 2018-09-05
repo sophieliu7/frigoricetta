@@ -8,7 +8,7 @@
       <div class="header-hi">
         <br>
         <h1>Recettes suggérées</h1>
-        <p>en utilisant les produits qui périment</p>
+        <p>en utilisant les produits suivants qui périment bientôt</p>
         <%  @userproducts.first(2).each do |item| %>
           <div class="etiquette btn">
             <i class="fas fa-tag"></i> <%= item.product.name %>
