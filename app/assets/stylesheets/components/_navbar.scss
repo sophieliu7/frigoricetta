@@ -98,6 +98,13 @@
 #accueil {
   font-family: 'Oleo Script', cursive;
 }
+#sidenav-title {
+  h4 {
+    color: $light-green;
+    font-weight: lighter;
+    font-size: 25px;
+  }
+}
 .sidenav-content {
   display: flex;
   justify-content: center;
