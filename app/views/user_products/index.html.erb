@@ -7,14 +7,17 @@
       <div class="header-hi">
         <br>
 
+          <h2>Mon Frigo</h2>
 
-        <% if @user_products.all.length > 0 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
-            <h3>Tu as <strong><%= @user_products.count %></strong> produits dans ta cuisine</h3>
+          <h4>Tu as <strong id="user-product-count"><%= @user_products.count %></strong> produits dans ta cuisine</h4>
+
+
+        <% if @user_products.all.length > 1 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2 %>
+          <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> et <%= @user_products.order(:peremption_date)[1].product.name%> vont bientôt périmer !</h4>
+          <%= link_to "Suggestion de recettes", recette_path, id: "mes-recettes", class: "btn btn-frigo-index" %>
+        <% elsif  @user_products.all.length == 1 && (@user_products.order(:peremption_date).first.peremption_date - Date.today).to_i < 2%>
+            <!-- <h1>Ma cuisine</h1> -->
             <h4>Il semblerait que <%= @user_products.order(:peremption_date).first.product.name%> va bientôt périmer !</h4>
-            <h4>Let's cook it!</h4>
-        <% else %>
-            <h1>Ma cuisine</h1>
-            <h4>Tu as <strong><%= @user_products.count %></strong> produits dans ta cuisine</h4>
         <% end %>
 
       </div>
@@ -99,8 +102,6 @@
 
                 <div style="width: 500px;">
 
-
-
                   <h4><%= truncate(user_product.product.name.capitalize,length: 35) %></h4>
                   <p> 🗓
                     <% if (Date.today - user_product.purchase_date).to_i == 0 %>
@@ -116,12 +117,6 @@
                     <% end %>
                   </p>
                 </div>
-
-
-
-
-
-
 
 
                 <div class="card-menu">
@@ -165,7 +160,7 @@
               </script>
             <% elsif (user_product.peremption_date - Date.today).to_i < 4 %>
               <script>
-                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid $red";
+                document.querySelector("[data-date='<%= user_product.id %>']").style.borderLeft = "6px solid red";
               </script>
             <% elsif (user_product.peremption_date - Date.today).to_i  > 4 && (user_product.peremption_date - Date.today).to_i < 8 %>
               <script>

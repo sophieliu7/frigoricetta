@@ -12,7 +12,7 @@
 
 .demo {
   width:80%;
-  height:100vh;
+
   background-image:
     linear-gradient( 60deg, #4BA255 25%, transparent 0 ),
     linear-gradient( 350deg, #93C799 20%, transparent 0 ),
@@ -38,6 +38,11 @@
 }
 .header-hi {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 .index-header {
   max-width: 80%;
@@ -46,4 +51,15 @@
 
 .fork-black {
   color: black;
+
+.product-count {
+  display: flex;
+  flex-direction: column;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
 }
