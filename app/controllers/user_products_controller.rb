@@ -3,6 +3,11 @@ class UserProductsController < ApplicationController
   before_action :set_user_product, only: [:edit, :update, :destroy, :toggle_selection]
 
   def index
+    # UserProduct.all.each do |uproduct|
+    #   uproduct.selected = false
+    #   uproduct.save
+    # end
+
     @user = current_user
     if params[:query].present?
       @user_products = UserProduct.global_search(params[:query])

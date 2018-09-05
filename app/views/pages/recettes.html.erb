@@ -9,7 +9,7 @@
         <br>
         <h1>Recettes suggérées</h1>
         <p>en utilisant les produits suivants qui périment bientôt</p>
-        <%  @userproducts.first(2).each do |item| %>
+        <%  @userproducts.each do |item| %>
           <div class="etiquette btn">
             <i class="fas fa-tag"></i> <%= item.product.name %>
           </div>
