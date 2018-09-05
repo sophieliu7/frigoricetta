@@ -5,10 +5,6 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { addreturntab } from '../components/recette';
 import "../plugins/flatpickr";
 
-import { newAlimentForm } from '../components/form'
-if (document.getElementById("#index-page")) {
-  newAlimentForm();
-}
 
 initUpdateNavbarOnScroll();
 

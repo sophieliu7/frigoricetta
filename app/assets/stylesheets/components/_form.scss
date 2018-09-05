@@ -56,14 +56,6 @@
   margin: 10px 0;
 }
 
-.form-select-date {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  .form-date {
-    width: 100%;
-  }
-}
 .new-form-search {
   display: block;
   align-items: center;
@@ -85,6 +77,26 @@
   margin-bottom: 20px;
 }
 
+#new-form-categories {
+  margin: 20px 0;
+}
+
+#form-new-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-select-date {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  .form-date {
+    width: 90%;
+  }
+}
 // sign-up
 
 .form-white-container {

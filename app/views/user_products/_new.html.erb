@@ -7,7 +7,7 @@
             <%= collection_select :products, :product_id, Product.all, :id, :name, placeholder: "Tape ton aliment" %>
           </div>
           <div class="new-form-search-enter">
-            <%= submit_tag "Entrer", class: "btn btn-frigo"  %>
+            <%= submit_tag "Entrer", class: "btn btn-frigo", id: "btn-new-form-search" %>
           </div>
         <% end %>
       </div>

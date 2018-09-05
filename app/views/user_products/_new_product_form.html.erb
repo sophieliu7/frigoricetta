@@ -15,23 +15,23 @@
       <% end %>
       <%= hidden_field_tag :category_id %>
     </div>
-    <p class="btn btn-frigo" id="btn-to-place">→</p>
+
   </div>
 
 
   <div id="form-new-place" class="hidden">
 
     <%= f.input :place, label: "Où veux-tu le ranger ?", placeholder: "placard, frigo...", input_html: { class: "input-light" }, label_html: { class: "font-20"} %>
-    <button class="btn btn-frigo" id="btn-to-dates">→</button>
   </div>
 
-  <div id="form-new-dates" class="hidden">
-    <div class="form-select-date">
-      <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase form-date"}, label: "Date d'achat" %>
+  <div id="form-new-dates">
+    <div class="form-select-date text-center">
+      <%= f.input :purchase_date, as: :string, required: false, input_html: {class: "datepicker-purchase form-date"}, label: "Date d'achat", label_html: {class: "font-20"} %>
 
-      <%= f.input :peremption_date, as: :string, required: false, input_html: {class: "datepicker-peremption form-date"}, label: "Date d'expiration" %>
+      <%= f.input :peremption_date, as: :string, required: false, input_html: {class: "datepicker-peremption form-date"}, label: "Date d'expiration", label_html: {class: "font-20"} %>
 
     </div>
+
 
     <%= f.button :submit, "Ajouter un aliment", class:"btn btn-primary btn-frigo" %>
   </div>
