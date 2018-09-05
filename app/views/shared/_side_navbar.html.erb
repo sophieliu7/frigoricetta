@@ -20,8 +20,7 @@
       </div>
     </li>
 
-      <li><%= link_to "Recettes", recette_path, id: "mes-recettes" %></li>
-
+      <li><%= link_to "Recettes ( #{UserProduct.where(selected: true).count} )", recette_path, id: "mes-recettes" %></li>
     </ul>
   </div>
   <div class="sidenav-general">
