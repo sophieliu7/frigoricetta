@@ -1,0 +1,17 @@
+// document.querySelector("[data-user-product-id='<%= @user_product.id %>']").reload();
+
+var ustensil = document.getElementById('fork-<%=@user_product.id%>')
+// ustensil.classList.toggle("fork-black");
+
+var recetteCount = document.getElementById('recette-count');
+// recetteCount.innerHTML = parseInt(recetteCount.innerHTML) + 1;
+
+if (ustensil.classList.contains("fork-black")) {
+  ustensil.classList.remove("fork-black");
+  recetteCount.innerHTML = parseInt(recetteCount.innerHTML) - 1;
+}
+else {
+  ustensil.classList.add("fork-black");
+  recetteCount.innerHTML = parseInt(recetteCount.innerHTML) + 1;
+}
+
