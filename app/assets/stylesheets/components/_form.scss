@@ -24,7 +24,7 @@
 .new-form-user-prod {
   padding-top: 60px;
   h1 {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
   }
 }
 
@@ -36,11 +36,43 @@
   padding-bottom: 20px;
 }
 
+// new-form
+
 .search-form-new {
   border: 1px solid black;
   border-radius: 3px;
   width: 100%
 }
+.form-select-cat {
+  margin-bottom: 20px;
+}
+
+.form-new-cat {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.form-select-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .form-date {
+    width: 100%;
+  }
+}
+.new-form-search {
+  display: flex;
+  align-items: center;
+  span {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .btn-frigo {
+    margin-bottom: 10px;
+  }
+}
+
+// sign-up
 
 .form-white-container {
   background: white;

@@ -49,8 +49,8 @@ $("#main_category").select2({
 });
 
 $('#main_category').on('select2:select', function (e) {
-  var main_category_name = $('#main_category').val().toLowerCase();
-
+  var main_category_name = $('#main_category').val().toLowerCase().replace(/\s/, '').replace(/\s/, '').replace('&', '_');
+  console.log(main_category_name);
   hide_categories();
   display_first_category(main_category_name);
 });
