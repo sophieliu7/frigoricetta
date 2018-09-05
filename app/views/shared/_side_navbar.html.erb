@@ -2,7 +2,7 @@
 <div id="mySidenav" class="sidenav">
   <div id="sidenav-title">
     <h3><%= link_to "Frigoricetta", root_path %></h3>
-    <h4>Bonjour, <%= @user.name.capitalize %></h4>
+    <h4>Bonjour, <%= current_user.name.capitalize %></h4>
   </div>
 
 
@@ -21,8 +21,7 @@
         </div>
       </li>
 
-      <li><%= link_to "Recettes", recette_path, id: "mes-recettes" %></li>
-
+      <li><%= link_to "Recettes ( #{UserProduct.where(selected: true).count} )", recette_path, id: "mes-recettes" %></li>
     </ul>
   </div>
   <div class="sidenav-general">
