@@ -1,67 +1,119 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Oupss, cette page n'existe pas (404)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    <!-- ajout de nos font google en dur-->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Raleway" rel="stylesheet">
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    <style>
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  /*
+  red: #EE5F5B;
+  blue: #469AE0;
+  yellow: #FDB631;
+  orange: #E67E22;
+  light-green: #4BA255;
+  green: #134E5E;
+  gray: #000000;
+  light-gray: #F4F4F4;
+  */
+
+      .demo {
+        width:100%;
+        height:100vh;
+        background-image:
+          linear-gradient( 60deg, #4BA255 25%, transparent 0 ),
+          linear-gradient( 350deg, #93C799 20%, transparent 0 ),
+          linear-gradient( 125deg, transparent 70%, #81BE88 70% ),
+          linear-gradient( 125deg, #5DAB66 45%, transparent 0 ),
+          linear-gradient( 125deg, #6FB477 70%, transparent 0 );
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow: scroll;
+      }
+
+
+      h1 {
+        line-height: 1;
+        margin: 0;
+        font-size: 1.7rem;
+        font-family: 'Oleo+Script', sans-serif;
+
+      }
+      h2 {
+        font-size: 1rem;
+        // font-weight: 300;
+        text-transform: uppercase;
+        color: $color_grey_dark;
+        margin-top: 5px;
+      }
+
+
+      .logo{
+
+        line-height: 1;
+        margin: 0;
+        font-size: 4.7rem;
+        font-family: 'Oleo Script', cursive, sans-serif;
+        width:100%;
+        text-align: center;
+        padding-top:50px;
+        color:#FFFFFF;
+
+      }
+
+
+      .dialog{
+
+      margin:50px auto;
+      padding: 100px;
+      background-color: #FFF;
+
+      }
+
+      a{
+
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+
+      }
+
+
+img {
+
+  height: 300px;
+}
+
+
+    </style>
+  </head>
+
+  <body >
+    <div class="demo">
+      <a href="/"><div class="logo">Frigoricetta</div></a>
+
+      <div class="dialog">
+        <div>
+          <h1>Oupss, cette page n'existe pas.</h1>
+          <p>Vous avez du faire une erreur de saisie.</p>
+        </div>
+        <a href="/"><h2>Aller à l'accueil du site</h2></a>
+      <div>
+        <img src="/images/page404.png" />
+      </div>
+      </div>
+
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
+
+
