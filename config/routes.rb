@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :user_products, except: [:show]
+  resources :user_products, except: [:show] do
+    member do
+      patch :toggle_selection
+    end
+  end
+
   get '/load_form', to: "user_products#load_form"
 
   devise_for :users
@@ -13,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   get 'pages/recettes', to: 'pages#recettes', as: :recette
+  # get 'pages/recettes/ingredients', to: 'pages#ingredients', as: :ingredients
   get 'user_products/email', to: 'user_products#email'
   get 'test', to: 'pages#test'
 

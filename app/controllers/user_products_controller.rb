@@ -1,8 +1,13 @@
 
 class UserProductsController < ApplicationController
-  before_action :set_user_product, only: [:edit, :update, :destroy]
+  before_action :set_user_product, only: [:edit, :update, :destroy, :toggle_selection]
 
   def index
+    # UserProduct.all.each do |uproduct|
+    #   uproduct.selected = false
+    #   uproduct.save
+    # end
+
     @user = current_user
     if params[:query].present?
       @user_products = UserProduct.global_search(params[:query])
@@ -127,6 +132,17 @@ class UserProductsController < ApplicationController
     redirect_to user_products_path
   end
 
+  def toggle_selection
+    if @user_product.selected == false
+      @user_product.selected = true
+    else
+      @user_product.selected = false
+    end
+
+    @user_product.save
+    redirect_to user_products_path
+  end
+
   ################ PRIVATE FUNCTIONS ###########################################
 
   private
@@ -141,7 +157,7 @@ class UserProductsController < ApplicationController
   end
 
   def set_user_product
-    @user_product = UserProduct.find(params[:id])
+    @user_product = current_user.user_products.find(params[:id])
   end
 
   def render_error

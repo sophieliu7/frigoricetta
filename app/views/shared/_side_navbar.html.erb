@@ -3,17 +3,38 @@
   <div id="sidenav-title">
     <h3><%= link_to "Frigoricetta", root_path %></h3>
   </div>
+
+
+
   <div class="sidenav-content">
     <ul class="sidenav-content-menu">
       <li><%= link_to "Ma Cuisine", user_products_path, class: "ma-cuisine" %></li>
-      <li><%= link_to "Ajouter un aliment", new_user_product_path, class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"} %></li>
-      <li><%= link_to "Ajouter une liste de courses", user_products_email_path, class: "ma-cuisine" %></li>
+      <li><%= link_to "+ aliment", new_user_product_path, class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"} %></li>
+      <li><%= link_to "+ liste de courses", user_products_email_path, class: "ma-cuisine" %></li>
+
+      <li>
+        <div class="email-notif" id="ical">
+          <% if InboundEmail.where(user: current_user).count > 0 %>
+            <i class="fas fa-envelope-open"></i> !
+          <% end %>
+        </div>
+      </li>
+
       <li><%= link_to "Recettes", recette_path, id: "mes-recettes" %></li>
+
     </ul>
   </div>
   <div class="sidenav-general">
     <div class="sidenav-profil"><h5><%= link_to "Profil", "#" %></h5></div>
-    <div class="sidenav-logout"><h5><%= link_to "Log Out", "#" %></h5></div>
+
+    <div class="sidenav-logout">
+      <h5>
+        <%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="fas fa-sign-out-alt"></i>
+        <% end %>
+      </h5>
+    </div>
+
   </div>
 </div>
 
