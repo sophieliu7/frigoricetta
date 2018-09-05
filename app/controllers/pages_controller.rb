@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     #   @userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
     # end
     if UserProduct.find_by(selected: true).nil?
-      @userproducts = current_user.user_products.order('peremption_date ASC')
+      @userproducts = current_user.user_products.order('peremption_date ASC').first(2)
     else
       @userproducts = UserProduct.where(selected: true)
     end
