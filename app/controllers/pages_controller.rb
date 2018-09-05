@@ -1,6 +1,5 @@
 require 'open-uri'
 
-
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
@@ -17,9 +16,13 @@ class PagesController < ApplicationController
     # @userproducts.first(2).each do |pdt|
     #   @userproductlist << Product.find(pdt.product_id).name.split(" ").first(3)
     # end
+    if UserProduct.find_by(selected: true).nil?
+      @userproducts = current_user.user_products.order('peremption_date ASC')
+    else
+      @userproducts = UserProduct.where(selected: true)
+    end
 
     @userproductlist = selecting_ingredient
-
 
     #@userproductlist = @userproductlist.join('-').gsub(' ', '-')
     @userproductlist = @userproductlist.join('-')
@@ -57,6 +60,7 @@ class PagesController < ApplicationController
 
   def selecting_ingredient
     userproductlist = []
+
     if UserProduct.find_by(selected: true).nil?
       userproducts = current_user.user_products.order('peremption_date ASC')
       userproducts.first(2).each do |pdt|
