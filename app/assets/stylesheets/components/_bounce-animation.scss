@@ -1,0 +1,11 @@
+
+
+#ical{
+     animation: bounce 0.4s ease infinite alternate;
+     color: $yellow;
+}
+
+@keyframes bounce{
+     from {transform: translateY(0);}
+     to   {transform: translateY(-20px);}
+}
