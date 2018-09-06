@@ -1,17 +1,56 @@
 // document.querySelector("[data-user-product-id='<%= @user_product.id %>']").reload();
 
-var ustensil = document.getElementById('fork-<%=@user_product.id%>')
+var ustensil = document.getElementById('fork-<%=@user_product.id%>');
+var mesRecettes = document.getElementById('mes-recettes');
+
+var count = <%= UserProduct.where(selected: true).count %>;
 // ustensil.classList.toggle("fork-black");
 
 var recetteCount = document.getElementById('recette-count');
 // recetteCount.innerHTML = parseInt(recetteCount.innerHTML) + 1;
 
-if (ustensil.classList.contains("fork-black")) {
-  ustensil.classList.remove("fork-black");
-  recetteCount.innerHTML = parseInt(recetteCount.innerHTML) - 1;
-}
-else {
-  ustensil.classList.add("fork-black");
-  recetteCount.innerHTML = parseInt(recetteCount.innerHTML) + 1;
+var parentheseOpen = document.getElementById('parenthese-open');
+var parentheseClosed = document.getElementById('parenthese-closed');
+// var ustensilIcon = document.getElementById('.fa-utensils');
+
+
+
+if (count > 0) {
+  recetteCount.classList.remove("hide-parentheses");
+  // ustensilIcon.classList.remove("hide-parentheses");
+  parentheseOpen.classList.remove("hide-parentheses");
+  parentheseClosed.classList.remove("hide-parentheses");
+  if (ustensil.classList.contains("fork-black")) {
+    ustensil.classList.remove("fork-black");
+    recetteCount.innerHTML = parseInt(recetteCount.innerHTML) - 1;
+  } else {
+    ustensil.classList.add("fork-black");
+    recetteCount.innerHTML = parseInt(recetteCount.innerHTML) + 1;
+  }
+} else {
+    recetteCount.classList.add("hide-parentheses");
+    // ustensilIcon.classList.add("hide-parentheses");
+    parentheseOpen.classList.add("hide-parentheses");
+    parentheseClosed.classList.add("hide-parentheses");
+    if (ustensil.classList.contains("fork-black")) {
+      ustensil.classList.remove("fork-black");
+      recetteCount.innerHTML = parseInt(recetteCount.innerHTML) - 1;
+      parentheseOpen.classList.add("hide-parentheses");
+      parentheseClosed.classList.add("hide-parentheses");
+    } else {
+       ustensil.classList.add("fork-black");
+      recetteCount.innerHTML = parseInt(recetteCount.innerHTML) + 1;
+      parentheseOpen.classList.remove("hide-parentheses");
+      parentheseClosed.classList.remove("hide-parentheses");
+    }
 }
 
+// if (count > 0) {
+//   console.log('hello');
+//   document.getElementById('recette-count').innerHTML += " ( <%= UserProduct.where(selected: true).count %> <i class='fas fa-utensils' </i> )";
+//   // mesRecettes.insertAdjacentHTML('beforeend', " ( #{<%= UserProduct.where(selected: true).count %>}")
+//   // mesRecettes.insertAdjacentHTML('beforeend', " <i class='fas fa-utensils' </i> )");
+//   // document.querySelectorAll(".parenthese").
+// } else {
+//   document.getElementById('mes-recettes').innerHTML -= " ( <%= UserProduct.where(selected: true).count %> )";
+// }
