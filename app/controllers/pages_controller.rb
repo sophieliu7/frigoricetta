@@ -37,7 +37,7 @@ class PagesController < ApplicationController
     html_doc = Nokogiri::HTML(html_file, nil, 'utf-8')
     url_target = ""
 
-    html_doc.search('div.recipe-card').first(3).each do |element|
+    html_doc.search('div.recipe-card').first(5).each do |element|
 
       name = element.search('.recipe-card__title').text.strip
       description = element.search('.recipe-card__description').text.strip
