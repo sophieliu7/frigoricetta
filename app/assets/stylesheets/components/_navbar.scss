@@ -120,6 +120,11 @@
   align-items: center;
   text-align: center;
   height: 79vh;
+
+.positionrelative{
+  position:relative;
+}
+
 }
 .sidenav-content-menu {
   list-style: none;
@@ -145,13 +150,14 @@
 
   }
 
+
+
  .rightnotif{
   position: absolute;
-  left:220px;
-  bottom:150px;
+  left:260px;
+  top:100px;
   z-index:2;
-
- }
+  }
 
 }
 
