@@ -27,11 +27,8 @@ class UserProductsController < ApplicationController
 
     params[:products][:product_id]
 
-    # binding.pry
-
 
     if (params[:products][:product_id] =~(/\d+/)).nil?
-      # binding.pry
       name = params[:products][:product_id]
       product = Product.create(name: name)
       @product_name = product.name
@@ -54,15 +51,13 @@ class UserProductsController < ApplicationController
     @product.category = @category
     @product.save
 
-    # raise
     @user_product = UserProduct.new(user_products_params)
     if @user_product.peremption_date.nil?
       @user_product.peremption_date = Date.today + @category.peremption_duration.days
     end
 
     @user_product.user = current_user
-    # @user_product.save
-    # raise
+
     @user_product.product = @product
     if @user_product.save
       redirect_to user_products_path

@@ -1,5 +1,3 @@
-console.log("yes")
-
 // ajouter la suite du form NEW
 
 function addForm(formHTML) {
@@ -25,7 +23,8 @@ flatpickr(".datepicker-peremption", {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
-    minDate: "today"
+    minDate: "today",
+    defaultDate: Date.now()
 })
 
 // double catégories du form NEW
@@ -41,8 +40,17 @@ function display_first_category(main_category_name) {
   // and set the category id to the FIRST category
   var category_id = $("#category_" + main_category_name + ":first").val();
   $("#category_id").val(category_id);
+
+  update_expiration_date(category_id);
 }
 
+function update_expiration_date(category_id) {
+  var optionTag = document.getElementById(`js-category-${category_id}`);
+  var expirationDate = optionTag.dataset.expirationDate;
+
+  var expirationDatepicker = document.querySelector(".datepicker-peremption")._flatpickr;
+  expirationDatepicker.setDate(expirationDate);
+}
 
 // MAIN CATEGORY
 $("#main_category").select2({
@@ -76,6 +84,8 @@ $(".js-categories").select2({
 $('.js-categories').on('select2:select', function (e) {
   var category_id = $(e.target).val();
   $("#category_id").val(category_id);
+
+  update_expiration_date(category_id);
 });
 
 hide_categories();
