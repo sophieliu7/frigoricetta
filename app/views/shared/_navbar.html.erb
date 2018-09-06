@@ -34,7 +34,6 @@
 
   <% else %>
     <!-- Login link (when logged out) -->
-    <h3><%= link_to "Accueil", root_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
     <div class="navbar-wagon-right navbar-wagon-not-sign-in hidden-xs hidden-sm">
       <h3><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
       <h3><%= link_to t(".sign_up", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
