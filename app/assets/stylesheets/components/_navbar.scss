@@ -137,12 +137,21 @@
     font-family: 'Julius Sans One', 'sans-serif';
     font-size: 20px;
     min-width: 270px;
+
   }
 
   i {
     font-size:15px;
 
   }
+
+ .rightnotif{
+  position: absolute;
+  left:220px;
+  bottom:150px;
+  z-index:2;
+
+ }
 
 }
 
