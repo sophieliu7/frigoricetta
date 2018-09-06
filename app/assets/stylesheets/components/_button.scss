@@ -56,3 +56,18 @@
   border: none;
 }
 
+.btn-frigo-index-yellow {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 20px;
+  border: 2px solid $yellow;
+  background-color: white ;
+  border-radius: 50px;
+  color: $yellow;
+}
+.btn-frigo-index-yellow:hover {
+  transition: 0.3s ease;
+  background-color: white;
+  color: $light-green;
+  border: 2px solid white;
+}
