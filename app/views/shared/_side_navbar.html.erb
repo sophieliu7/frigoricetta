@@ -47,7 +47,11 @@
       </li>
 
       <li>
-        <a id="mes-recettes" href="/pages/recettes"><i class="fas fa-book-open"></i> Recettes ( <b id="recette-count"><%= UserProduct.where(selected: true).count %></b> )</a>
+          <a id="mes-recettes" href="/pages/recettes"><i class="fas fa-book-open"></i> Recettes
+            <b id="parenthese-open" class="hide-parentheses">( </b>
+            <b id="recette-count" class="hide-parentheses"><%= UserProduct.where(selected: true).count %></b>
+            <b id="parenthese-closed" class="hide-parentheses"> )</b>
+          </a>
       </li>
 
     </ul>
