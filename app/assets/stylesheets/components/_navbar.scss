@@ -119,11 +119,22 @@
   margin: 0;
 }
 .sidenav-content-menu li {
+
+  text-align:left;
+  padding-left:55px;
+
+
   a {
     font-family: 'Julius Sans One', 'sans-serif';
-    font-size: 22px;
+    font-size: 20px;
     min-width: 270px;
   }
+
+  i {
+    font-size:15px;
+
+  }
+
 }
 
 .sidenav a {
