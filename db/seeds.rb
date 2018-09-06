@@ -145,7 +145,7 @@ Category.create! name: "rillettes", SubCategory: "charcuterie", peremption_durat
 Category.create! name: "riz etuve", SubCategory: "epicerie salée", peremption_duration: 360
 Category.create! name: "salade verte", SubCategory: "fruits & légumes", peremption_duration: 5
 Category.create! name: "salades crudite ls indus", SubCategory: "fruits & légumes", peremption_duration: 21
-Category.create! name: "salades de crudites", SubCategory: "traiteur", peremption_duration: 4
+Category.create! name: "aperitifs frais", SubCategory: "traiteur", peremption_duration: 4
 Category.create! name: "salaison", SubCategory: "charcuterie", peremption_duration: 6
 Category.create! name: "sardines", SubCategory: "conserves", peremption_duration: 720
 Category.create! name: "sauces", SubCategory: "epicerie salée", peremption_duration: 240
@@ -335,7 +335,7 @@ Product.create! name: "Colin d'Alaska à la bordelaise Findus", category: Catego
 Product.create! name: "Aiguillettes de poulet grillé Fleury Michon", category: Category.find_by(name: "poulet surgele"), validated: true
 Product.create! name: "Pâté en croûte cocktail Carrefour", category: Category.find_by(name: "aperitifs pates"), validated: true
 Product.create! name: "Taboulé aux légumes bio Carrefour Bio", category: Category.find_by(name: "salades crudite ls indus"), validated: true
-Product.create! name: "Tomates cerise confites à l'origan Ensoleil'ade", category: Category.find_by(name: "salades de crudites"), validated: true
+Product.create! name: "Tomates cerise confites à l'origan Ensoleil'ade", category: Category.find_by(name: "aperitifs frais"), validated: true
 Product.create! name: "Tarama Blini", category: Category.find_by(name: "tarama"), validated: true
 Product.create! name: "Merguez fortes boeuf/mouton Socopa", category: Category.find_by(name: "barquettes merguez"), validated: true
 Product.create! name: "Brandade de morue à la nîmoise Reflets de France", category: Category.find_by(name: "base poisson"), validated: true

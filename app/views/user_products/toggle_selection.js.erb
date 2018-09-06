@@ -11,13 +11,13 @@ var recetteCount = document.getElementById('recette-count');
 
 var parentheseOpen = document.getElementById('parenthese-open');
 var parentheseClosed = document.getElementById('parenthese-closed');
-// var ustensilIcon = document.getElementById('.fa-utensils');
+var ustensilIcon = document.getElementById('recette-icon');
 
 
 
 if (count > 0) {
   recetteCount.classList.remove("hide-parentheses");
-  // ustensilIcon.classList.remove("hide-parentheses");
+  ustensilIcon.classList.remove("hide-parentheses");
   parentheseOpen.classList.remove("hide-parentheses");
   parentheseClosed.classList.remove("hide-parentheses");
   if (ustensil.classList.contains("fork-black")) {
@@ -29,7 +29,7 @@ if (count > 0) {
   }
 } else {
     recetteCount.classList.add("hide-parentheses");
-    // ustensilIcon.classList.add("hide-parentheses");
+    ustensilIcon.classList.add("hide-parentheses");
     parentheseOpen.classList.add("hide-parentheses");
     parentheseClosed.classList.add("hide-parentheses");
     if (ustensil.classList.contains("fork-black")) {
