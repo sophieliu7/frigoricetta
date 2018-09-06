@@ -1,4 +1,4 @@
-.email-container {
+.no-email-container {
   position: relative;
   display: flex;
   // align-items: center;
@@ -7,7 +7,7 @@
   max-width: 80%;
   height: 100vh;
 }
-.email-message {
+.no-email-message {
   position: absolute;
   flex-direction: column;
   margin-top: 40px;
@@ -38,4 +38,32 @@
     color: white;
     font-weight: lighter;
   }
+}
+
+.container-with-item-email {
+
+margin: 30px;
+  //max-width: 80%;
+  // height: 100vh;
+}
+
+.email-message {
+
+ // max-width: 80%;
+  color: white;
+  p {
+    font-size: 20px;
+    strong {
+      text-decoration: underline;
+    }
+  }
+}
+
+.width-80-pourcent {
+  max-width: 80%;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 12%;
 }

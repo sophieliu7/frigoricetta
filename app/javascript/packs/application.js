@@ -13,6 +13,9 @@ import $ from 'jquery';
 import 'select2';                       // globally assign select2 fn to $ element
 import 'select2/dist/css/select2.css';  // optional if you have css loader
 
+// import { loadDynamicBannerText } from '../components/bannertyped';
+// loadDynamicBannerText();
+
 
 // select2 dropdown avec search
 function matchCustom(params, data) {
@@ -51,10 +54,10 @@ $(document).ready(function(){
       matcher: matchCustom,
       minimumInputLength: 3,
       minimumResultsForSearch: 5,
-      placeholder: {
-        id: '-1', // the value of the option
-        text: 'Select an option'
-      },
+      placeholder: "Saisis ton nouvel aliment",
+      //   id: '-1', // the value of the option
+      //   text: 'Select an option'
+      // },
       allowClear: true
     });
 
