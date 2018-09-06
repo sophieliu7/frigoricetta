@@ -3,10 +3,10 @@ class UserProductsController < ApplicationController
   before_action :set_user_product, only: [:edit, :update, :destroy, :toggle_selection]
 
   def index
-    # UserProduct.all.each do |uproduct|
-    #   uproduct.selected = false
-    #   uproduct.save
-    # end
+    UserProduct.all.each do |uproduct|
+      uproduct.selected = false
+      uproduct.save
+    end
 
     @user = current_user
     if params[:query].present?
@@ -138,9 +138,11 @@ class UserProductsController < ApplicationController
     else
       @user_product.selected = false
     end
-
     @user_product.save
-    redirect_to user_products_path
+    respond_to do |format|
+      format.html { redirect_to user_products_path }
+      format.js
+    end
   end
 
   ################ PRIVATE FUNCTIONS ###########################################
@@ -232,7 +234,7 @@ class UserProductsController < ApplicationController
   end
 
   def destroy_emails
-    current_user.inbound_emails.last.destroy
+    current_user.inbound_emails.destroy_all
   end
 ####################### CARREFOUR API CALLS ####################################
 require 'uri'

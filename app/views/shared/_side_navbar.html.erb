@@ -21,7 +21,10 @@
         </div>
       </li>
 
-      <li><%= link_to "Recettes ( #{UserProduct.where(selected: true).count} )", recette_path, id: "mes-recettes" %></li>
+      <li>
+        <a id="mes-recettes" href="/pages/recettes">Recettes ( <b id="recette-count"><%= UserProduct.where(selected: true).count %></b> )</a>
+      </li>
+
     </ul>
   </div>
   <div class="sidenav-general">
