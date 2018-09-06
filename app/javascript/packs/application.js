@@ -54,10 +54,10 @@ $(document).ready(function(){
       matcher: matchCustom,
       minimumInputLength: 3,
       minimumResultsForSearch: 5,
-      placeholder: {
-        id: '-1', // the value of the option
-        text: 'Select an option'
-      },
+      placeholder: "Saisis ton nouvel aliment",
+      //   id: '-1', // the value of the option
+      //   text: 'Select an option'
+      // },
       allowClear: true
     });
 
