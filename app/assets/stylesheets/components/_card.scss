@@ -22,71 +22,48 @@
     font-weight: bold;
     font-size: 18px;
   }
-    p {
+  p {
     padding: 2px 20px;
-
-
   }
-
-&:hover {
+  &:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.6);
   }
-
 }
 
-
 .card-menu{
-
 flex-basis : 200px;
 padding-left: 20px;
 padding-top : 40px;
 font-size:22px;
 color: #71B280;
-
-a{
+  a {
     color: $light-green;
-}
-
-
-
-
-
-}
-
-
-
-
-  @media (max-width: 640px) {
-
-h4{
-font-size: 50px;
-padding-left: 20px;
-}
-
-p{
-font-size: 10px;
-padding-left: 20px;
-}
-
-.card {
-    height:100px;
-}
-
-.card-menu{
-  flex-basis: 200px;
-  padding-left: 50px;
-  padding-top : 40px;
-font-size:25px;
-
-
-a{
-    color: $light-green;
-}
-
   }
-
 }
 
+
+@media (max-width: 640px) {
+  h4 {
+    font-size: 50px;
+    padding-left: 20px;
+  }
+  p {
+  font-size: 10px;
+  padding-left: 20px;
+  }
+  .card {
+      height:100px;
+  }
+  .card-menu{
+    flex-basis: 200px;
+    padding-left: 50px;
+    padding-top : 40px;
+  font-size:25px;
+    a {
+      color: $light-green;
+    }
+  }
+}
 
 .card-email {
   margin-bottom:10px;
@@ -95,9 +72,6 @@ a{
   justify-content: space-between;
   border-left: 5px solid;
   border-radius: 5px;
-
-
-
  /* justify-content: flex-start;
   align-items: flex-start;
   */
@@ -114,31 +88,24 @@ a{
     font-weight: bold;
     font-size: 18px;
     text-align: left;
-
   }
   p {
     padding: 2px 20px;
   }
-
-
-
-
-&:hover {
+  &:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.6);
   }
-
 }
 
- .centre-vertical {
-    flex-direction: column; /* direction d'affichage verticale */
-    justify-content: center;
-  }
+.centre-vertical {
+  flex-direction: column; /* direction d'affichage verticale */
+  justify-content: center;
+}
 
 .font-25 {
   font-size:25px;
 }
 
-
 .light-green {
-   color: $light-green
+  color: $light-green
 }
