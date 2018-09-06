@@ -53,7 +53,14 @@
     </ul>
   </div>
   <div class="sidenav-general">
-    <div class="sidenav-profil"><h5><i class="fas fa-user-circle"></i><%= link_to "Profil", "#" %></h5></div>
+    <div class="sidenav-profil"><h5>
+ <!--      <i class="fas fa-user-circle"></i> -->
+
+      <%= link_to  "#" do %>
+        <i class="fas fa-user-circle"></i>
+      <% end %>
+
+    </h5></div>
 
     <div class="sidenav-logout">
       <h5>
