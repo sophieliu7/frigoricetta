@@ -9,45 +9,32 @@
 
   <div class="sidenav-content">
     <ul class="sidenav-content-menu">
- <!--      <li><%= link_to "Mon Frigo", user_products_path, class: "ma-cuisine" %></li> -->
-<!--       <li><%= link_to "Aliment", new_user_product_path, class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"} %></li> -->
-
-      <!-- <li><%= link_to "liste de courses", user_products_email_path, class: "ma-cuisine" %></li> -->
-
-
-<li>
-<%= link_to user_products_path , class: "ma-cuisine"  do %>
-  <i class="far fa-square"></i> Mon Frigo
-<% end %>
-</li>
-
-
-<li>
-<%= link_to new_user_product_path , class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"}   do %>
-  <i class="fas fa-plus-circle"></i> Aliment
-<% end %>
-</li>
-
-<li>
-<%= link_to user_products_email_path , class: "ma-cuisine" do %>
-  <i class="fas fa-upload"></i> liste de courses
-<% end %>
-</li>
-
-
-
+      <li>
+      <%= link_to user_products_path , class: "ma-cuisine"  do %>
+        <i class="fas fa-snowflake"></i> Mon Frigo
+      <% end %>
+      </li>
 
 
       <li>
-        <div class="email-notif" id="ical">
-          <% if InboundEmail.where(user: current_user).count > 0 %>
-            <i class="fas fa-envelope-open"></i> !
-          <% end %>
-        </div>
+      <%= link_to new_user_product_path , class: "ma-cuisine", data: {toggle: "modal", target: "#add-aliment"}   do %>
+        <i class="fas fa-plus-circle"></i> Aliment
+      <% end %>
       </li>
 
       <li>
-          <a id="mes-recettes" href="/pages/recettes"><i class="fas fa-book-open"></i> Recettes
+      <%= link_to user_products_email_path , class: "ma-cuisine" do %>
+        <i class="fas fa-upload"></i> liste de courses
+      <% if InboundEmail.where(user: current_user).count > 0 %>
+            <p class="email-notif rightnotif" id="ical" >
+                <i class="fas fa-envelope-open"></i>
+            </p>
+          <% end %>
+        <% end %>
+      </li>
+
+      <li>
+          <a id="mes-recettes" href="/pages/recettes" class="ma-cuisine"><i class="fas fa-book-open"></i> Recettes
             <b id="parenthese-open" class="hide-parentheses">( </b>
             <b id="recette-count" class="hide-parentheses"><%= UserProduct.where(selected: true).count %> </b>
             <b id="recette-icon" class="fas fa-utensils hide-parentheses"></b>
