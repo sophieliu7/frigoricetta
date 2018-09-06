@@ -40,55 +40,55 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
               <div class="card" data-date="<%= user_product.id %>">
 
-                  <% if user_product.product.category.SubCategory == "LEGUMES" %>
+                  <% if user_product.product.category.SubCategory == "fruits & légumes" %>
 
                    <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:LEGUMES]  %>
 
-                  <% elsif user_product.product.category.SubCategory == "CHARCUTERIE" %>
+                  <% elsif user_product.product.category.SubCategory == "charcuterie" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CHARCUTERIE]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "SURGELES" %>
+                  <% elsif user_product.product.category.SubCategory  == "surgelés" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:SURGELES]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "LIQUIDES" %>
+                  <% elsif user_product.product.category.SubCategory  == "liquides" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:LIQUIDES]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "BIO" %>
+                  <% elsif user_product.product.category.SubCategory  == "bio" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:BIO]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "PLATS CUISINES" %>
+                  <% elsif user_product.product.category.SubCategory  == "plats cuisinés" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:PLATSCUISINES]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "GLACES" %>
+                  <% elsif user_product.product.category.SubCategory  == "glaces" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:GLACES]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "EPICERIE SALE" %>
+                  <% elsif user_product.product.category.SubCategory  == "epicerie salée" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:EPICERIESALE]  %>
 
-                  <% elsif user_product.product.category.SubCategory == "EPICERIE SUCREE" %>
+                  <% elsif user_product.product.category.SubCategory == "epicerie sucrée" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:EPICERIESUCREE]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "CREMERIE" %>
+                  <% elsif user_product.product.category.SubCategory  == "crémerie" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CREMERIE]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "TRAITEUR" %>
+                  <% elsif user_product.product.category.SubCategory  == "traiteur" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:TRAITEUR]  %>
 
-                  <% elsif user_product.product.category.SubCategory  == "PAINS & PATISSERIE" %>
+                  <% elsif user_product.product.category.SubCategory  == "pains & patisserie" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:PAINSPATISSERIE]  %>
 
-                  <% elsif user_product.product.category.SubCategory == "CONSERVES" %>
+                  <% elsif user_product.product.category.SubCategory == "conserves" %>
 
                     <%= render 'iconcard', iconurl: Category::IMAGECATEGORY[:CONSERVES]  %>
 
