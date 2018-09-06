@@ -11,9 +11,12 @@
     <div class="navbar-wagon-left hidden-xs hidden-sm">
 
       <!-- Links when logged in -->
-      <%= link_to "Accueil", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Mon frigo", user_products_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Recettes", recette_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <h3><%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+            <i class="fas fa-user-circle"></i>
+          <% end %>
+      </h3>
+      <h3><%= link_to "Mon frigo", user_products_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3><%= link_to "Recettes", recette_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
     </div>
 
     <!-- TITLE IN ZE MIDDLE -->
@@ -23,18 +26,18 @@
 
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
-      <%= link_to "Mon compte", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-           <%= t(".sign_out", default: "Se déconnecter") %>
+      <h3><%= link_to destroy_user_session_path, method: :delete  do %>
+          <i class="fas fa-sign-out-alt"></i>
         <% end %>
+      </h3>
     </div>
 
   <% else %>
     <!-- Login link (when logged out) -->
-    <%= link_to "Accueil", root_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <h3><%= link_to "Accueil", root_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
     <div class="navbar-wagon-right navbar-wagon-not-sign-in hidden-xs hidden-sm">
-      <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t(".sign_up", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <h3><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
+      <h3><%= link_to t(".sign_up", default: "Créer un compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></h3>
     </div>
 
   <% end %>

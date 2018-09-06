@@ -42,12 +42,18 @@
     margin-right: 20px;
   }
 }
+.navbar-wagon-left a:hover {
+  color: $light-green;
+}
 .navbar-wagon-right {
   display: flex;
   a {
     color: white;
     margin-left: 20px;
   }
+}
+.navbar-wagon-right a:hover {
+  color: $light-green;
 }
 .navbar-wagon-middle {
   h2 {
@@ -68,6 +74,9 @@
 }
 .navbar-wagon-item {
   font-size: 20px;
+  .fas {
+    font-size: 30px;
+  }
 }
 
 // side_navbar

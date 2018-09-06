@@ -13,6 +13,9 @@ import $ from 'jquery';
 import 'select2';                       // globally assign select2 fn to $ element
 import 'select2/dist/css/select2.css';  // optional if you have css loader
 
+// import { loadDynamicBannerText } from '../components/bannertyped';
+// loadDynamicBannerText();
+
 
 // select2 dropdown avec search
 function matchCustom(params, data) {
